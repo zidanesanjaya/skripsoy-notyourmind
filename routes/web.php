@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+// Beginning Login Section
 Route::get('/login_admin', function () {
     return view('auth/admin/adminLogin');
 });
+// End Login Section
+
+// Beginning Admin Section
+Route::get('/dashboardAdmin', function () {
+    return view('admin/dashboardAdmin');
+});
+// End Admin Section

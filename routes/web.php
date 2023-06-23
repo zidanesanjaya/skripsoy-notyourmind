@@ -28,4 +28,22 @@ Route::get('/login_admin', function () {
 Route::get('/dashboardAdmin', function () {
     return view('admin/dashboardAdmin');
 });
+Route::get('/mataPelajaranAdmin', function () {
+    return view('admin/mataPelajaranAdmin');
+});
+Route::get('/updateInformasiAdmin', function () {
+    return view('admin/updateInformasiAdmin');
+});
+Route::get('/tahunAkademikAdmin', function () {
+    return view('admin/tahunAkademikAdmin');
+});
+Route::get('/kelolaGurudanKaryawan', function () {
+    return view('admin/kelolaUser/kelolaGurudanKaryawan');
+});
+Route::get('/kelolaSiswa', function () {
+    return view('admin/kelolaUser/kelolaSiswa');
+});
+Route::get('/dataKepalaSekolah', function () {
+    return view('admin/kelolaUser/dataKepalaSekolah');
+});
 // End Admin Section

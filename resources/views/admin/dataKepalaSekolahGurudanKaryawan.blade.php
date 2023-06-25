@@ -24,7 +24,7 @@
 						</li>
 						<!--end::Item-->
 						<!--begin::Item-->
-						<li class="breadcrumb-item text-muted">Mata Pelajaran</li>
+						<li class="breadcrumb-item text-muted">Master Data Kepala Sekolah, Guru, dan Karyawan</li>
 						<!--end::Item-->
 					</ul>
 					<!--end::Breadcrumb-->
@@ -43,21 +43,8 @@
 					<!--begin::Header-->
 					<div class="card-header border-0 pt-5">
 						<h3 class="card-title align-items-start flex-column">
-							<span class="card-label fw-bold fs-3 mb-1">Daftar Mata Pelajaran</span>
+							<span class="card-label fw-bold fs-3 mb-1">Data Anggota</span>
 						</h3>
-						<div class="card-toolbar">
-							<a href="#" class="btn btn-sm btn-light btn-active-success" data-bs-toggle="modal" data-bs-target="#inputTahunAkademik">
-								<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-								<span class="svg-icon svg-icon-3">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
-										<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
-									</svg>
-								</span>
-								<!--end::Svg Icon-->
-								Input Tahun Akademik
-							</a>
-						</div>
 						<div class="card-toolbar">
 							<a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#mataPelajaranBaru">
 								<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
@@ -68,7 +55,7 @@
 									</svg>
 								</span>
 								<!--end::Svg Icon-->
-								Tambah Mata Pelajaran
+								Tambah Anggota
 							</a>
 						</div>
 					</div>
@@ -78,21 +65,21 @@
 						<!--begin::Table container-->
 						<div class="table-responsive">
 							<!--begin::Table-->
-							<table id="datamatapelajaran" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
+							<table id="dataanggota" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
 								<thead>
 									<tr class="fw-bold text-muted bg-light">
-										<th class="ps-4 min-w-150px w-300px rounded-start">Mata Pelajaran</th>
-										<th class="min-w-25px">Kelas</th>
-										<th class="min-w-125px">Guru</th>
-										<th class="min-w-50px w-100px text-center">Tahun Akademik</th>
+										<th class="ps-4 min-w-150px w-300px rounded-start">Nama</th>
+										<th class="min-w-20px">NBM</th>
+										<th class="min-w-70px">Email</th>
+										<th class="min-w-50px w-100px text-center">Role</th>
 										<th class="min-w-150px w-50px text-center">Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td class="px-5">Bahasa Arab</td>
-										<td>7</td>
-										<td>Bapak Nosa</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
+										<td>1222.086</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -119,9 +106,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Bahasa Indonesia</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>8</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -148,9 +135,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Bahasa Inggris</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>9</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -177,9 +164,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Bahasa Jawa</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>7</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -206,9 +193,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Ilmu Pengetahuan Sosial</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>8</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -235,9 +222,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Ilmu Pengetahuan Alam</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>9</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -264,9 +251,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Kemuhammadiyahan</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>7</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -293,9 +280,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Matematika</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>8</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -322,9 +309,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Pendidikan Agama Islam dan Budi Pekerti</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>9</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -351,9 +338,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>7</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -380,9 +367,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Pancasila</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>8</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -409,9 +396,9 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="px-5">Teknologi Informatika</td>
+										<td class="px-5">Zidane Putra Sanjaya</td>
 										<td>9</td>
-										<td>Bapak Nosa</td>
+										<td>zidanesanjaya81@gmail.com</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
 											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
@@ -517,7 +504,7 @@
 							<label class="required fs-6 fw-semibold mb-2">Guru</label>
 							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
 								<option>Pilih Guru...</option>
-								<option value="Bapak Nosa">Bapak Nosa</option>
+								<option value="zidanesanjaya81@gmail.com">zidanesanjaya81@gmail.com</option>
 								<option value="Bapak Vatqi">Bapak Vatqi</option>
 								<option value="Bapak Puji">Bapak Puji</option>
 							</select>
@@ -618,7 +605,7 @@
 							<label class="required fs-6 fw-semibold mb-2">Guru</label>
 							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
 								<option>Pilih Guru...</option>
-								<option value="Bapak Nosa">Bapak Nosa</option>
+								<option value="zidanesanjaya81@gmail.com">zidanesanjaya81@gmail.com</option>
 								<option value="Bapak Vatqi">Bapak Vatqi</option>
 								<option value="Bapak Puji">Bapak Puji</option>
 							</select>
@@ -657,153 +644,4 @@
 	<!--end::Modal dialog-->
 </div>
 <!--end::Modal - Edit Mata Pelajaran-->
-
-<!--begin::Modal - Input Tahun Akademik-->
-<div class="modal fade" id="inputTahunAkademik" tabindex="-1" aria-hidden="true">
-	<!--begin::Modal dialog-->
-	<div class="modal-dialog modal-dialog-centered mw-650px">
-		<!--begin::Modal content-->
-		<div class="modal-content rounded">
-			<!--begin::Modal header-->
-			<div class="modal-header pb-0 border-0 justify-content-end">
-				<!--begin::Close-->
-				<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-					<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-					<span class="svg-icon svg-icon-1">
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-							<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-						</svg>
-					</span>
-					<!--end::Svg Icon-->
-				</div>
-				<!--end::Close-->
-			</div>
-			<!--begin::Modal header-->
-			<!--begin::Modal body-->
-			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
-				<!--begin:Form-->
-				<form id="inputTahunAkademik_form" class="form" action="/mataPelajaranAdmin">
-					<!--begin::Heading-->
-					<div class="mb-13 text-center">
-						<!--begin::Title-->
-						<h1 class="mb-3">Input Tahun Akademik</h1>
-						<!--end::Title-->
-					</div>
-					<!--end::Heading-->
-					<!--begin::Input group-->
-					<div class="row g-9 mb-8 justify-content-center">
-						<!--begin::Col-->
-						<div class="col-md-4 fv-row">
-							<input type="text" class="form-control form-control-solid" placeholder="Tahun/Tahun" name="target_title" />
-						</div>
-						<!--end::Col-->
-					</div>
-					<!--end::Input group-->				
-					<!--begin::Content-->
-					<div id="kt_app_content" class="app-content flex-column-fluid">
-						<!--begin::Content container-->
-						<div id="kt_app_content_container" class="app-container container-xxl">
-							<!--begin::Tables Widget 11-->
-							<div class="card mb-5 mb-xl-8">
-								<!--begin::Header-->
-								<div class="card-header border-0 pt-5">
-									<h3 class="card-title align-items-start flex-column">
-										<span class="card-label fw-bold fs-3 mb-1">List Tahun Akademik</span>
-									</h3>
-								</div>
-								<!--end::Header-->
-								<!--begin::Body-->
-								<div class="card-body py-3">
-									<!--begin::Table container-->
-									<div class="table-responsive">
-										<!--begin::Table-->
-										<table id="datamatapelajaran" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
-											<thead>
-												<tr class="fw-bold text-muted bg-light">
-													<th class="ps-4 min-w-150px w-300px rounded-start">Tahun Akademik</th>
-													<th class="min-w-150px w-50px text-center">Aksi</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="px-5">2023/2024</td>
-													<td class="text-center">
-														<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-															<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-															<span class="svg-icon svg-icon-3">
-																<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																	<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-																	<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-																	<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td class="px-5">2024/2025</td>
-													<td class="text-center">
-														<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-															<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-															<span class="svg-icon svg-icon-3">
-																<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																	<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-																	<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-																	<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td class="px-5">2025/2026</td>
-													<td class="text-center">
-														<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-															<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-															<span class="svg-icon svg-icon-3">
-																<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-																	<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-																	<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-																	<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-																</svg>
-															</span>
-															<!--end::Svg Icon-->
-														</a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<!--end::Table-->
-									</div>
-									<!--end::Table container-->
-								</div>
-								<!--begin::Body-->
-							</div>
-						</div>
-						<!--end::Content container-->
-					</div>
-					<!--end::Content-->
-					<!--begin::Actions-->
-					<div class="text-center">
-						<button type="reset" id="inputTahunAkademik_cancel" class="btn btn-light me-3">Cancel</button>
-						<button type="submit" id="inputTahunAkademik_submit" class="btn btn-primary">
-							<span class="indicator-label">Submit</span>
-							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-						</button>
-					</div>
-					<!--end::Actions-->
-				</form>
-				<!--end:Form-->
-			</div>
-			<!--end::Modal body-->
-		</div>
-		<!--end::Modal content-->
-	</div>
-	<!--end::Modal dialog-->
-</div>
-<!--end::Modal - Input Tahun Akademik-->
 @endsection

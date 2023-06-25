@@ -43,30 +43,6 @@
 			<div id="kt_app_content_container" class="app-container container-xxl">
 				<!--begin::Row-->
 				<div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-					<!--begin::Engage widget 4-->
-					<div class="card border-transparent" data-theme="light" style="background-color: #1C325E;">
-						<!--begin::Body-->
-						<div class="card-px text-center pt-5 pb-5">
-							<!--begin::Wrapper-->
-							<div class="m-0">
-								<!--begin::Title-->
-								<div class="position-relative fs-2x z-index-2 fw-bold text-white mb-7">
-									<span class="me-2">Tahun Akademik Saat Ini<br>
-										<span class="position-relative d-inline-block text-danger">
-											<a href="{{url('/tahunAkademikAdmin')}}" class="text-danger opacity-75-hover">2023/2024</a>
-											<!--begin::Separator-->
-											<span class="position-absolute opacity-50 bottom-0 start-0 border-4 border-danger border-bottom w-100"></span>
-											<!--end::Separator-->
-										</span>
-									</span>
-								</div>
-								<!--end::Title-->
-							</div>
-							<!--end::Wrapper-->
-						</div>
-						<!--end::Body-->
-					</div>
-					<!--end::Engage widget 4-->
 					<!--begin::Col-->
 					<div class="col-xl-3">
 						<!--begin::Card widget 3-->

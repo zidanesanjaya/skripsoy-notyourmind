@@ -39,4 +39,9 @@
     $('#datamatapelajaran').DataTable();
 });
 </script>
+<script>
+    $(document).ready(function () {
+    $('#dataanggota').DataTable();
+});
+</script>
 <!--end::datatables-->

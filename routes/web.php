@@ -37,13 +37,10 @@ Route::get('/updateInformasiAdmin', function () {
 Route::get('/tahunAkademikAdmin', function () {
     return view('admin/tahunAkademikAdmin');
 });
-Route::get('/kelolaGurudanKaryawan', function () {
-    return view('admin/kelolaUser/kelolaGurudanKaryawan');
+Route::get('/dataKepalaSekolahGurudanKaryawan', function () {
+    return view('admin/dataKepalaSekolahGurudanKaryawan');
 });
-Route::get('/kelolaSiswa', function () {
-    return view('admin/kelolaUser/kelolaSiswa');
-});
-Route::get('/dataKepalaSekolah', function () {
-    return view('admin/kelolaUser/dataKepalaSekolah');
+Route::get('/dataSiswa', function () {
+    return view('admin/dataSiswa');
 });
 // End Admin Section

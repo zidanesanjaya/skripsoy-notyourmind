@@ -310,9 +310,12 @@
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
                         <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                            <a href="../../demo1/dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
-                        </div>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <div class="menu-item px-5">
+                                <a href="{{ route('logout') }}"onclick="event.preventDefault(); this.closest('form').submit();" class="menu-link px-5">{{ __('Logout') }}</a>
+                            </div>
+                        </form>
                         <!--end::Menu item-->
                     </div>
                     <!--end::User account menu-->

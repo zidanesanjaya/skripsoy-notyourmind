@@ -78,7 +78,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Data Siswa</span>
+                        <span class="menu-title">Master Siswa</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

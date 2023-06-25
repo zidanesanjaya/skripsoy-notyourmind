@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnggotaControllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+Route::get('/welcome', function () {
+    return view('welcome');
 });
 
 
@@ -44,3 +48,9 @@ Route::get('/dataSiswa', function () {
     return view('admin/dataSiswa');
 });
 // End Admin Section
+
+Auth::routes();
+
+Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboardAdmin');
+
+Route::resource('anggot',AnggotaControllers::class);

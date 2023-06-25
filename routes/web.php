@@ -53,4 +53,4 @@ Auth::routes();
 
 Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboardAdmin');
 
-Route::resource('anggot',AnggotaControllers::class);
+// Route::resource('anggot',AnggotaControllers::class);

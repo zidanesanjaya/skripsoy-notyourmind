@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Anggota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
 class AnggotaControllers extends Controller
@@ -15,8 +16,15 @@ class AnggotaControllers extends Controller
      */
     public function index()
     {
-        $anggot = Anggota::latest()->paginate(5);
-        return view ('anggot.index',compact('anggot'))->with('i', (request()->input('page', 1) -1) * 5);
+        return view ('admin.dataKepalaSekolahGurudanKaryawan');
+    }
+
+    public function fetchstudent()
+    {
+        $anggotas = Anggota::all();
+        return response()->json([
+            'anggota'=>$anggotas,
+        ]);
     }
 
     /**
@@ -27,7 +35,7 @@ class AnggotaControllers extends Controller
     public function create()
     {
         //
-        return view('anggot.create');
+        // return view('anggot.create');
     }
 
     /**
@@ -39,15 +47,32 @@ class AnggotaControllers extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'namaAnggota' => 'required',
-            'nbm' => 'required',
-            'email' => 'required',
-            'role' => 'required',
-        ]);
-        Anggota::create($request->all());
+        try {
+            $anggota = $request->all();
+            print_r($anggota);exit;
 
-        return redirect()->route('anggot.index')->with('success','Data Berhasil Di Input');
+            $request->validate([
+                'namaAnggota' => 'required',
+                'jabatan' => 'required',
+            ]);
+
+            // $anggota = $request->post();
+
+            $save = Anggota::create($anggota);
+            return $this->responseCreate($save);
+        } catch (\Exception $e) {
+            return $this->responseCreate($e->getMessage(),true);
+        }
+
+        // $request->validate([
+        //     'namaAnggota' => 'required',
+        //     'nbm' => 'required',
+        //     'email' => 'required',
+        //     'role' => 'required',
+        // ]);
+        // Anggota::create($request->all());
+
+        // return redirect()->route('anggot.index')->with('success','Data Berhasil Di Input');
     }
 
     /**

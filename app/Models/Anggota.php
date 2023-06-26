@@ -13,6 +13,6 @@ class Anggota extends Model
     protected $primarykey = 'id';
 
     protected $fillable = [
-        'namaAnggota', 'nbm', 'email', 'role'
+        'namaAnggota', 'nbm', 'email', 'jabatan'
     ];
 }

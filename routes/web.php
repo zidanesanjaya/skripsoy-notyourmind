@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnggotaControllers;
+use App\Models\Anggota;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,9 +42,19 @@ Route::get('/updateInformasiAdmin', function () {
 Route::get('/tahunAkademikAdmin', function () {
     return view('admin/tahunAkademikAdmin');
 });
-Route::get('/dataKepalaSekolahGurudanKaryawan', function () {
-    return view('admin/dataKepalaSekolahGurudanKaryawan');
-});
+// Route::get('/dataKepalaSekolahGurudanKaryawan', function () {
+//     return view('admin/dataKepalaSekolahGurudanKaryawan');
+// });
+
+// Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'index'])->name('tableAnggota');
+
+Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tableAnggota')->group(function () {
+    $route = array('index', 'fetchstudent', 'store');  
+    foreach ($route as $route) {
+        Route::any($route=='index'?'':'/'.$route, $route)->name($route);
+        }
+    });
+
 Route::get('/dataSiswa', function () {
     return view('admin/dataSiswa');
 });
@@ -54,3 +65,5 @@ Auth::routes();
 Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboardAdmin');
 
 // Route::resource('anggot',AnggotaControllers::class);
+
+// Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'fetchstudent'])->name('tableAnggota');

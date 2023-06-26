@@ -46,7 +46,7 @@
 							<span class="card-label fw-bold fs-3 mb-1">Data Anggota</span>
 						</h3>
 						<div class="card-toolbar">
-							<a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#mataPelajaranBaru">
+							<a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#tambahDataAnggota">
 								<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 								<span class="svg-icon svg-icon-3">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,67 +76,8 @@
 										<th class="min-w-150px w-50px text-center">Aksi</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<td class="px-5">1.</td>
-										<td class="px-5">Zidane Putra Sanjaya</td>
-										<td>1222.086</td>
-										<td>zidanesanjaya81@gmail.com</td>
-										<td class="text-center">2023/2024</td>
-										<td class="text-center">
-											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
-												<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-												<span class="svg-icon svg-icon-3">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
-														<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-											</a>
-											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-												<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-												<span class="svg-icon svg-icon-3">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-														<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-														<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-											</a>
-										</td>
-									</tr>
-									<tr>
-										<td class="px-5">1.</td>
-										<td class="px-5">Zidane Putra Sanjaya</td>
-										<td>1222.086</td>
-										<td>zidanesanjaya81@gmail.com</td>
-										<td class="text-center">2023/2024</td>
-										<td class="text-center">
-											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
-												<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-												<span class="svg-icon svg-icon-3">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
-														<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-											</a>
-											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-												<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-												<span class="svg-icon svg-icon-3">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-														<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-														<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->
-											</a>
-										</td>
-									</tr>
+								<tbody id="listAnggota">
+									
 								</tbody>
 							</table>
 							<!--end::Table-->
@@ -156,7 +97,7 @@
 
 
 <!--begin::Modal - Tambah Data Anggota-->
-<div class="modal fade" id="mataPelajaranBaru" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="tambahDataAnggota" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
@@ -180,7 +121,8 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="mataPelajaranBaru_form" class="form" action="/mataPelajaranAdmin">
+				<form id="tambahDataAnggota_form" method="post" class="form" action="javascript:onSave()">
+					@csrf
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
@@ -197,7 +139,7 @@
 								<span class="required">Nama Anggota</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Anggota" name="target_title" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Anggota" name="namaAnggota" />
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
@@ -207,7 +149,7 @@
 								<span class="required">NBM</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="target_title" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" />
 						</div>
 						<!--end::Col-->
 					</div>
@@ -219,13 +161,13 @@
 							<span class="required">E-mail</span>
 						</label>
 						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="target_title" />
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="email" />
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8 fv-row">
 						<label class="required fs-6 fw-semibold mb-2">Role</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
 							<option value="">Pilih Role...</option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
@@ -235,8 +177,8 @@
 					<!--end::Input group-->
 					<!--begin::Actions-->
 					<div class="text-center">
-						<button type="reset" id="mataPelajaranBaru_cancel" class="btn btn-light me-3">Cancel</button>
-						<button type="submit" id="mataPelajaranBaru_submit" class="btn btn-primary">
+						<button type="reset" id="tambahDataAnggota_cancel" class="btn btn-light me-3">Cancel</button>
+						<button type="submit" id="tambahDataAnggota_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
 							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -354,4 +296,113 @@
 	<!--end::Modal dialog-->
 </div>
 <!--end::Modal - Edit Mata Pelajaran-->
+<script>
+	var table = 'dataanggota'
+	var form = 'tambahDataAnggota_form'
+	var list_table = 'listAnggota'
+	// var tabelKategori
+
+	var tabelAnggota = {
+		store: "{{ route('tableAnggota.store') }}",
+		select: "{{ route('tableAnggota.fetchstudent') }}",
+		// store: "{{ route('tableAnggota.store') }}",
+		// store: "{{ route('tableAnggota.store') }}",
+	}
+
+	tableAnggota()
+	function onSave(){
+		swal({
+			title: "peringatan",
+			text: "Apakah anda yakin untuk menyimpan data ini?",
+			icon: "Warning",
+			buttons: true,
+			dangerMode: true,
+		})
+		.then((response) => {
+			if (response) {
+				const formElement = $('tambahDataAnggota_form')[0];
+				const form = new FormData(formElement);
+
+				// urlSave = $('[name=id]').val() == ''? tabelAnggota.store:tabelAnggota.update;
+				$.ajax({
+					url: tabelAnggota.store,
+					data: form,
+					contentType: false,
+					processData: false,
+					type: 'POST',
+					success: function (response){
+						console.log(response)
+						if(response.status == true){
+							swal("Success !", response.message, "success");
+							onRefresh()
+						} else{
+							swal("Warning", response.message, "Warning");
+						}
+					}
+				})
+			}
+		})
+	}
+
+	function tableAnggota(){
+		$.ajax({
+            url: tabelAnggota.select,
+            type: 'GET',
+            success: function(response){
+				$('#listAnggota').empty();
+
+                    // $('#listAnggota').html('')
+                    anggota = response.anggota;
+
+					$.each(anggota, function(index, data) {
+                        var row = `
+								<tr>
+									<td class="px-5">${index + 1}</td>
+									<td class="px-5">${data.namaAnggota}</td>
+									<td>${data.nbm}</td>
+									<td>${data.email}</td>
+									<td class="text-center">${data.jabatan}</td>
+									<td class="text-center">
+									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
+										<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+										<span class="svg-icon svg-icon-3">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
+											<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
+										</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</a>
+									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+										<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+										<span class="svg-icon svg-icon-3">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+											<path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+											<path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+										</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</a>
+									</td>
+								</tr>
+        `;
+
+        $('#listAnggota').append(row);
+                });
+                
+            }
+		});
+	}
+
+	function onRefresh(){
+		onClear()
+		tableAnggota()
+	}
+
+	function onClear() {
+		$(`#${form}`)[0].reset();
+	}
+</script>
 @endsection
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>

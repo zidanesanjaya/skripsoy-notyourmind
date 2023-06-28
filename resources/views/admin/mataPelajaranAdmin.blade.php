@@ -428,7 +428,7 @@
 									<!--begin::Table container-->
 									<div class="table-responsive">
 										<!--begin::Table-->
-										<table id="datamatapelajaran" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
+										<table id="tahunAkademik" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
 											<thead>
 												<tr class="fw-bold text-muted bg-light">
 													<th class="ps-4 min-w-150px w-300px rounded-start">Tahun Akademik</th>
@@ -437,7 +437,7 @@
 											</thead>
 											<tbody>
 												<tr>
-													<td class="px-5">2023/2024</td>
+													<td class="px-5"></td>
 													<td class="text-center">
 														<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
 															<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
@@ -545,4 +545,5 @@
 </script>
 <!-- end::ajaxInputTahunAkademik -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 @endsection

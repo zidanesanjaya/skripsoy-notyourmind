@@ -64,6 +64,9 @@ Auth::routes();
 
 Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboardAdmin');
 
+Route::post('/createAnggota', [App\Http\Controllers\AnggotaControllers::class, 'store'])->name('createAnggota');
+
+Route::put('/updateAnggota/{id}', [App\Http\Controllers\AnggotaControllers::class, 'update'])->name('updateAnggota');
 // Route::resource('anggot',AnggotaControllers::class);
 
 // Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'fetchstudent'])->name('tableAnggota');

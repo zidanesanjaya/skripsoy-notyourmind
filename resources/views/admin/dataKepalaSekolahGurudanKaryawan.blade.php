@@ -72,12 +72,12 @@
 										<th class="ps-4 min-w-150px w-300px rounded-start">Nama</th>
 										<th class="min-w-20px">NBM</th>
 										<th class="min-w-70px">Email</th>
-										<th class="min-w-50px w-100px text-center">Role</th>
+										<th class="min-w-50px w-100px text-center">Jabatan</th>
 										<th class="min-w-150px w-50px text-center">Aksi</th>
 									</tr>
 								</thead>
 								<tbody id="listAnggota">
-									
+
 								</tbody>
 							</table>
 							<!--end::Table-->
@@ -121,7 +121,7 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="tambahDataAnggota_form" method="post" class="form" action="javascript:onSave()">
+				<form id="tambahDataAnggota_form" method="post" class="form" action="{{ route('createAnggota')}}">
 					@csrf
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
@@ -166,9 +166,9 @@
 					<!--end::Input group-->
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8 fv-row">
-						<label class="required fs-6 fw-semibold mb-2">Role</label>
+						<label class="required fs-6 fw-semibold mb-2">Jabatan</label>
 						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
-							<option value="">Pilih Role...</option>
+							<option value="">Pilih Jabatan...</option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
 							<option value="Karyawan">Karyawan</option>
@@ -181,7 +181,7 @@
 						<button type="submit" id="tambahDataAnggota_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 					</div>
 					<!--end::Actions-->
@@ -196,8 +196,8 @@
 </div>
 <!--end::Modal - Tambah Data Anggota-->
 
-<!--begin::Modal - Edit Mata Pelajaran-->
-<div class="modal fade" id="editMataPelajaran" tabindex="-1" aria-hidden="true">
+<!--begin::Modal - Edit Data Anggota-->
+<div class="modal fade" id="editDataAnggota" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
@@ -221,68 +221,68 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="editMataPelajaran_form" class="form" action="/mataPelajaranAdmin">
+				<form id="editDataAnggota_form" method="post" class="form" action="{{route('updateAnggota', 1)}}">
+					@csrf
+					@method('put')
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
-						<h1 class="mb-3">Edit Mata Pelajaran</h1>
+						<h1 class="mb-3">Edit Nama Anggota</h1>
 						<!--end::Title-->
 					</div>
 					<!--end::Heading-->
 					<!--begin::Input group-->
-					<div class="d-flex flex-column mb-8 fv-row">
-						<!--begin::Label-->
-						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-							<span class="required">Nama Mata Pelajaran</span>
-						</label>
-						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Mata Pelajaran" name="target_title" />
-					</div>
-					<!--end::Input group-->
-					<!--begin::Input group-->
 					<div class="row g-9 mb-8">
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Kelas</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option value="">Pilih Kelas...</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-							</select>
+							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+								<span class="required">Nama Anggota</span>
+							</label>
+							<!--end::Label-->
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Anggota" name="namaAnggota" />
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Guru</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Guru...</option>
-								<option value="zidanesanjaya81@gmail.com">zidanesanjaya81@gmail.com</option>
-								<option value="Bapak Vatqi">Bapak Vatqi</option>
-								<option value="Bapak Puji">Bapak Puji</option>
-							</select>
+							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+								<span class="required">NBM</span>
+							</label>
+							<!--end::Label-->
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" />
 						</div>
 						<!--end::Col-->
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
-					<div class="d-flex flex-column mb-8">
-						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Tahun Akademik...</option>
-								<option value="2023/2024">2023/2024</option>
-								<option value="2024/2025">2024/2025</option>
-								<option value="2025/2026">2025/2026</option>
-							</select>
+					<div class="d-flex flex-column mb-8 fv-row">
+						<!--begin::Label-->
+						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+							<span class="required">E-mail</span>
+						</label>
+						<!--end::Label-->
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="email" />
+					</div>
+					<!--end::Input group-->
+					<!--begin::Input group-->
+					<div class="d-flex flex-column mb-8 fv-row">
+						<label class="required fs-6 fw-semibold mb-2">Jabatan</label>
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
+							<option value="">Pilih Jabatan...</option>
+							<option value="Kepala Sekolah">Kepala Sekolah</option>
+							<option value="Guru">Guru</option>
+							<option value="Karyawan">Karyawan</option>
+						</select>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->
 					<div class="text-center">
-						<button type="reset" id="editMataPelajaran_cancel" class="btn btn-light me-3">Cancel</button>
-						<button type="submit" id="editMataPelajaran_submit" class="btn btn-primary">
+						<button type="reset" id="editDataAnggota_cancel" class="btn btn-light me-3">Cancel</button>
+						<button type="submit" id="editDataAnggota_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 					</div>
 					<!--end::Actions-->
@@ -295,7 +295,7 @@
 	</div>
 	<!--end::Modal dialog-->
 </div>
-<!--end::Modal - Edit Mata Pelajaran-->
+<!--end::Modal - Edit Data Anggota-->
 <script>
 	var table = 'dataanggota'
 	var form = 'tambahDataAnggota_form'
@@ -310,60 +310,61 @@
 	}
 
 	tableAnggota()
-	function onSave(){
-		swal({
-			title: "peringatan",
-			text: "Apakah anda yakin untuk menyimpan data ini?",
-			icon: "Warning",
-			buttons: true,
-			dangerMode: true,
-		})
-		.then((response) => {
-			if (response) {
-				const formElement = $('tambahDataAnggota_form')[0];
-				const form = new FormData(formElement);
 
-				// urlSave = $('[name=id]').val() == ''? tabelAnggota.store:tabelAnggota.update;
-				$.ajax({
-					url: tabelAnggota.store,
-					data: form,
-					contentType: false,
-					processData: false,
-					type: 'POST',
-					success: function (response){
-						console.log(response)
-						if(response.status == true){
-							swal("Success !", response.message, "success");
-							onRefresh()
-						} else{
-							swal("Warning", response.message, "Warning");
+	function onSave() {
+		swal({
+				title: "peringatan",
+				text: "Apakah anda yakin untuk menyimpan data ini?",
+				icon: "Warning",
+				buttons: true,
+				dangerMode: true,
+			})
+			.then((response) => {
+				if (response) {
+					const formElement = $('tambahDataAnggota_form')[0];
+					const form = new FormData(formElement);
+
+					// urlSave = $('[name=id]').val() == ''? tabelAnggota.store:tabelAnggota.update;
+					$.ajax({
+						url: tabelAnggota.store,
+						data: form,
+						contentType: false,
+						processData: false,
+						type: 'POST',
+						success: function(response) {
+							console.log(response)
+							if (response.status == true) {
+								swal("Success !", response.message, "success");
+								onRefresh()
+							} else {
+								swal("Warning", response.message, "Warning");
+							}
 						}
-					}
-				})
-			}
-		})
+					})
+				}
+			})
 	}
 
-	function tableAnggota(){
+	function tableAnggota() {
 		$.ajax({
-            url: tabelAnggota.select,
-            type: 'GET',
-            success: function(response){
+			url: tabelAnggota.select,
+			type: 'GET',
+			success: function(response) {
 				$('#listAnggota').empty();
 
-                    // $('#listAnggota').html('')
-                    anggota = response.anggota;
+				// $('#listAnggota').html('')
+				anggota = response.anggota;
 
-					$.each(anggota, function(index, data) {
-                        var row = `
+				$.each(anggota, function(index, data) {
+					var row = `
 								<tr>
-									<td class="px-5">${index + 1}</td>
+									<td class="px-5">${data.id}</td>
 									<td class="px-5">${data.namaAnggota}</td>
 									<td>${data.nbm}</td>
 									<td>${data.email}</td>
 									<td class="text-center">${data.jabatan}</td>
 									<td class="text-center">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
+									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataAnggota">
 										<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 										<span class="svg-icon svg-icon-3">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -388,14 +389,14 @@
 								</tr>
         `;
 
-        $('#listAnggota').append(row);
-                });
-                
-            }
+					$('#listAnggota').append(row);
+				});
+
+			}
 		});
 	}
 
-	function onRefresh(){
+	function onRefresh() {
 		onClear()
 		tableAnggota()
 	}

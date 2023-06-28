@@ -16,14 +16,14 @@ class AnggotaControllers extends Controller
      */
     public function index()
     {
-        return view ('admin.dataKepalaSekolahGurudanKaryawan');
+        return view('admin.dataKepalaSekolahGurudanKaryawan');
     }
 
     public function fetchstudent()
     {
         $anggotas = Anggota::all();
         return response()->json([
-            'anggota'=>$anggotas,
+            'anggota' => $anggotas,
         ]);
     }
 
@@ -49,7 +49,7 @@ class AnggotaControllers extends Controller
         //
         try {
             $anggota = $request->all();
-            print_r($anggota);exit;
+            // print_r($anggota);exit;
 
             $request->validate([
                 'namaAnggota' => 'required',
@@ -59,9 +59,10 @@ class AnggotaControllers extends Controller
             // $anggota = $request->post();
 
             $save = Anggota::create($anggota);
-            return $this->responseCreate($save);
+            // return $this->responseCreate($save);
+            return back();
         } catch (\Exception $e) {
-            return $this->responseCreate($e->getMessage(),true);
+            return $this->responseCreate($e->getMessage(), true);
         }
 
         // $request->validate([
@@ -96,7 +97,7 @@ class AnggotaControllers extends Controller
     public function edit($id)
     {
         //
-        return view('anggot.edit', compact('anggot'));
+        // return view('anggot.edit', compact('anggot'));
     }
 
     /**
@@ -106,19 +107,51 @@ class AnggotaControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Anggota $anggot)
+    public function update(Request $request, $id)
     {
         //
-        $request->validate([
+        $validator = validator::make($request->all(), [
             'namaAnggota' => 'required',
-            'nbm' => 'required',
-            'email' => 'required',
-            'role' => 'required',
+            'jabatan' => 'required',
         ]);
 
-        $anggot->update($request->all());
+        if ($validator->fails()) {
+            return response()->json([
+                'status'=>400,
+                // 'errors'=>$validator->message()
+            ]);
+        } else{
+            $anggota = Anggota::find($id);
+            if($anggota){
+                $anggota->namaAnggota = $request->input('namaAnggota');
+                $anggota->nbm = $request->input('nbm');
+                $anggota->email = $request->input('email');
+                $anggota->jabatan = $request->input('jabatan');
+                $anggota->update();
+                return back();
+                // return response()->json([
+                //     'status'=>200,
+                //     'message'=>'Data Berhasil di Update',
+                // ]);
+            } else{
+                return response()->json([
+                    'status'=>404,
+                    'message'=>'Anggota tidak ditemukan',
+                ]);
+            }
+        }
 
-        return redirect()->route('anggot.index')->with('Success', 'Data Berhasil di Update');
+
+        // $request->validate([
+        //     'namaAnggota' => 'required',
+        //     'nbm' => 'required',
+        //     'email' => 'required',
+        //     'role' => 'required',
+        // ]);
+
+        // $anggot->update($request->all());
+
+        // return redirect()->route('anggot.index')->with('Success', 'Data Berhasil di Update');
     }
 
     /**

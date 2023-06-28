@@ -56,7 +56,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
-									<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+									<h1 class="text-dark fw-bolder mb-3">Log In Admin</h1>
 									<!--end::Title-->
 								</div>
 								<!--begin::Heading-->

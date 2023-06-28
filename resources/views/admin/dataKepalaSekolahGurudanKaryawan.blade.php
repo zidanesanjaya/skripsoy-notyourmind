@@ -297,11 +297,17 @@
 </div>
 
 @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
-    </div>
+	<!-- Success Alert -->
+	<div class="alert alert-success alert-dismissible fade show">
+		Data <strong>Berhasil!</strong> ditambahkan.
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+	</div>
+@elseif (\Session::has('danger'))
+	<!-- Error Alert -->
+	<div class="alert alert-danger alert-dismissible fade show">
+		<strong>Error!</strong> A problem has been occurred while submitting your data.
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+	</div>
 @endif
 <!--end::Modal - Edit Data Anggota-->
 <script>

@@ -16,8 +16,9 @@ class Controller extends BaseController
             $save= array(
                 'status' => true,
                 'message'=>'Berhasil Menyimpan Data',
+                'notif'=>'success',
             );
-
+            
             if($show){
                 $operation['anggota'] = $anggota;
             }
@@ -25,8 +26,9 @@ class Controller extends BaseController
             $save= array(
                 'status' => false,
                 'message'=> $show?$anggota:'Gagal Menyimpan Data',
+                'notif'=>'danger',
             );
         }
-        return back()->with('success',$save['message']);
+        return back()->with($save['notif'],$save['message']);
     }
 }

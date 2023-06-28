@@ -11,7 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function responseCreate($anggota='',$show=false){
+    public function responseCreate($anggota='',$show=false,$route){
         if(isset($anggota->wasRecentlyCreated) || isset($anggota['success'])){
             $save= array(
                 'status' => true,
@@ -27,6 +27,6 @@ class Controller extends BaseController
                 'message'=> $show?$anggota:'Gagal Menyimpan Data',
             );
         }
-        return $save;
+        return redirect()->route($route);
     }
 }

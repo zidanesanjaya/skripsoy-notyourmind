@@ -310,7 +310,7 @@
 	}
 	var link = document.querySelector('.btn[data-bs-target="#editDataAnggota"]');
 	
-	function fungsiBaru(element){
+	function editAnggota(element){
 		var dataId = element.getAttribute('data-id');
 		var form = document.getElementById('editDataAnggota_form');
   		form.action = '/updateAnggota/'+dataId;
@@ -367,13 +367,13 @@
 				$.each(anggota, function(index, data) {
 					var row = `
 								<tr>
-									<td class="px-5">${data.id}</td>
+									<td class="px-5">${index +1}</td>
 									<td class="px-5">${data.namaAnggota}</td>
 									<td>${data.nbm}</td>
 									<td>${data.email}</td>
 									<td class="text-center">${data.jabatan}</td>
 									<td class="text-center">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataAnggota" data-id="${data.id}" onclick="fungsiBaru(this)">
+									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataAnggota" data-id="${data.id}" onclick="editAnggota(this)">
 										<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 										<span class="svg-icon svg-icon-3">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -383,7 +383,7 @@
 										</span>
 										<!--end::Svg Icon-->
 									</a>
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+									<a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
 										<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
 										<span class="svg-icon svg-icon-3">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

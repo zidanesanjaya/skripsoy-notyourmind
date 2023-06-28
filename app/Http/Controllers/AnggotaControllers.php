@@ -53,6 +53,7 @@ class AnggotaControllers extends Controller
 
             $request->validate([
                 'namaAnggota' => 'required',
+                'nbm' => 'required|unique:anggotas,nbm',
                 'jabatan' => 'required',
             ]);
 
@@ -62,7 +63,7 @@ class AnggotaControllers extends Controller
             // return $this->responseCreate($save);
             return back();
         } catch (\Exception $e) {
-            return $this->responseCreate($e->getMessage(), true);
+            return $this->responseCreate($e->getMessage(), true, 'tableAnggota');
         }
 
         // $request->validate([
@@ -85,7 +86,7 @@ class AnggotaControllers extends Controller
     public function show(Anggota $anggot)
     {
         //
-        return view('anggot.show', compact('anggot'));
+        // return view('anggot.show', compact('anggot'));
     }
 
     /**
@@ -160,11 +161,41 @@ class AnggotaControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Anggota $anggot)
+    public function destroy($id)
     {
         //
-        $anggot->delete();
+        $anggota = Anggota::find($id);
+        if($anggota){
+            $anggota->delete();
+            return back();
+        } else{
+            return response()->json([
+                'status'=>404,
+                'message'=>'Tidak ada data Anggota',
+            ]);
+        }
 
-        return redirect()->route('anggot.index')->with('Success', 'Data Berhasil Dihapus');
+        // $anggot->delete();
+
+        // return redirect()->route('anggot.index')->with('Success', 'Data Berhasil Dihapus');
+    
+    }
+    public function delete($id)
+    {
+        //
+        $anggota = Anggota::find($id);
+        if($anggota){
+            $anggota->delete();
+            return back();
+        } else{
+            return response()->json([
+                'status'=>404,
+                'message'=>'Tidak ada data Anggota',
+            ]);
+        }
+
+        // $anggot->delete();
+
+        // return redirect()->route('anggot.index')->with('Success', 'Data Berhasil Dihapus');
     }
 }

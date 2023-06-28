@@ -49,11 +49,11 @@ Route::get('/tahunAkademikAdmin', function () {
 // Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'index'])->name('tableAnggota');
 
 Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tableAnggota')->group(function () {
-    $route = array('index', 'fetchstudent', 'store');  
+    $route = array('index', 'fetchstudent', 'store');
     foreach ($route as $route) {
-        Route::any($route=='index'?'':'/'.$route, $route)->name($route);
-        }
-    });
+        Route::any($route == 'index' ? '' : '/' . $route, $route)->name($route);
+    }
+});
 
 Route::get('/dataSiswa', function () {
     return view('admin/dataSiswa');
@@ -67,6 +67,8 @@ Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'inde
 Route::post('/createAnggota', [App\Http\Controllers\AnggotaControllers::class, 'store'])->name('createAnggota');
 
 Route::put('/updateAnggota/{id}', [App\Http\Controllers\AnggotaControllers::class, 'update'])->name('updateAnggota');
+
+Route::get('/deleteAnggota/{id}', [App\Http\Controllers\AnggotaControllers::class, 'delete'])->name('deleteAnggota');
 // Route::resource('anggot',AnggotaControllers::class);
 
 // Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'fetchstudent'])->name('tableAnggota');

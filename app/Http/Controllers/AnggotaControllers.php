@@ -61,9 +61,9 @@ class AnggotaControllers extends Controller
 
             $save = Anggota::create($anggota);
             // return $this->responseCreate($save);
-            return back();
+            return $this->responseCreate($e->getMessage(), true);
         } catch (\Exception $e) {
-            return $this->responseCreate($e->getMessage(), true, 'tableAnggota');
+            return $this->responseCreate($e->getMessage(), false);
         }
 
         // $request->validate([

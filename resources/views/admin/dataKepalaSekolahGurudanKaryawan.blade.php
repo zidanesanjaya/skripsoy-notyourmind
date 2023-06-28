@@ -221,7 +221,7 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="editDataAnggota_form" method="post" class="form" action="{{route('updateAnggota', 1)}}">
+				<form id="editDataAnggota_form" method="post" class="form">
 					@csrf
 					@method('put')
 					<!--begin::Heading-->
@@ -240,7 +240,7 @@
 								<span class="required">Nama Anggota</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Anggota" name="namaAnggota" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Anggota" name="namaAnggota" id="namaAnggota"/>
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
@@ -250,7 +250,7 @@
 								<span class="required">NBM</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" id="nbm" />
 						</div>
 						<!--end::Col-->
 					</div>
@@ -262,13 +262,13 @@
 							<span class="required">E-mail</span>
 						</label>
 						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="email" />
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="email" id="email"/>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8 fv-row">
 						<label class="required fs-6 fw-semibold mb-2">Jabatan</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan" id="jabatan">
 							<option value="">Pilih Jabatan...</option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
@@ -308,6 +308,15 @@
 		// store: "{{ route('tableAnggota.store') }}",
 		// store: "{{ route('tableAnggota.store') }}",
 	}
+	var link = document.querySelector('.btn[data-bs-target="#editDataAnggota"]');
+	
+	function fungsiBaru(element){
+		var dataId = element.getAttribute('data-id');
+		var form = document.getElementById('editDataAnggota_form');
+  		form.action = '/updateAnggota/'+dataId;
+	}
+
+
 
 	tableAnggota()
 
@@ -364,7 +373,7 @@
 									<td>${data.email}</td>
 									<td class="text-center">${data.jabatan}</td>
 									<td class="text-center">
-									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataAnggota">
+									<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataAnggota" data-id="${data.id}" onclick="fungsiBaru(this)">
 										<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 										<span class="svg-icon svg-icon-3">
 										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

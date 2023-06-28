@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnggotaControllers;
+use App\Http\Controllers\tahunAkademikControllers;
 use App\Models\Anggota;
 use Illuminate\Support\Facades\Route;
 
@@ -72,3 +73,7 @@ Route::get('/deleteAnggota/{id}', [App\Http\Controllers\AnggotaControllers::clas
 // Route::resource('anggot',AnggotaControllers::class);
 
 // Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'fetchstudent'])->name('tableAnggota');
+
+// begin::Tahun Akademik
+Route::resource('tahunAkademik', tahunAkademikControllers::class);
+// end::Tahun Akademik

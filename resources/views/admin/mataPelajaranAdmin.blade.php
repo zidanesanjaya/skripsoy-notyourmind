@@ -239,11 +239,11 @@
 					<div class="d-flex flex-column mb-8">
 						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
 						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Tahun Akademik...</option>
-								<option value="2023/2024">2023/2024</option>
-								<option value="2024/2025">2024/2025</option>
-								<option value="2025/2026">2025/2026</option>
-							</select>
+							<option>Pilih Tahun Akademik...</option>
+							<option value="2023/2024">2023/2024</option>
+							<option value="2024/2025">2024/2025</option>
+							<option value="2025/2026">2025/2026</option>
+						</select>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->
@@ -252,7 +252,7 @@
 						<button type="submit" id="mataPelajaranBaru_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 					</div>
 					<!--end::Actions-->
@@ -340,11 +340,11 @@
 					<div class="d-flex flex-column mb-8">
 						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
 						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Tahun Akademik...</option>
-								<option value="2023/2024">2023/2024</option>
-								<option value="2024/2025">2024/2025</option>
-								<option value="2025/2026">2025/2026</option>
-							</select>
+							<option>Pilih Tahun Akademik...</option>
+							<option value="2023/2024">2023/2024</option>
+							<option value="2024/2025">2024/2025</option>
+							<option value="2025/2026">2025/2026</option>
+						</select>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->
@@ -353,7 +353,7 @@
 						<button type="submit" id="editMataPelajaran_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
-							<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 						</button>
 					</div>
 					<!--end::Actions-->
@@ -405,11 +405,11 @@
 					<div class="row g-9 mb-8 justify-content-center">
 						<!--begin::Col-->
 						<div class="col-md-4 fv-row">
-							<input type="text" class="form-control form-control-solid" placeholder="Tahun/Tahun" name="tahunAkademik" />
+							<input type="text" class="form-control form-control-solid" placeholder="Tahun/Tahun" name="tahunAkademik" id="tahunAkademik" />
 						</div>
 						<!--end::Col-->
 					</div>
-					<!--end::Input group-->				
+					<!--end::Input group-->
 					<!--begin::Content-->
 					<div id="kt_app_content" class="app-content flex-column-fluid">
 						<!--begin::Content container-->
@@ -467,7 +467,7 @@
 					<!--begin::Actions-->
 					<div class="text-center">
 						<button type="reset" id="inputTahunAkademik_cancel" class="btn btn-light me-3">Cancel</button>
-						<button type="button" class="btn btn-primary" onclick="submitTahunAkademik()">
+						<button id="inputTahunAkademik_submit" type="button" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 						</button>
 					</div>
@@ -484,36 +484,65 @@
 <!--end::Modal - Input Tahun Akademik-->
 
 <!-- begin::ajaxInputTahunAkademik -->
+<!-- <script>
+	// Fungsi untuk mengirim permintaan AJAX ke backend
+	function submitTahunAkademik() {
+		var form = document.getElementById("inputTahunAkademik_form");
+		var formData = new FormData(form);
+		console.log(formData);
+		// Kirim permintaan AJAX menggunakan library seperti Axios atau jQuery
+		// Contoh menggunakan Axios:
+		axios.post(form.action, formData)
+			.then(function(response) {
+				// Tangani respon dari backend jika diperlukan
+				console.log(response.data);
+				// Tutup modal setelah berhasil menyimpan data
+				$('#inputTahunAkademik').modal('hide');
+			})
+			.catch(function(error) {
+				// Tangani kesalahan jika terjadi
+				console.error(error);
+			});
+	}
+
+	// Tangani submit form
+	document.getElementById("inputTahunAkademik_form").addEventListener("submit", function(event) {
+		event.preventDefault(); // Mencegah form melakukan submit langsung
+
+		// Panggil fungsi untuk mengirim permintaan AJAX
+		submitTahunAkademik();
+	});
+</script> -->
 
 <script>
-    // Fungsi untuk mengirim permintaan AJAX ke backend
-    function submitTahunAkademik() {
-        var form = document.getElementById("inputTahunAkademik_form");
-        var formData = new FormData(form);
-		console.log(formData);
-        // Kirim permintaan AJAX menggunakan library seperti Axios atau jQuery
-        // Contoh menggunakan Axios:
-        axios.post(form.action, formData)
-            .then(function(response) {
-                // Tangani respon dari backend jika diperlukan
-                console.log(response.data);
-                // Tutup modal setelah berhasil menyimpan data
-                $('#inputTahunAkademik').modal('hide');
-            })
-            .catch(function(error) {
-                // Tangani kesalahan jika terjadi
-                console.error(error);
-            });
-    }
+	// Tangkap acara klik pada tombol simpan
+	document.getElementById('inputTahunAkademik_submit').addEventListener('click', function(e) {
+		e.preventDefault(); // Mencegah perilaku default dari tombol
 
-    // Tangani submit form
-    document.getElementById("inputTahunAkademik_form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Mencegah form melakukan submit langsung
+		// Ambil nilai-nilai input dari formulir
+		var tahunAkademik = document.getElementById('tahunAkademik').value;
+		console.log(tahunAkademik);
+		// var email = document.getElementById('email').value;
 
-        // Panggil fungsi untuk mengirim permintaan AJAX
-        submitTahunAkademik();
-    });
+		// Kirim data ke server menggunakan Axios
+		axios.post('{{ route("tahunAkademik.store") }}', {
+				tahunAkademik: tahunAkademik,
+				// email: email
+			})
+			.then(function(response) {
+				// Penyimpanan berhasil, lakukan tindakan yang diperlukan
+				// Misalnya, update modal dengan respons dari server
+				// document.getElementById('editDataAnggota').style.display = 'none'; // Menutup modal penyuntingan data
+				// document.getElementById('modalSukses').style.display = 'block'; // Menampilkan modal sukses
+
+				// Lakukan pembaruan lainnya sesuai kebutuhan
+			})
+			.catch(function(error) {
+				// Penyimpanan gagal, lakukan penanganan kesalahan yang sesuai
+				console.log(error.response.data); // Tampilkan respons kesalahan pada konsol
+			});
+	});
 </script>
 <!-- end::ajaxInputTahunAkademik -->
-@endsection
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+@endsection

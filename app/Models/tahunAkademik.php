@@ -12,6 +12,6 @@ class tahunAkademik extends Model
     protected $table = 'tahunakademik';
 
     protected $fillable = [
-        'tahunakademik',
+        'tahunAkademik',
     ];
 }

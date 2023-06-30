@@ -33,6 +33,9 @@ License: For each use you must have a valid license purchased only from above li
                         @include('layouts.sidebar')
 					<!--end::Sidebar-->
 					<!--begin::Main-->
+						<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+						<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+						<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
                         @yield('content')
 					<!--end:::Main-->
                     <!--Begin:::Footer-->

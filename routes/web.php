@@ -68,6 +68,8 @@ Route::get('/deleteAnggota/{id}', [App\Http\Controllers\AnggotaControllers::clas
 
 // begin::Tahun Akademik
 Route::resource('tahunAkademik', tahunAkademikControllers::class);
+
+Route::get('/deleteTahunAkademik/{id}', [App\Http\Controllers\tahunAkademikControllers::class, 'delete']);
 // end::Tahun Akademik
 
 // begin::checkRole

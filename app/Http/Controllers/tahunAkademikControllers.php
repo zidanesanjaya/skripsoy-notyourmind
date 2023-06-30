@@ -86,10 +86,17 @@ class tahunAkademikControllers extends Controller
      * @param  \App\Models\tahunAkademik  $tahunAkademik
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tahunAkademik $tahunAkademik)
+    public function destroy($id)
     {
         //
-        $tahunAkademik->delete();
-        return 0;
+        // tahunAkademik::find($id)->delete();
+        // return ;
+    }
+
+    public function delete($id)
+    {
+        //
+        tahunAkademik::find($id)->delete();
+        return ;
     }
 }

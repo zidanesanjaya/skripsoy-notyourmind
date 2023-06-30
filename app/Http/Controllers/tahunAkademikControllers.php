@@ -14,9 +14,7 @@ class tahunAkademikControllers extends Controller
      */
     public function index()
     {
-        //
-        $tahunAkademik = tahunAkademik::all();
-        return view ('tahunAkademik.index', compact('tahunAkademik'));
+        
     }
 
     /**
@@ -87,16 +85,12 @@ class tahunAkademikControllers extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
-        // tahunAkademik::find($id)->delete();
-        // return ;
+    { 
     }
 
     public function delete($id)
     {
-        //
-        tahunAkademik::find($id)->delete();
-        return ;
+        tahunAkademik::destroy($id);
+        return back();
     }
 }

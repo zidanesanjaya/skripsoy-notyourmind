@@ -26,7 +26,8 @@ class tahunAkademikControllers extends Controller
      */
     public function create()
     {
-        //
+        $tahunAkademik = tahunAkademik::all();
+        return json_encode($tahunAkademik);
     }
 
     /**
@@ -38,8 +39,11 @@ class tahunAkademikControllers extends Controller
     public function store(Request $request)
     {
         //
-        tahunAkademik::create($request->all());
-        return redirect()->route('tahunAkademik.index')->with('success', 'Tahun Akademik Berhasil di Tambahkan');
+        tahunAkademik::create([
+            'tahunAkademik' => $request->tahunAkademik
+        ]);
+        return 0;
+        // return redirect()->route('tahunAkademik.index')->with('success', 'Tahun Akademik Berhasil di Tambahkan');
     }
 
     /**

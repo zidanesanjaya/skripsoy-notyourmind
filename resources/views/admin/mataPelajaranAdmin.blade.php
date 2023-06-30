@@ -481,40 +481,12 @@
 	</div>
 	<!--end::Modal dialog-->
 </div>
-<!--end::Modal - Input Tahun Akademik-->
-
-<!-- begin::ajaxInputTahunAkademik -->
-<!-- <script>
-	// Fungsi untuk mengirim permintaan AJAX ke backend
-	function submitTahunAkademik() {
-		var form = document.getElementById("inputTahunAkademik_form");
-		var formData = new FormData(form);
-		console.log(formData);
-		// Kirim permintaan AJAX menggunakan library seperti Axios atau jQuery
-		// Contoh menggunakan Axios:
-		axios.post(form.action, formData)
-			.then(function(response) {
-				// Tangani respon dari backend jika diperlukan
-				console.log(response.data);
-				// Tutup modal setelah berhasil menyimpan data
-				$('#inputTahunAkademik').modal('hide');
-			})
-			.catch(function(error) {
-				// Tangani kesalahan jika terjadi
-				console.error(error);
-			});
-	}
-
-	// Tangani submit form
-	document.getElementById("inputTahunAkademik_form").addEventListener("submit", function(event) {
-		event.preventDefault(); // Mencegah form melakukan submit langsung
-
-		// Panggil fungsi untuk mengirim permintaan AJAX
-		submitTahunAkademik();
-	});
-</script> -->
 
 <script>
+	$(document).ready(function() {
+		loadTable();
+	});
+
 	// Tangkap acara klik pada tombol simpan
 	document.getElementById('inputTahunAkademik_submit').addEventListener('click', function(e) {
 		e.preventDefault(); // Mencegah perilaku default dari tombol
@@ -530,20 +502,39 @@
 				// email: email
 			})
 			.then(function(response) {
-				// Penyimpanan berhasil, lakukan tindakan yang diperlukan
-				// Misalnya, update modal dengan respons dari server
-				// document.getElementById('editDataAnggota').style.display = 'none'; // Menutup modal penyuntingan data
-				// document.getElementById('modalSukses').style.display = 'block'; // Menampilkan modal sukses
-
-				// Lakukan pembaruan lainnya sesuai kebutuhan
+				loadTable();
 			})
 			.catch(function(error) {
 				// Penyimpanan gagal, lakukan penanganan kesalahan yang sesuai
 				console.log(error.response.data); // Tampilkan respons kesalahan pada konsol
 			});
 	});
+
+	function loadTable() {
+		$.ajax({
+			url: '/tahunAkademik/create',
+			method: 'GET',
+			dataType: 'json', // Menentukan bahwa respons akan berupa JSON
+			success: function(data) {
+			console.log(data);
+			var tbody = $('#tahunAkademik tbody');
+			tbody.empty();
+			for (var i = 0; i < data.length; i++) {
+				var row = '<tr>' +
+				'<td>' + data[i].tahunAkademik + '</td>' +
+				'<td><button class="btn btn-success">Edit</button></td>' +
+				'</tr>';
+				tbody.append(row);
+			}
+			},
+			error: function(xhr, status, error) {
+			console.error(error);
+			}
+		});
+	}
+
+
 </script>
 <!-- end::ajaxInputTahunAkademik -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 @endsection

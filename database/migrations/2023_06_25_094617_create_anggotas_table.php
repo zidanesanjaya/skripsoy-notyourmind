@@ -18,7 +18,7 @@ class CreateAnggotasTable extends Migration
             $table->text('namaAnggota');
             $table->string('nbm')->nullable();
             $table->string('email')->nullable();
-            $table->string('jabatan');
+            $table->string('jabatan', ['kepalaSekolah', 'guru', 'karyawan'])->default('karyawan');
             $table->timestamps();
         });
     }

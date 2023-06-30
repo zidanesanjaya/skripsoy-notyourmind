@@ -43,11 +43,6 @@ Route::get('/updateInformasiAdmin', function () {
 Route::get('/tahunAkademikAdmin', function () {
     return view('admin/tahunAkademikAdmin');
 });
-// Route::get('/dataKepalaSekolahGurudanKaryawan', function () {
-//     return view('admin/dataKepalaSekolahGurudanKaryawan');
-// });
-
-// Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'index'])->name('tableAnggota');
 
 Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tableAnggota')->group(function () {
     $route = array('index', 'fetchstudent', 'store');
@@ -70,10 +65,21 @@ Route::post('/createAnggota', [App\Http\Controllers\AnggotaControllers::class, '
 Route::put('/updateAnggota/{id}', [App\Http\Controllers\AnggotaControllers::class, 'update'])->name('updateAnggota');
 
 Route::get('/deleteAnggota/{id}', [App\Http\Controllers\AnggotaControllers::class, 'delete'])->name('deleteAnggota');
-// Route::resource('anggot',AnggotaControllers::class);
-
-// Route::get('/tableAnggota', [App\Http\Controllers\AnggotaController::class, 'fetchstudent'])->name('tableAnggota');
 
 // begin::Tahun Akademik
 Route::resource('tahunAkademik', tahunAkademikControllers::class);
 // end::Tahun Akademik
+
+// begin::checkRole
+Route::group(['middleware' => ['auth', 'jabatan:kepala_sekolah']], function () {
+    // Rute-rute khusus untuk kepala sekolah
+});
+
+Route::group(['middleware' => ['auth', 'jabatan:guru']], function () {
+    // Rute-rute khusus untuk guru
+});
+
+Route::group(['middleware' => ['auth', 'jabatan:karyawan']], function () {
+    // Rute-rute khusus untuk karyawan
+});
+// end::checkRole

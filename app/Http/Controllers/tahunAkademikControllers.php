@@ -90,6 +90,6 @@ class tahunAkademikControllers extends Controller
     {
         //
         $tahunAkademik->delete();
-        return redirect()->route('tahunAkademik.index')->with('success', 'Tahun Akademik Berhasil di Hapus');
+        return 0;
     }
 }

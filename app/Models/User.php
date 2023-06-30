@@ -21,7 +21,21 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'jabatan',
     ];
+
+    public function isKepalaSekolah(){
+        return $this->jabatan === 'kepalaSekolah';
+    }
+    public function isGuru(){
+        return $this->jabatan === 'guru';
+    }
+    public function isKaryawan(){
+        return $this->jabatan === 'karyawan';
+    }
+    public function isSiswa(){
+        return $this->jabatan === 'siswa';
+    }
 
     /**
      * The attributes that should be hidden for serialization.

@@ -16,7 +16,7 @@ class AnggotaControllers extends Controller
      */
     public function index()
     {
-        return view('admin.dataKepalaSekolahGurudanKaryawan');
+        return view('admin.masterKepalaSekolahdanKaryawan');
     }
 
     public function fetchstudent()

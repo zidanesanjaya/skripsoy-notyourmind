@@ -59,7 +59,7 @@
 							</a>
 						</div>
 						<div class="card-toolbar">
-							<a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#mataPelajaranBaru">
+							<a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#tambahMataPelajaran">
 								<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 								<span class="svg-icon svg-icon-3">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@
 								<thead>
 									<tr class="fw-bold text-muted bg-light">
 										<th class="ps-4 min-w-150px w-300px rounded-start">Mata Pelajaran</th>
-										<th class="min-w-25px">Kelas</th>
+										<th class="min-w-25px">Semester</th>
 										<th class="min-w-125px">Guru</th>
 										<th class="min-w-50px w-100px text-center">Tahun Akademik</th>
 										<th class="min-w-150px w-50px text-center">Aksi</th>
@@ -91,7 +91,7 @@
 								<tbody>
 									<tr>
 										<td class="px-5">Bahasa Arab</td>
-										<td>7</td>
+										<td class="px-10">1</td>
 										<td>Bapak Nosa</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
@@ -120,7 +120,7 @@
 									</tr>
 									<tr>
 										<td class="px-5">Bahasa Indonesia</td>
-										<td>8</td>
+										<td class="px-10">2</td>
 										<td>Bapak Nosa</td>
 										<td class="text-center">2023/2024</td>
 										<td class="text-center">
@@ -166,7 +166,7 @@
 
 
 <!--begin::Modal - Tambah Mata Pelajaran-->
-<div class="modal fade" id="mataPelajaranBaru" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="tambahMataPelajaran" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
@@ -190,7 +190,7 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="mataPelajaranBaru_form" class="form" action="/mataPelajaranAdmin">
+				<form id="tambahMataPelajaran_form" class="form" action="/mataPelajaranAdmin">
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
@@ -213,23 +213,22 @@
 					<div class="row g-9 mb-8">
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Kelas</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option value="">Pilih Kelas...</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
+							<label class="required fs-6 fw-semibold mb-2">Guru</label>
+							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Guru" name="target_assign">
+								<option value="">Pilih Guru...</option>
+								<option value="Bapak Nosa">Bapak Nosa</option>
+								<option value="Bapak Vatqi">Bapak Vatqi</option>
+								<option value="Bapak Puji">Bapak Puji</option>
 							</select>
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Guru</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Guru...</option>
-								<option value="Bapak Nosa">Bapak Nosa</option>
-								<option value="Bapak Vatqi">Bapak Vatqi</option>
-								<option value="Bapak Puji">Bapak Puji</option>
+							<label class="required fs-6 fw-semibold mb-2">Semester</label>
+							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Semester" name="target_assign">
+								<option value="">Pilih Semester...</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
 							</select>
 						</div>
 						<!--end::Col-->
@@ -238,8 +237,8 @@
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8">
 						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-							<option>Pilih Tahun Akademik...</option>
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tahun Akademik" name="target_assign">
+							<option value="">Pilih Tahun Akademik...</option>
 							<option value="2023/2024">2023/2024</option>
 							<option value="2024/2025">2024/2025</option>
 							<option value="2025/2026">2025/2026</option>
@@ -248,8 +247,8 @@
 					<!--end::Input group-->
 					<!--begin::Actions-->
 					<div class="text-center">
-						<button type="reset" id="mataPelajaranBaru_cancel" class="btn btn-light me-3">Cancel</button>
-						<button type="submit" id="mataPelajaranBaru_submit" class="btn btn-primary">
+						<button type="reset" id="tambahMataPelajaran_cancel" class="btn btn-light me-3">Cancel</button>
+						<button type="submit" id="tambahMataPelajaran_submit" class="btn btn-primary">
 							<span class="indicator-label">Submit</span>
 							<span class="indicator-progress">Please wait...
 								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -314,23 +313,22 @@
 					<div class="row g-9 mb-8">
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Kelas</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option value="">Pilih Kelas...</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
+							<label class="required fs-6 fw-semibold mb-2">Guru</label>
+							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Guru" name="target_assign">
+								<option value="">Pilih Guru...</option>
+								<option value="Bapak Nosa">Bapak Nosa</option>
+								<option value="Bapak Vatqi">Bapak Vatqi</option>
+								<option value="Bapak Puji">Bapak Puji</option>
 							</select>
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
-							<label class="required fs-6 fw-semibold mb-2">Guru</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-								<option>Pilih Guru...</option>
-								<option value="Bapak Nosa">Bapak Nosa</option>
-								<option value="Bapak Vatqi">Bapak Vatqi</option>
-								<option value="Bapak Puji">Bapak Puji</option>
+							<label class="required fs-6 fw-semibold mb-2">Semester</label>
+							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Semester" name="target_assign">
+								<option value="">Pilih Semester...</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
 							</select>
 						</div>
 						<!--end::Col-->
@@ -339,8 +337,8 @@
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8">
 						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="target_assign">
-							<option>Pilih Tahun Akademik...</option>
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tahun Akademik" name="target_assign">
+							<option value="">Pilih Tahun Akademik...</option>
 							<option value="2023/2024">2023/2024</option>
 							<option value="2024/2025">2024/2025</option>
 							<option value="2025/2026">2025/2026</option>
@@ -466,6 +464,7 @@
 	</div>
 	<!--end::Modal dialog-->
 </div>
+<!--end::Modal - Input Tahun Akademik-->
 
 <script>
 	$(document).ready(function() {

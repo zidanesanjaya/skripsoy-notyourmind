@@ -44,5 +44,10 @@
     $('#dataanggota').DataTable();
 });
 </script>
+<script>
+    $(document).ready(function () {
+    $('#datasiswa').DataTable();
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!--end::datatables-->

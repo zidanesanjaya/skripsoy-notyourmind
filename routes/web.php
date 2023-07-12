@@ -34,14 +34,14 @@ Route::get('/login_admin', function () {
 Route::get('/dashboardAdmin', function () {
     return view('admin/dashboardAdmin');
 });
-Route::get('/mataPelajaranAdmin', function () {
-    return view('admin/mataPelajaranAdmin');
+Route::get('/masterMataPelajaranAdmin', function () {
+    return view('admin/masterMataPelajaranAdmin');
+});
+Route::get('/kelolaKelasdanWaliKelasAdmin', function () {
+    return view('admin/kelolaKelasdanWaliKelasAdmin');
 });
 Route::get('/updateInformasiAdmin', function () {
     return view('admin/updateInformasiAdmin');
-});
-Route::get('/tahunAkademikAdmin', function () {
-    return view('admin/tahunAkademikAdmin');
 });
 
 Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tableAnggota')->group(function () {
@@ -51,8 +51,8 @@ Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tab
     }
 });
 
-Route::get('/dataSiswa', function () {
-    return view('admin/dataSiswa');
+Route::get('/masterSiswa', function () {
+    return view('admin/masterSiswa');
 });
 // End Admin Section
 

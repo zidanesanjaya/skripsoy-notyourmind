@@ -1,5 +1,6 @@
-
-<script>var hostUrl = "/";</script>
+<script>
+    var hostUrl = "/";
+</script>
 <!--begin::Global Javascript Bundle(mandatory for all pages)-->
 <script src="/plugins/global/plugins.bundle.js"></script>
 <script src="/js/scripts.bundle.js"></script>
@@ -34,20 +35,51 @@
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<!-- Begin::Data Table Master Pelajaran -->
 <script>
-    $(document).ready(function () {
-    $('#datamatapelajaran').DataTable();
-});
+    $(document).ready(function() {
+        $('#datamatapelajaran').DataTable();
+    });
 </script>
+<!-- End::Data Table Master Pelajaran -->
+
+<!-- Begin::Data Table Master Kepala Sekolah dan Guru -->
 <script>
-    $(document).ready(function () {
-    $('#dataanggota').DataTable();
-});
+    $(document).ready(function() {
+        $('#dataanggota').DataTable();
+    });
 </script>
+<!-- End::Data Table Master Kepala Sekolah dan Guru -->
+
+<!-- Begin::Data Table Master Siswa -->
 <script>
-    $(document).ready(function () {
-    $('#datasiswa').DataTable();
-});
+    $(document).ready(function() {
+        $('#datasiswa').DataTable();
+    });
 </script>
+<!-- End::Data Table Master Siswa -->
+
+<!-- Begin::Data Table List Kelas -->
+<script>
+    $(document).ready(function() {
+        var table = $('#listKelas').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 20],
+                [5, 10, 20]
+            ]
+        })
+    });
+</script>
+<!-- End::Data Table List Kelas -->
+
+<!-- Begin::Data Table Data Wali Kelas -->
+<script>
+    $(document).ready(function() {
+        $('#dataWaliKelas').DataTable();
+    });
+</script>
+<!-- End::Data Table Data Wali Kelas -->
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!--end::datatables-->

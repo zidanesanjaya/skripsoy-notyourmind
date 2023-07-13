@@ -56,6 +56,21 @@ Route::get('/masterSiswa', function () {
 });
 // End Admin Section
 
+// Begin Kepala Sekolah Section
+Route::get('/dashboardKepalaSekolah', function () {
+    return view('kepalaSekolah/dashboardKepalaSekolah');
+});
+Route::get('/menuDataNilaiSiswaKepalaSekolah', function () {
+    return view('kepalaSekolah/menuDataNilaiSiswaKepalaSekolah');
+});
+Route::get('/dataNilaiSiswaKepalaSekolah', function () {
+    return view('kepalaSekolah/dataNilaiSiswaKepalaSekolah');
+});
+Route::get('/dataGuruKepalaSekolah', function () {
+    return view('kepalaSekolah/dataGuruKepalaSekolah');
+});
+// End Kepala Sekolah Section
+
 Auth::routes();
 
 Route::get('/dashboardAdmin', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboardAdmin');

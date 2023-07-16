@@ -80,5 +80,60 @@
     });
 </script>
 <!-- End::Data Table Data Wali Kelas -->
+
+<!-- Begin::Data Nilai Siswa Kepala Sekolah -->
+<!-- <script>
+    $(document).ready(function() {
+        $('#dataNilaiSiswaKepalaSekolah').DataTable();
+    });
+</script> -->
+<script>
+    var oTable = $('#dataNilaiSiswaKepalaSekolah').DataTable({
+        fixedHeader: {
+            header: false,
+            footer: false
+        },
+        pagingType: "full_numbers",
+        bSort: true,
+        "order": [
+            [0, "asc"]
+        ],
+        "lengthMenu": [
+            [5, 25, 50, 100, -1],
+            [5, 25, 50, 100, "All"]
+        ],
+        initComplete: function() {
+            this.api().columns().every(function() {
+                var column = this;
+                var select = $('<select style="width:100px;"><option value=""></option></select>')
+                    .appendTo($(column.header()).find('span').empty())
+                    .on({
+                        'change': function() {
+                            var val = $.fn.dataTable.util.escapeRegex(
+                                $(this).val()
+                            );
+
+                            column
+                                .search(val ? '^' + val + '$' : '', true, false)
+                                .draw();
+                        },
+                        'click': function(e) {
+                            // stop click event bubbling
+                            e.stopPropagation();
+                        }
+                    });
+
+                column.data().unique().sort().each(function(d, j) {
+                    select.append('<option value="' + d + '">' + d + '</option>')
+                });
+            });
+        }
+
+    });
+</script>
+<!-- End::Data Nilai Siswa Kepala Sekolah -->
+
+<!-- Link -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Link -->
 <!--end::datatables-->

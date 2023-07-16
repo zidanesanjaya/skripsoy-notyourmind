@@ -61,13 +61,7 @@ Route::get('/dashboardKepalaSekolah', function () {
     return view('kepalaSekolah/dashboardKepalaSekolah');
 });
 Route::get('/menuDataNilaiSiswaKepalaSekolah', function () {
-    return view('kepalaSekolah/menuDataNilaiSiswaKepalaSekolah/pilihSemesterKepalaSekolah');
-});
-Route::get('/tahunAkademikKepalaSekolah', function () {
-    return view('kepalaSekolah/menuDataNilaiSiswaKepalaSekolah/pilihTahunAkademikKepalaSekolah');
-});
-Route::get('/dataNilaiSiswaKepalaSekolah', function () {
-    return view('kepalaSekolah/menuDataNilaiSiswaKepalaSekolah/dataNilaiSiswaKepalaSekolah');
+    return view('kepalaSekolah/dataNilaiSiswaKepalaSekolah/dataNilaiSiswaKepalaSekolah');
 });
 Route::get('/dataGuruKepalaSekolah', function () {
     return view('kepalaSekolah/dataGuruKepalaSekolah');

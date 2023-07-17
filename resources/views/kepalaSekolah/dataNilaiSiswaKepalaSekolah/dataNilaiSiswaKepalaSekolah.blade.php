@@ -15,7 +15,7 @@
 					<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
 						<!--begin::Item-->
 						<li class="breadcrumb-item text-muted">
-							<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+							<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary text-center">Home</a>
 						</li>
 						<!--end::Item-->
 						<!--begin::Item-->
@@ -265,7 +265,7 @@
 <!--begin::Modal Nilai Keseluruhan-->
 <div class="modal fade" id="nilaiKeseluruhanSiswaKepalaSekolah" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
-	<div class="modal-dialog modal-dialog-centered mw-900px">
+	<div class="modal-dialog modal-dialog-centered mw-1000px">
 		<!--begin::Modal content-->
 		<div class="modal-content">
 			<!--begin::Modal body-->
@@ -275,10 +275,40 @@
 					<!--begin::Card header-->
 					<div class="card-header align-items-center py-5 gap-md-5">
 						<h3 class="card-title align-items-start flex-column">
-							Nilai Keseluruhan
-							<span class="card-label fw-bold fs-3 mb-1 mt-5">Aisyah Fatin Sholikah</span>
+							<span class="card-label fw-bold fs-3 mb-1 mt-5">Nilai Keseluruhan</span>
 						</h3>
-						<div class="row">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="table-responsive">
+							<table>
+								<tbody>
+									<tr>
+										<td>Nama Peserta Didik</td>
+										<td class="px-5">: Aisyah Fatin Sholikah</td>
+										<td class="px-15">Kelas</td>
+										<td>: 7</td>
+									</tr>
+									<tr>
+										<td>NISN</td>
+										<td class="px-5">: 2104295256</td>
+										<td class="px-15">Fase</td>
+										<td>: D</td>
+									</tr>
+									<tr>
+										<td>Sekolah</td>
+										<td class="px-5">: SMP Muhammadiyah 1 Malang</td>
+										<td class="px-15">Semester</td>
+										<td>: Ganjil</td>
+									</tr>
+									<tr>
+										<td>Alamat</td>
+										<td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
+										<td class="px-15">Tahun Pelajaran</td>
+										<td>: 2022/2023</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="row justify-content-around">
 							<div class="row">
 								<div class="col-6">
 									<h3 class="card-title align-items-start flex-column">
@@ -300,7 +330,6 @@
 								</div>
 							</div>
 						</div>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<!--end::Card header-->
 					<!--begin::Card body-->
@@ -311,8 +340,17 @@
 							<thead>
 								<!--begin::Table row-->
 								<tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-									<th class="min-w-175px">Mata Pelajaran</th>
-									<th class="min-w-100px text-center">Nilai</th>
+									<th class="min-w-150px">Mata Pelajaran</th>
+									<th class="min-w-50px text-center">Sumatif 1</th>
+									<th class="min-w-50px text-center">Sumatif 2</th>
+									<th class="min-w-50px text-center">Sumatif 3</th>
+									<th class="min-w-50px text-center">Sumatif 4</th>
+									<th class="min-w-50px text-center">Sumatif 5</th>
+									<th class="min-w-50px text-center">Sumatif 6</th>
+									<th class="min-w-75px text-center">NA Sumatif Lingkup Materi</th>
+									<th class="min-w-50px text-center">PTS</th>
+									<th class="min-w-50px text-center">PAS</th>
+									<th class="min-w-50px text-center">NA Sumatif Akhir Semester</th>
 								</tr>
 								<!--end::Table row-->
 							</thead>
@@ -321,55 +359,62 @@
 							<tbody class="fw-semibold text-gray-600">
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Agama islam</td>
-									<td class="text-gray-800 text-hover-primary">89.44642857</td>
+									<td class="text-gray-800 text-hover-primary text-center">87</td>
+									<td class="text-gray-800 text-hover-primary text-center">89</td>
+									<td class="text-gray-800 text-hover-primary text-center">100</td>
+									<td class="text-gray-800 text-hover-primary text-center">85</td>
+									<td class="text-gray-800 text-hover-primary text-center">87</td>
+									<td class="text-gray-800 text-hover-primary text-center">95</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
+									<td class="text-gray-800 text-hover-primary text-center">90.14285714</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Kewarganegaraan</td>
-									<td class="text-gray-800 text-hover-primary">85.833</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Indonesia</td>
-									<td class="text-gray-800 text-hover-primary">89.44642857</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Matematika</td>
-									<td class="text-gray-800 text-hover-primary">81.89285714</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Alam</td>
-									<td class="text-gray-800 text-hover-primary">82.25</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Sosial</td>
-									<td class="text-gray-800 text-hover-primary">82.25</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Inggris</td>
-									<td class="text-gray-800 text-hover-primary">81.5</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Seni Budaya</td>
-									<td class="text-gray-800 text-hover-primary">88.375</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-									<td class="text-gray-800 text-hover-primary">82.91666667</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Teknologi Ilmu Komputer</td>
-									<td class="text-gray-800 text-hover-primary">84.65</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Jawa</td>
-									<td class="text-gray-800 text-hover-primary">83.25</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Arab</td>
-									<td class="text-gray-800 text-hover-primary">93.41666667</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 								<tr>
-									<td class="text-gray-800 text-hover-primary fw-bold">KMD</td>
-									<td class="text-gray-800 text-hover-primary">88.33333333</td>
+									<td class="text-gray-800 text-hover-primary fw-bold">Kemuhammadiyahan</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 								</tr>
 							</tbody>
 							<!--end::Table body-->
@@ -400,6 +445,10 @@
 				<div class="card card-flush">
 					<!--begin::Card header-->
 					<div class="card-header align-items-center py-5 gap-md-5">
+						<h3 class="card-title align-items-start flex-column">
+							<span class="card-label fw-bold fs-3 mb-1 mt-5">Nilai Rapor</span>
+						</h3>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						<table>
 							<tbody>
 								<tr>
@@ -428,7 +477,6 @@
 								</tr>
 							</tbody>
 						</table>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<!--end::Card header-->
 					<!--begin::Card body-->
@@ -441,8 +489,8 @@
 								<tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
 									<th class="min-w-20px w-20px text-center">No.</th>
 									<th class="min-w-75px w-100px text-center">Mata Pelajaran</th>
-									<th class="min-w-30px w-30px text-center">Nilai Akhir</th>
-									<th class="min-w-50px w-120px text-center">Capaian Kompetensi</th>
+									<th class="min-w-30px w-75px text-center">Nilai Akhir</th>
+									<th class="min-w-50px w-110px text-center">Capaian Kompetensi</th>
 								</tr>
 								<!--end::Table row-->
 							</thead>
@@ -452,7 +500,7 @@
 								<tr>
 									<td class="text-center">1.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Agama islam</td>
-									<td class="text-gray-800 text-hover-primary">89</td>
+									<td class="text-gray-800 text-hover-primary text-center">89</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan tentang materi beriman kepada Allah SWT
@@ -464,9 +512,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">2.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Kewarganegaraan</td>
-									<td class="text-gray-800 text-hover-primary">86</td>
+									<td class="text-gray-800 text-hover-primary text-center">86</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan pemahaman terhadap Norma dan UUD NRI Tahun 1945 dan mampu menerapkan dalam kehiduan sehari-hari
@@ -478,9 +526,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">3.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Indonesia</td>
-									<td class="text-gray-800 text-hover-primary">82</td>
+									<td class="text-gray-800 text-hover-primary text-center">82</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan kemampuan untuk mendiskusikan unsur intrinsik, mengenali majas, dan berlatih menyajikan gagasannya dengan menulis cerita fantasi sederhana
@@ -492,9 +540,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">4.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Matematika</td>
-									<td class="text-gray-800 text-hover-primary">79</td>
+									<td class="text-gray-800 text-hover-primary text-center">79</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik dalam mengoperasikan bilangan asli dan bilangan bulat
@@ -506,9 +554,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">5.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Alam</td>
-									<td class="text-gray-800 text-hover-primary">82</td>
+									<td class="text-gray-800 text-hover-primary text-center">82</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik daam melakukan identifikasi sifat dan karakteristik zat secara kolaboratif, membedakan perubahan fisik dan kimia, melakukan pemisahan campuran sederhana
@@ -520,9 +568,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">6.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Sosial</td>
-									<td class="text-gray-800 text-hover-primary">82</td>
+									<td class="text-gray-800 text-hover-primary text-center">82</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik dalam menjelaskan ciri khas kehidupan manusia pra aksara dan membandingkan dengan manusia modern jaman sekarang
@@ -534,9 +582,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">7.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Inggris</td>
-									<td class="text-gray-800 text-hover-primary">82</td>
+									<td class="text-gray-800 text-hover-primary text-center">82</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik dalam menyapa, memperkenalkan diri, dan menyatakan waktu dalam Bahasa Inggris
@@ -548,9 +596,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">8.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Seni Budaya</td>
-									<td class="text-gray-800 text-hover-primary">88</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Sangat memahami tentang unsur-unsur nada
@@ -562,9 +610,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">9.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-									<td class="text-gray-800 text-hover-primary">83</td>
+									<td class="text-gray-800 text-hover-primary text-center">83</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik dalam materi olahraga bola
@@ -576,9 +624,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">10.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Teknologi Ilmu Komputer</td>
-									<td class="text-gray-800 text-hover-primary">85</td>
+									<td class="text-gray-800 text-hover-primary text-center">85</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan dalam memahami sistem operasi dan juga jaringan komputer
@@ -590,9 +638,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">11.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Jawa</td>
-									<td class="text-gray-800 text-hover-primary">83</td>
+									<td class="text-gray-800 text-hover-primary text-center">83</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan dalam memahami struktur teks profie tokoh dengan baik
@@ -604,9 +652,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">12.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Bahasa Arab</td>
-									<td class="text-gray-800 text-hover-primary">93</td>
+									<td class="text-gray-800 text-hover-primary text-center">93</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik dalam melakukan percakapan tentang At-Ta'aaruf (Perkenalan)
@@ -618,9 +666,9 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="text-center">1.</td>
+									<td class="text-center">13.</td>
 									<td class="text-gray-800 text-hover-primary fw-bold">Kemuhammadiyahan</td>
-									<td class="text-gray-800 text-hover-primary">88</td>
+									<td class="text-gray-800 text-hover-primary text-center">88</td>
 									<td class="text-gray-800 fw-bold">
 										<div class="row">
 											Menunjukkan penguasaan yang baik tentang sejarah hidup dan kepribadian tokoh Muhammadiyah

@@ -15,9 +15,13 @@ class CreateSiswasTable extends Migration
     {
         Schema::create('siswas', function (Blueprint $table) {
             $table->id();
-            $table->integer('nis');
-            $table->integer('nisn')->nullable();
+            $table->string('nis');
+            $table->string('nisn');
             $table->string('namaSiswa');
+            $table->string('kelas');
+            $table->string('fase');
+            $table->string('semester');
+            $table->string('tahunAkademik');
             $table->timestamps();
         });
     }

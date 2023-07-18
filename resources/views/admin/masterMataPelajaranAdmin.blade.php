@@ -515,16 +515,5 @@
 			}
 		});
 	}
-
-	// function deleteTahunAkademik(id) {
-	// 	axios.delete('deleteTahunAkademik/' + id)
-	// 		.then(function(response) {
-	// 			loadTable();
-	// 			console.log(response);
-	// 		})
-	// 		.catch(function(error) {
-	// 			console.log(error.response.data);
-	// 		});
-	// }
 </script>
 @endsection

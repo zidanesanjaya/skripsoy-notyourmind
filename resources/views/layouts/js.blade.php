@@ -133,6 +133,14 @@
 </script>
 <!-- End::Data Nilai Siswa Kepala Sekolah -->
 
+<!-- Begin::Modal Tambah Data Siswa Guru -->
+<script>
+    $(document).ready(function() {
+        $('#modalTambahDataSiswaGuru').DataTable();
+    });
+</script>
+<!-- End::Modal Tambah Data Siswa Guru -->
+
 <!-- Link -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- Link -->

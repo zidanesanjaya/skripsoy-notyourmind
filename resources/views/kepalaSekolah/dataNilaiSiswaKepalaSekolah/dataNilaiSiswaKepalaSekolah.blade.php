@@ -438,7 +438,7 @@
 									<th class="min-w-50px text-center">Sumatif 8</th>
 									<th class="min-w-50px text-center">Sumatif 9</th>
 									<th class="min-w-50px text-center">Sumatif 10</th>
-									<th class="min-w-75px text-center">NA Sumatif Lingkup Materi</th>
+									<th class="min-w-50px w-100px text-center">NA Sumatif Lingkup Materi</th>
 									<th class="min-w-50px text-center">PTS</th>
 									<th class="min-w-50px text-center">PAS</th>
 									<th class="min-w-50px text-center">NA Sumatif Akhir Semester</th>
@@ -950,50 +950,7 @@
 	<!--end::Modal dialog-->
 </div>
 <!--end::Modal Nilai Rapor-->
-
-<!-- Begin::Sorting Tabel Data Nilai Siswa Kepala Sekolah -->
-<script>
-	var dataTable = $('.datatable').DataTable({
-		buttons: [{
-			extend: 'excel',
-			text: 'Export to Excel',
-			className: 'btn-sm btn-flat',
-		}, ],
-		dom: "<'row'<'col-md-3'l><'col-md-6 text-center'B><'col-md-3'f>>" +
-			"<'row'<'col-md-12'tr>>" +
-			"<'row'<'col-md-5'i><'col-md-7'p>>",
-		drawCallback: function(settings) {
-			if (!$('.datatable').parent().hasClass('table-responsive')) {
-				$('.datatable').wrap("<div class='table-responsive'></div>");
-			}
-		}
-	});
-
-	dataTable.columns().every(function() {
-		var column = this;
-
-		$('.filter-column', this.footer()).on('keyup change', function() {
-			if (column.search() !== this.value) {
-				column
-					.search(this.value && `^${this.value}$`, true, false)
-					.draw();
-				this.focus();
-			}
-		});
-	});
-</script>
-<!-- End::Sorting Tabel Data Nilai Siswa Kepala Sekolah -->
 @endsection
 <!-- begin::Link Javascript -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<!-- Responsive extension -->
-<script src="https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js"></script>
-<!-- Buttons extension -->
-<script src="//cdn.datatables.net/buttons/1.2.1/js/dataTables.buttons.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="//cdn.datatables.net/buttons/1.2.1/js/buttons.html5.min.js"></script>
 <!-- end::Link Javascript -->

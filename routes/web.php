@@ -30,7 +30,7 @@ Route::get('/login_admin', function () {
 });
 // End Login Section
 
-// Beginning Admin Section
+// Begin Admin Section
 Route::get('/dashboardAdmin', function () {
     return view('admin/dashboardAdmin');
 });
@@ -67,6 +67,15 @@ Route::get('/dataGuruKepalaSekolah', function () {
     return view('kepalaSekolah/dataGuruKepalaSekolah');
 });
 // End Kepala Sekolah Section
+
+// Begin Guru Section
+Route::get('/dashboardGuru', function () {
+    return view('guru/dashboardGuru');
+});
+Route::get('/dataSiswaGuru', function () {
+    return view('guru/dataSiswaGuru');
+});
+// End Guru Section
 
 Auth::routes();
 

@@ -75,6 +75,9 @@ Route::get('/dashboardGuru', function () {
 Route::get('/dataSiswaGuru', function () {
     return view('guru/dataSiswaGuru');
 });
+Route::get('/inputNilaiSiswaGuru', function () {
+    return view('guru/inputNilaiSiswaGuru');
+});
 // End Guru Section
 
 Auth::routes();

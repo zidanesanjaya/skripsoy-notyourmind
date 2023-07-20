@@ -167,8 +167,8 @@
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8 fv-row">
 						<label class="required fs-6 fw-semibold mb-2">Jabatan</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
-							<option value="">Pilih Jabatan...</option>
+						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Jabatan..." name="jabatan">
+							<option value=""></option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
 							<option value="Karyawan">Karyawan</option>

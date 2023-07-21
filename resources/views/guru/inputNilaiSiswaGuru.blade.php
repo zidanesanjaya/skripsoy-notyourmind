@@ -45,7 +45,7 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa (mata pelajaran)</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa</span>
                             </h3>
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar">
@@ -66,7 +66,7 @@
                                     </a>
                                     <!--end::Export-->
                                     <!--begin::Add customer-->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importNilaiAsesmen">
+                                    <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#importNilaiAsesmen">
                                         <!--begin::Svg Icon | path: icons/duotune/files/fil018.svg-->
                                         <span class="svg-icon svg-icon-2">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,6 +77,10 @@
                                         </span>
                                         <!--end::Svg Icon-->Unggah Nilai Asesmen</button>
                                     <!--end::Add customer-->
+                                    <!--begin::Add customer-->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kelolaAsesmenGuru">
+                                        Kelola Sumatif</button>
+                                    <!--end::Add customer-->
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
@@ -84,11 +88,10 @@
                         </div>
                         <!--end::Header-->
                     </div>
-                    <!-- End::Row Header -->
-                    <!-- begin::Row Toolbar -->
+                    <!-- end::Row Header -->
                     <!--begin::Header-->
                     <div class="row d-flex justify-content-center">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-3 col-sm-3">
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
@@ -106,7 +109,50 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="card-header border-0 pt-5 w-20">
+                                <div class="mb-10">
+                                    <!--begin::Label-->
+                                    <label class="form-label fw-semibold">Kelas:</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <div>
+                                        <select class="form-select form-select-solid">
+                                            <option value="">Pilih Kelas...</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="card-header border-0 pt-5 w-20">
+                                <div class="mb-10">
+                                    <!--begin::Label-->
+                                    <label class="form-label fw-semibold">Fase:</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <div>
+                                        <select class="form-select form-select-solid">
+                                            <option value="">Pilih Fase...</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                            <option value="F">F</option>
+                                            <option value="G">G</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
@@ -132,21 +178,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 d-flex justify-content-end py-5">
-                            <div class="card-header border-0 pt-5 w-20">
-                                <div class="mb-10">
-                                    <!--begin::Modal Kelola Asesmen-->
-                                    <Button class="btn btn-sm fw-bold btn-primary " data-bs-toggle="modal" data-bs-target="#kelolaAsesmenGuru">Kelola Asesmen Sumatif</Button>
-                                    <!--end::Kelola Asesmen-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-
                     </div>
                     <!--end::Header-->
-                    <!-- begin::Row Toolbar -->
+                    <!-- end::Row Toolbar -->
                     <!--begin::Body-->
                     <div class="card-body py-3">
                         <!--begin::Table container-->
@@ -155,10 +189,10 @@
                             <table id="datasiswa" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
                                 <thead>
                                     <tr class="fw-bold text-muted bg-light text-nowrap">
-                                        <th class="px-5 min-w-20px w-20px">No.</th>
-                                        <th class="ps-4 min-w-20px w-20px">NIS</th>
+                                        <th class="px-5 min-w-20px w-20px text-center">No.</th>
+                                        <th class="ps-4 min-w-20px w-20px text-center">NIS</th>
                                         <th class="min-w-50px w-75px text-center">NISN</th>
-                                        <th class="min-w-100px w-100px">Nama Siswa</th>
+                                        <th class="min-w-100px w-100px text-center">Nama Siswa</th>
                                         <th class="min-w-100px w-150px text-center">Nilai</th>
                                         <th class="min-w-100px w-150px text-start">Deskripsi Tertinggi</th>
                                         <th class="min-w-100px w-150px text-start">Deskripsi Terendah</th>

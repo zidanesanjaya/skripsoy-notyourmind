@@ -45,7 +45,7 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa Kelas (kelas & fase)</span>
                             </h3>
                             <div class="card-toolbar">
                                 <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#tambahDataSiswa">
@@ -64,73 +64,6 @@
                         <!--end::Header-->
                     </div>
                     <!-- end::row header -->
-                    <!-- begin::Row Toolbar -->
-                    <!--begin::Header-->
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="card-header border-0 pt-5 w-20">
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Mata Pelajaran:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Mata Pelajaran...</option>
-                                            <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
-                                            <option value="Bahasa Arab">Bahasa Arab</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="card-header border-0 pt-5 w-20">
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Kelas:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Kelas...</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="card-header border-0 pt-5 w-20">
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Fase:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Fase...</option>
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="D">D</option>
-                                            <option value="E">E</option>
-                                            <option value="F">F</option>
-                                            <option value="G">G</option>
-                                            <option value="H">H</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end::Header-->
-                    <!-- begin::Row Toolbar -->
                     <!--begin::Body-->
                     <div class="card-body py-3">
                         <!--begin::Table container-->

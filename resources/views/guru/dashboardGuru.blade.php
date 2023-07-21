@@ -53,14 +53,14 @@
 								<div class="d-flex align-items-center">
 									<span class="fs-4hx text-white fw-bold me-6">Data </span>
 									<div class="fw-bold fs-1 text-white">
-										<span class="d-block">Nilai Siswa</span>
+										<span class="d-block">Siswa</span>
 									</div>
 								</div>
 								<!--end::Info-->
 							</div>
 							<!--end::Card body-->
 							<!--begin::Card footer-->
-							<a href="{{url('/dataNilaiSiswaKepalaSekolah')}}">
+							<a href="{{url('/dataSiswaGuru')}}">
 								<div class="card-footer d-flex" style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
 									<span class="text-white">Selengkapnya</span>
 									<span class="material-symbols-outlined text-white ms-auto bd-highlight">arrow_right_alt</span>
@@ -79,16 +79,16 @@
 							<div class="card-body d-flex align-items-end mb-3">
 								<!--begin::Info-->
 								<div class="d-flex align-items-center">
-									<span class="fs-4hx text-white fw-bold me-6">Data </span>
+									<span class="fs-4hx text-white fw-bold me-6">Input </span>
 									<div class="fw-bold fs-1 text-white">
-										<span class="d-block">Guru</span>
+										<span class="d-block">Nilai Siswa</span>
 									</div>
 								</div>
 								<!--end::Info-->
 							</div>
 							<!--end::Card body-->
 							<!--begin::Card footer-->
-							<a href="{{url('/dataGuruKepalaSekolah')}}">
+							<a href="{{url('/inputNilaiSiswaGuru')}}">
 								<div class="card-footer d-flex" style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
 									<span class="text-white">Selengkapnya</span>
 									<span class="material-symbols-outlined text-white ms-auto bd-highlight">arrow_right_alt</span>

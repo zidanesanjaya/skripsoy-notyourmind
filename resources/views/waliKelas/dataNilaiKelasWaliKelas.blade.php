@@ -68,7 +68,7 @@
                                         <th class="min-w-100px w-200px text-center text-nowrap">Nama Siswa</th>
                                         <th class="min-w-50px w-100px text-center text-nowrap">Semester</th>
                                         <th class="min-w-70px w-100px text-center text-nowrap">Tahun Akademik</th>
-                                        <th class="min-w-150px w-50px text-center text-nowrap">Nilai</th>
+                                        <th class="min-w-150px w-50px text-center text-nowrap">Nilai Rapor</th>
                                         <th class="min-w-50px w-50px text-center">Show</th>
                                     </tr>
                                 </thead>
@@ -82,25 +82,30 @@
                                         <td class="px-5 text-center">2022/2023</td>
                                         <td class="text-center">
                                             <div class="row m-1">
-                                                <div class="col-12">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-Success" data-bs-toggle="modal" data-bs-target="#nilaiKeseluruhanSiswaKepalaSekolah">Keseluruhan</a>
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm fw-bold btn-Success w-100" data-bs-toggle="modal" data-bs-target="#nilaiKeseluruhanSiswaKepalaSekolah">Keseluruhan</a>
                                                 </div>
-                                            </div>
-                                            <div class="row m-1">
-                                                <div class="col-md-6">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#nilaiRaporSiswaKepalaSekolah">Rapor</a>
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm fw-bold btn-primary w-100" data-bs-toggle="modal" data-bs-target="#nilaiRaporSiswaKepalaSekolah">Rapor</a>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-info" data-bs-toggle="modal" data-bs-target="#">Unduh</a>
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#nilaiProfilPelajarPancasila">Pancasila</a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="px-5 text-center">
-                                            <!--begin::Switch-->
-                                            <div class="form-check form-switch form-check-custom form-check-solid d-flex align-items-center justify-content-center">
-                                                <input class="form-check-input" type="checkbox" value="" id="allowchanges" checked="checked" />
+                                            <div class="row my-1">
+                                                <div class="col-md-12 my-1">
+                                                    <!--begin::Switch-->
+                                                    <div class="form-check form-switch form-check-custom form-check-solid d-flex align-items-center justify-content-center">
+                                                        <input class="form-check-input" type="checkbox" value="" id="allowchanges" checked="checked" />
+                                                    </div>
+                                                    <!--end::Switch-->
+                                                </div>
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#">Unduh</a>
+                                                </div>
                                             </div>
-                                            <!--end::Switch-->
                                         </td>
                                     </tr>
                                 </tbody>
@@ -721,6 +726,198 @@
     <!--end::Modal dialog-->
 </div>
 <!--end::Modal Nilai Rapor-->
+
+<!--begin::Modal Nilai Profil Pelajar Pancasila-->
+<div class="modal fade" id="nilaiProfilPelajarPancasila" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal body-->
+            <div id="kt_app_content_container" class="app-container container-xxl">
+                <!--begin::Products-->
+                <div class="card card-flush">
+                    <!--begin::Modal header-->
+                    <div class="modal-header">
+                        <!--begin::Modal title-->
+                        <h2>Nilai Penguatan Profil Pelajar Pancasila</h2>
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </div>
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Card header-->
+                    <div class="card-header align-items-center d-flex justify-content-between">
+                        <div class="table-responsive pt-3">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Nama Peserta Didik</td>
+                                        <td class="px-5">: Aisyah Fatin Sholikah</td>
+                                        <td class="px-15">Kelas</td>
+                                        <td>: 7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NISN</td>
+                                        <td class="px-5">: 2104295256</td>
+                                        <td class="px-15">Fase</td>
+                                        <td>: D</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sekolah</td>
+                                        <td class="px-5">: SMP Muhammadiyah 1 Malang</td>
+                                        <td class="px-15">Semester</td>
+                                        <td>: Ganjil</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
+                                        <td class="px-15">Tahun Pelajaran</td>
+                                        <td>: 2022/2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--begin::Input-->
+                        <div class="py-5">
+                            <select class="form-select form-select-solid">
+                                <option>Pilih Lihat Projek</option>
+                                <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
+                                <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
+                                <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
+                            </select>
+                        </div>
+                        <!--end::Input-->
+                    </div>
+                </div>
+                <!--end::Card header-->
+                <!--begin::Card body-->
+                <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
+                    <!--begin::Table-->
+                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                        <!--begin::Table head-->
+                        <thead>
+                            <!--begin::Table row-->
+                            <tr class="text-start text-gray-800 fw-bold fs-7 text-uppercase gs-0">
+                                <th class="min-w-100px w-200px text-center">Ajang Kompetensi dan Kreativitas Siswa</th>
+                                <th class="min-w-30px w-75px text-center">BB</th>
+                                <th class="min-w-30px w-75px text-center">MB</th>
+                                <th class="min-w-30px w-75px text-center">BSH</th>
+                                <th class="min-w-30px w-75px text-center">SB</th>
+                            </tr>
+                            <!--end::Table row-->
+                        </thead>
+                        <!--end::Table head-->
+                        <!--begin::Table body-->
+                        <tbody class="fw-semibold text-gray-600">
+                            <div>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                            </div>
+                            <div>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Berkebhinekaan Global</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                            </div>
+                            <div>
+                                <tr style="background-color: #f2f2f2;">
+                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Bergotong Royong</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
+                                    <td class="text-gray-800 text-center table-active"></td>
+                                    <td class="text-gray-800 text-center">V</td>
+                                    <td class="text-gray-800 text-center table-active">V</td>
+                                    <td class="text-gray-800 text-center"></td>
+                                </tr>
+                            </div>
+                        </tbody>
+                        <!--end::Table body-->
+                    </table>
+                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                        <!--begin::Table Footer-->
+                        <tfoot>
+                            <tr style="background-color: #f2f2f2;">
+                                <td class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Catatan Proses</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis a voluptate minus hic nulla illum voluptatem magnam vel dolores ex ratione sapiente ut omnis optio dicta, qui quod rerum in facere. Totam quae voluptas optio eveniet dicta? Animi, saepe neque necessitatibus, perferendis itaque dignissimos vel, delectus iste mollitia voluptate suscipit ad quae officia accusantium totam doloremque. Praesentium, corporis earum itaque minima amet aspernatur iusto. At totam quaerat eos eius eaque iste ipsa libero cum corporis unde. Molestias explicabo harum accusantium nobis quod rerum veniam in corrupti excepturi voluptatum, quia minus facere maiores natus? Ad fuga molestiae doloremque molestias voluptatem? Repellat.</td>
+                            </tr>
+                        </tfoot>
+                        <!--end::Table Footer-->
+                    </table>
+                    <!--end::Table-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <!--end::Products-->
+        </div>
+        <!--end::Modal body-->
+    </div>
+    <!--end::Modal content-->
+</div>
+<!--end::Modal dialog-->
+</div>
+<!--end::Modal Nilai Profil Pelajar Pancasila-->
 
 <!-- begin::Modal Download Rapor -->
 <div class="modal fade" id="downloadRapor" tabindex="-1" aria-hidden="true">

@@ -48,7 +48,7 @@
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                             <!--begin::Add product-->
-                            <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#downloadRapor">Unduh Semua Rapor</a>
+                            <a class="btn btn-info">Unduh Semua Rapor</a>
                             <!--end::Add product-->
                         </div>
                         <!--end::Card toolbar-->
@@ -198,7 +198,7 @@
                     <!--begin::Card body-->
                     <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
                         <!--begin::Table-->
-                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive table-striped" style="cursor:context-menu">
                             <!--begin::Table head-->
                             <thead>
                                 <!--begin::Table row-->
@@ -513,7 +513,7 @@
                     <!--begin::Card body-->
                     <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
                         <!--begin::Table-->
-                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive table-striped" style="cursor:context-menu">
                             <!--begin::Table head-->
                             <thead>
                                 <!--begin::Table row-->
@@ -757,10 +757,10 @@
                     </div>
                     <!--end::Modal header-->
                     <!--begin::Card header-->
-                    <div class="card-header align-items-center d-flex justify-content-between">
+                    <div class="card-header d-flex align-items-center">
                         <div class="table-responsive pt-3">
                             <table>
-                                <tbody>
+                                <tbody class="text-nowrap">
                                     <tr>
                                         <td>Nama Peserta Didik</td>
                                         <td class="px-5">: Aisyah Fatin Sholikah</td>
@@ -788,23 +788,51 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!--begin::Input-->
-                        <div class="py-5">
-                            <select class="form-select form-select-solid">
-                                <option>Pilih Lihat Projek</option>
-                                <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
-                                <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
-                                <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
-                            </select>
+                        <div class="row m-1">
+                            <div class="col-sm-6">
+                                <!--begin::Input-->
+                                <div class="py-5">
+                                    <select class="form-select form-select-solid">
+                                        <option>Pilih Lihat Projek</option>
+                                        <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
+                                        <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
+                                        <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
+                                    </select>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-sm-6">
+                                <!--begin::Card toolbar-->
+                                <div class="card-toolbar flex-row-fluid justify-content-end py-3">
+                                    <!--begin::Add product-->
+                                    <button class="btn btn-info">Unduh Rapor Projek Penguatan Profil Pelajar Pancasila</button>
+                                    <!--end::Add product-->
+                                </div>
+                                <!--end::Card toolbar-->
+                            </div>
                         </div>
-                        <!--end::Input-->
                     </div>
                 </div>
                 <!--end::Card header-->
                 <!--begin::Card body-->
                 <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
                     <!--begin::Table-->
-                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                        <!--begin::Table Footer-->
+                        <thead>
+                            <tr style="background-color: #f2f2f2;">
+                                <th class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Projek 1: Ajang Kompetensi dan Kreativitas Siswa</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis a voluptate minus hic nulla illum voluptatem magnam vel dolores ex ratione sapiente ut omnis optio dicta, qui quod rerum in facere. Totam quae voluptas optio eveniet dicta? Animi, saepe neque necessitatibus, perferendis itaque dignissimos vel, delectus iste mollitia voluptate suscipit ad quae officia accusantium totam doloremque. Praesentium, corporis earum itaque minima amet aspernatur iusto. At totam quaerat eos eius eaque iste ipsa libero cum corporis unde. Molestias explicabo harum accusantium nobis quod rerum veniam in corrupti excepturi voluptatum, quia minus facere maiores natus? Ad fuga molestiae doloremque molestias voluptatem? Repellat.</td>
+                            </tr>
+                        </thead>
+                        <!--end::Table Footer-->
+                    </table>
+                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
                         <!--begin::Table head-->
                         <thead>
                             <!--begin::Table row-->
@@ -889,7 +917,7 @@
                         </tbody>
                         <!--end::Table body-->
                     </table>
-                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_sales_table" style="cursor:context-menu">
+                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
                         <!--begin::Table Footer-->
                         <tfoot>
                             <tr style="background-color: #f2f2f2;">
@@ -905,6 +933,37 @@
                         </tfoot>
                         <!--end::Table Footer-->
                     </table>
+                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                        <h2>Keterangan Tingkat Pencapaian Siswa</h2>
+                        <!--begin::Table head-->
+                        <tfoot>
+                            <!--begin::Table row-->
+                            <tr>
+                                <th class="min-w-30px w-75px text-center fw-bold">BB</th>
+                                <td class="text-gray-800 text-center">Belum Berkembang</td>
+                                <td class="text-gray-800 text-center">Siswa masih membutuhkan bimbingan dalam mengembangkan kemampuan</td>
+
+
+                            </tr>
+                            <tr>
+                                <th class="min-w-30px w-75px text-center fw-bold">MB</th>
+                                <td class="text-gray-800 text-center">Mulai Berkembang</td>
+                                <td class="text-gray-800 text-center">Siswa mulai mengembangkan kemampuan namun masih belum konsisten</td>
+                            </tr>
+                            <tr>
+                                <th class="min-w-30px w-75px text-center fw-bold">BSH</th>
+                                <td class="text-gray-800 text-center">Siswa telah mengembangkan kemampuan hingga berada dalam tahap konsisten</td>
+                                <td class="text-gray-800 text-center">Siswa mengembangkan kemampuannya melampaui harapan</td>
+                            </tr>
+                            <tr>
+                                <th class="min-w-30px w-75px text-center fw-bold">SB</th>
+                                <td class="text-gray-800 text-center">Sangat Berkembang</td>
+                                <td class="text-gray-800 text-center">Siswa mengembangkan kemampuannya melampaui harapan</td>
+                            </tr>
+                            <!--end::Table row-->
+                        </tfoot>
+                        <!--end::Table head-->
+                    </table>
                     <!--end::Table-->
                 </div>
                 <!--end::Card body-->
@@ -919,67 +978,6 @@
 </div>
 <!--end::Modal Nilai Profil Pelajar Pancasila-->
 
-<!-- begin::Modal Download Rapor -->
-<div class="modal fade" id="downloadRapor" tabindex="-1" aria-hidden="true">
-    <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-650px">
-        <!--begin::Modal content-->
-        <div class="modal-content rounded">
-            <!--begin::Modal header-->
-            <div class="modal-header pb-0 border-0 justify-content-end">
-                <!--begin::Close-->
-                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                    <span class="svg-icon svg-icon-1">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                        </svg>
-                    </span>
-                    <!--end::Svg Icon-->
-                </div>
-                <!--end::Close-->
-            </div>
-            <!--begin::Modal header-->
-            <!--begin::Modal body-->
-            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
-                <!--begin::Heading-->
-                <div class="text-center">
-                    <!--begin::Title-->
-                    <h1>Pilih Tipe Unduh</h1>
-                    <!--end::Title-->
-                </div>
-                <!--end::Heading-->
-                <!--begin::Modal body-->
-                <div class="modal-body pt-10 pb-15 px-lg-17">
-                    <!--begin::Input group-->
-                    <div class="form-group">
-                        <!--begin::Dropzone-->
-                        <div class="dropzone dropzone-queue mb-2" id="kt_modal_upload_dropzone">
-                            <!--begin::Controls-->
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-12 d-flex justify-content-center m-10">
-                                    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#downloadRapor">Semua Siswa Menjadi 1 File</a>
-                                </div>
-                                <div class="col-sm-12 d-flex justify-content-center">
-                                    <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#downloadRapor">Sendiri - Sendiri</a>
-                                </div>
-                            </div>
-                            <!--end::Controls-->
-                        </div>
-                        <!--end::Dropzone-->
-                    </div>
-                    <!--end::Input group-->
-                </div>
-                <!--end::Modal body-->
-            </div>
-            <!--end::Modal body-->
-        </div>
-        <!--end::Modal content-->
-    </div>
-    <!--end::Modal dialog-->
-</div>
-<!-- end::Modal Download Rapor -->
 @endsection
 <!-- begin::Link Javascript -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

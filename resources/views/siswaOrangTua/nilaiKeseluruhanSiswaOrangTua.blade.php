@@ -40,20 +40,54 @@
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <!--begin::Tables Widget 11-->
                 <div class="card mb-5 mb-xl-8">
-                    <!--begin::Header-->
-                    <div class="card-header border-0 pt-5">
-                        <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold fs-3 mb-1">Data Nilai Siswa Kelas (kelas & fase)</span>
-                        </h3>
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                            <!--begin::Add product-->
-                            <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#">Unduh Leger Nilai</a>
-                            <!--end::Add product-->
+                    <!-- begin::row header -->
+                    <div class="row">
+                        <!--begin::Header-->
+                        <div class="card-header border-0 pt-5">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold fs-3 mb-1">Nilai Keseluruhan</span>
+                            </h3>
                         </div>
-                        <!--end::Card toolbar-->
+                        <!--end::Header-->
+                    </div>
+                    <!-- end::row header -->
+                    <!-- begin::Row Toolbar -->
+                    <!--begin::Header-->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="card-header border-0 pt-5 w-20">
+                                <div class="mb-10">
+                                    <!--begin::Input-->
+                                    <div>
+                                        <select class="form-select form-select-solid">
+                                            <option value="">Pilih Kelas</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="card-header border-0 pt-5 w-20">
+                                <div class="mb-10">
+                                    <!--begin::Input-->
+                                    <div>
+                                        <select class="form-select form-select-solid">
+                                            <option value="">Pilih Semester</option>
+                                            <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
+                                            <option value="Bahasa Arab">Bahasa Arab</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--end::Header-->
+                    <!-- end::Row Toolbar -->
                     <!--begin::Body-->
                     <div class="card-body py-3">
                         <!--begin::Table container-->
@@ -128,109 +162,6 @@
     <!--end::Content wrapper-->
 </div>
 <!--end:::Main-->
-
-<!--begin::Modal Leger Nilai-->
-<div class="modal fade" id="legerNilaiWaliKelas" tabindex="-1" aria-hidden="true">
-    <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-md-1000px">
-        <!--begin::Modal content-->
-        <div class="modal-content">
-            <!--begin::Modal body-->
-            <div id="kt_app_content_container" class="app-container container-xxl">
-                <!--begin::Products-->
-                <div class="card card-flush">
-                    <!--begin::Card header-->
-                    <div class="card-header align-items-center py-5 gap-md-5">
-                        <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold fs-3 mb-1 mt-5">Detail Leger Nilai</span>
-                        </h3>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Card body-->
-                    <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
-                        <!--begin::Table-->
-                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_ecommerce_sales_table" style="cursor:context-menu">
-                            <!--begin::Table head-->
-                            <thead>
-                                <!--begin::Table row-->
-                                <tr class="fw-bold text-muted bg-light">
-                                    <th class="min-w-50px w-50px rounded-start text-center">Mata Pelajaran</th>
-                                    <th class="min-w-50px w-50px text-center">Nilai</th>
-                                </tr>
-                                <!--end::Table row-->
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody class="fw-semibold text-gray-600">
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Pendidikan Agama Islam</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Pendidikan Pancasila</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">86</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Bahasa Indonesia</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Matematika</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Ilmu Pengetahuan Alam</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Ilmu Pengetahuan Sosial</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Bahasa Inggris</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Seni Budaya</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Teknologi Informasi Komputer</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Bahasa Jawa</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Bahasa Arab</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-10 text-gray-800 text-hover-primary">Kemuhammadiyahan</td>
-                                    <td class="text-gray-800 text-hover-primary text-center">87</td>
-                                </tr>
-                            </tbody>
-                            <!--end::Table body-->
-                        </table>
-                        <!--end::Table-->
-                    </div>
-                    <!--end::Card body-->
-                </div>
-                <!--end::Products-->
-            </div>
-            <!--end::Modal body-->
-        </div>
-        <!--end::Modal content-->
-    </div>
-    <!--end::Modal dialog-->
-</div>
-<!--end::Modal Leger Nilai-->
 @endsection
 <!-- begin::Link Javascript -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -81,6 +81,9 @@ Route::get('/inputNilaiSiswaGuru', function () {
 // End Guru Section
 
 // Begin Wali Kelas Section
+Route::get('/dashboardWaliKelas', function () {
+    return view('waliKelas/dashboardWaliKelas');
+});
 Route::get('/dataSiswaWaliKelas', function () {
     return view('waliKelas/dataSiswaWaliKelas');
 });
@@ -91,6 +94,15 @@ Route::get('/legerNilaiWaliKelas', function () {
     return view('waliKelas/legerNilaiWaliKelas');
 });
 // End Wali Kelas Section
+
+// Begin Siswa dan Orang Tua
+Route::get('/dashboardSiswaOrangTua', function () {
+    return view('siswaOrangTua/dashboardSiswaOrangTua');
+});
+Route::get('/nilaiKeseluruhanSiswaOrangTua', function () {
+    return view('siswaOrangTua/nilaiKeseluruhanSiswaOrangTua');
+});
+// End Siswa dan Orang Tua
 
 Auth::routes();
 

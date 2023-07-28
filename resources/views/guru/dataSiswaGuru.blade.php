@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <!--end::Header-->
-                    <!-- begin::Row Toolbar -->
+                    <!-- end::Row Toolbar -->
                     <!--begin::Body-->
                     <div class="card-body py-3">
                         <!--begin::Table container-->

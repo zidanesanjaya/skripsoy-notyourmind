@@ -281,7 +281,7 @@
             </div>
             <!-- end::guruSection -->
 
-            <!-- begin::guruSection -->
+            <!-- begin::waliKelasSection -->
             <div class="text-white">
                 Wali kelas
                 <!--begin::Menu-->
@@ -365,7 +365,7 @@
                 </div>
                 <!--end::Menu-->
             </div>
-            <!-- end::guruSection -->
+            <!-- end::waliKelasSection -->
 
             <!-- begin::siswadanOrangTuaSection -->
             <div class="text-white">
@@ -417,15 +417,15 @@
                     <!--begin:Menu item-->
                     <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="{{url('/dataNilaiKelasWaliKelas')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                        <a class="menu-link" href="{{url('/keteranganDiriPesertaDidik')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                                 <span class="material-symbols-outlined">
-                                    analytics
+                                    edit_document
                                 </span>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title">Data Nilai Kelas</span>
+                            <span class="menu-title">Rapor</span>
                         </a>
                         <!--end:Menu link-->
                     </div>
@@ -437,15 +437,15 @@
                     <!--begin:Menu item-->
                     <div class="menu-item">
                         <!--begin:Menu link-->
-                        <a class="menu-link" href="{{url('/legerNilaiWaliKelas')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                        <a class="menu-link" href="{{url('/profilSiswaOrangTua')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                                 <span class="material-symbols-outlined">
-                                    edit_document
+                                    person
                                 </span>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title">Leger Siswa</span>
+                            <span class="menu-title">Profil Siswa</span>
                         </a>
                         <!--end:Menu link-->
                     </div>

@@ -102,6 +102,15 @@ Route::get('/dashboardSiswaOrangTua', function () {
 Route::get('/nilaiKeseluruhanSiswaOrangTua', function () {
     return view('siswaOrangTua/nilaiKeseluruhanSiswaOrangTua');
 });
+Route::get('/keteranganDiriPesertaDidik', function () {
+    return view('siswaOrangTua/nilaiRapor/keteranganDiriPesertaDidik');
+});
+Route::get('/nilaiRaporSiswaOrangTua', function () {
+    return view('siswaOrangTua/nilaiRapor/nilaiRaporSiswaOrangTua');
+});
+Route::get('/profilSiswaOrangTua', function () {
+    return view('siswaOrangTua/profilSiswaOrangTua');
+});
 // End Siswa dan Orang Tua
 
 Auth::routes();

@@ -38,60 +38,21 @@
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Content container-->
             <div id="kt_app_content_container" class="app-container container-xxl">
+                <!--begin::Tables Widget 11-->
                 <div class="row">
-                    <div class="col-sm-3">
-                        <!--begin::Tables Widget 11-->
-                        <div class="card mb-5 mb-xl-8">
-                            <!-- begin::row header -->
-                            <div class="row">
-                                <!--begin::Header-->
-                                <div class="card-header border-0 pt-5">
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">Kelas/Semester</span>
-                                    </h3>
-                                </div>
-                                <!--end::Header-->
-                            </div>
-                            <!-- end::row header -->
-                            <!-- begin::Row Toolbar -->
+                    <div class="col-sm-10">
+                        <div class="card mb-5">
                             <!--begin::Header-->
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="card-header border-0 pt-5 w-20">
-                                        <div class="mb-1">
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <option value="">Pilih Kelas</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="card-header border-0 pt-5 w-20">
-                                        <div class="mb-1">
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <option value="">Pilih Semester</option>
-                                                    <option value="Ganjil">Ganjil</option>
-                                                    <option value="Genap">Genap</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="card-header border-0 pt-5 d-flex= justify-content-center">
+                                <h3 class="card-title d-flex align-items-center text-center">
+                                    <span class="card-label fw-bold fs-3 mb-1">
+                                        Keterangan Diri Peserta Didik
+                                    </span>
+                                </h3>
                             </div>
                             <!--end::Header-->
-                            <!-- end::Row Toolbar -->
                             <!--begin::Body-->
-                            <div class="card-body py-3">
+                            <div class="app-container py-3">
                                 <!--begin::Table container-->
                                 <div class="table-responsive">
 
@@ -100,236 +61,192 @@
                             </div>
                             <!--begin::Body-->
                         </div>
-                        <!--end::Tables Widget 11-->
                     </div>
-                    <div class="col-sm-9">
-                        <!--begin::Tables Widget 11-->
-                        <div class="card mb-5 mb-xl-8">
-                            <!-- begin::row header -->
-                            <div class="row">
-                                <!--begin::Header-->
-                                <div class="card-header border-0 pt-5">
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">Keterangan Diri Peserta Didik</span>
-                                    </h3>
+                    <div class="col-sm-2">
+                        <div class="card mb-5">
+                            <!--begin::Header-->
+                            <div class="row d-flex justify-content-center align-content-center">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="card-header border-0 pt-5 w-20">
+                                        <div class="mb-1">
+                                            <!--begin::Input-->
+                                            <div>
+                                                <select class="form-select form-select-solid">
+                                                    <a href="{{ url('/asd') }}">
+                                                        <option value="">Pilih Rapor</option>
+                                                    </a>
+                                                    <option value="7C/Ganjil">7C/Ganjil</option>
+                                                    <option value="8D/Genap">8D/Genap</option>
+                                                    <option value="9E/Ganjil">9E/Ganjil</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input-->
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--end::Header-->
                             </div>
-                            <!-- end::row header -->
+                            <!--end::Header-->
                             <!--begin::Body-->
-                            <div class="card-body py-3">
+                            <div class="app-container py-3">
                                 <!--begin::Table container-->
                                 <div class="table-responsive">
-                                    <!--begin::Table-->
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive table-striped" style="cursor:context-menu">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <!--begin::Table row-->
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-20px w-20px text-center px-2">No.</th>
-                                                <th class="min-w-75px w-100px text-center">Mata Pelajaran</th>
-                                                <th class="min-w-30px w-75px text-center">Nilai Akhir</th>
-                                                <th class="min-w-50px w-110px text-center">Capaian Kompetensi</th>
-                                            </tr>
-                                            <!--end::Table row-->
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody class="fw-semibold text-gray-600">
-                                            <tr>
-                                                <td class="text-center px-2">1.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Agama islam</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">89</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan tentang materi beriman kepada Allah SWT
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu pendampingan dalam materi perilaku jujur, amanah, tabligh fathonah
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">2.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Kewarganegaraan</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">86</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan pemahaman terhadap Norma dan UUD NRI Tahun 1945 dan mampu menerapkan dalam kehiduan sehari-hari
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam menjelaskan kelahiran Pancasila
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">3.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Indonesia</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan kemampuan untuk mendiskusikan unsur intrinsik, mengenali majas, dan berlatih menyajikan gagasannya dengan menulis cerita fantasi sederhana
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam mengeskpresikan ide melalui latihan menulis puisi rakyat
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">4.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Matematika</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">79</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik dalam mengoperasikan bilangan asli dan bilangan bulat
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bantuan dalam menentukan himpunan penyelesaian pada pertidaksamaan linear satu variabel
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">5.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Alam</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik daam melakukan identifikasi sifat dan karakteristik zat secara kolaboratif, membedakan perubahan fisik dan kimia, melakukan pemisahan campuran sederhana
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam melakukan pengukuran panjang, waktu, dan massa secara kolaboratif
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">6.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Sosial</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik dalam menjelaskan ciri khas kehidupan manusia pra aksara dan membandingkan dengan manusia modern jaman sekarang
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam membuat pohon silsiah keluarga dari pihak ayah dan ibu
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">7.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Inggris</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik dalam menyapa, memperkenalkan diri, dan menyatakan waktu dalam Bahasa Inggris
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam memperkanalkan orang lain dan mengidentifikasi benda di sekitarnya
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">8.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Seni Budaya</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">88</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Sangat memahami tentang unsur-unsur nada
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu pendampingan dalam memahami unsur-unsur nada
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">9.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">83</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik dalam materi olahraga bola
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu pendampingan dalam memahami dan mempraktikkan materi pembelajaran bola basket dan perlu pembimbingan lebih lanjut agar kemampuan tersebut dikuasai secara konsisten
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">10.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Teknologi Ilmu Komputer</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">85</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan dalam memahami sistem operasi dan juga jaringan komputer
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam melakukan perakitan komputer
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">11.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Jawa</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">83</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan dalam memahami struktur teks profie tokoh dengan baik
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu bimbingan dalam penggunaan unggah-ungguh basa dan menjabarkan struktur cerita wayang
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">12.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Arab</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">93</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik dalam melakukan percakapan tentang At-Ta'aaruf (Perkenalan)
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu pendampingan dalam menulis dan membaca teks tentang Fil Fashli (di dalam kelas )
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center px-2">13.</td>
-                                                <td class="text-gray-800 text-hover-primary fw-bold">Kemuhammadiyahan</td>
-                                                <td class="text-gray-800 text-hover-primary text-center">88</td>
-                                                <td class="text-gray-800 fw-bold">
-                                                    <div class="row">
-                                                        Menunjukkan penguasaan yang baik tentang sejarah hidup dan kepribadian tokoh Muhammadiyah
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row">
-                                                        Perlu pendampingan dalam memahami Muhammadiyah sebagai gerakan pendidikan
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
-                                    <!--end::Table-->
+
                                 </div>
                                 <!--end::Table container-->
                             </div>
                             <!--begin::Body-->
                         </div>
-                        <!--end::Tables Widget 11-->
                     </div>
                 </div>
+                <!--end::Tables Widget 11-->
+                <!--begin::Tables Widget 11-->
+                <div class="card mb-5 mb-xl-8">
+                    <!--begin::Body-->
+                    <div class="app-container py-3">
+                        <!--begin::Table container-->
+                        <div class="table-responsive">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                                <thead>
+                                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                        <th class="min-w-20px w-20px text-center"></th>
+                                        <th class="min-w-50px w-50px text-center"></th>
+                                        <th class="min-w-500px w-100px text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="No." class="text-center">1.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nama Peserta Didik</td>
+                                        <td id="row2">: Aisyah Fatin Sholikah</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">2.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Induk Siswa (NIS)</td>
+                                        <td id="row2">: 9925</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">3.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Induk Siswa Nasional (NISN)</td>
+                                        <td id="row2">: 2104295256</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">4.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Tempat, Tanggal Lahir</td>
+                                        <td id="row2">: Tangerang Selatan, 22 November 2008</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">5.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Jenis Kelamin</td>
+                                        <td id="row2">: Laki - Laki</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">6.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Agama</td>
+                                        <td id="row2">: Islam</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">7.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Status Dalam Keluarga</td>
+                                        <td id="row2">: Anak Kandung</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">8.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Anak Ke-</td>
+                                        <td id="row2">: 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">9.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Alamat Peserta Didik</td>
+                                        <td id="row2">: JL. IKAN GURAMI NO. 19 RT 02 RW 06 TUNJUNGSEKAR LOWOKWARU</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">10.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Sekolah Asal (SD/MTs, Sebutkan)</td>
+                                        <td id="row2">: SDN TUNJUNGSEKAR 03</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">11.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Diterima di Sekolah ini</td>
+                                        <td id="row2">: SMP MUHAMMADIYAH 1 MALANG</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">NPSN</td>
+                                        <td id="row2">: 20533750</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Di Kelas</td>
+                                        <td id="row2">: VII (Tujuh)</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Tanggal</td>
+                                        <td id="row2">: 12 JULI 2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">12.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nama Orang Tua</td>
+                                        <td id="row2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">a. Nama Ayah</td>
+                                        <td id="row2">: MUHAMMAD KHUMAINI</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">b. Nama Ibu</td>
+                                        <td id="row2">: VIRNA SARI</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">13.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Alamat Orang Tua</td>
+                                        <td id="row2">: JL. IKAN GURAMI NO. 19 RT 02 RW 06 TUNJUNGSEKAR LOWOKWARU</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Telepon / Hp</td>
+                                        <td id="row2">: </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">14.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Pekerjaan Orang Tua</td>
+                                        <td id="row2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">a. Pekerjaan Ayah</td>
+                                        <td id="row2">: </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">b. Pekerjaan Ibu</td>
+                                        <td id="row2">: KARYAWAN BUMN</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">15.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nama Wali</td>
+                                        <td id="row2">: </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center"></td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Telepon / HP</td>
+                                        <td id="row2">: </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="No." class="text-center">17.</td>
+                                        <td id="row1" class="text-gray-800 fw-bold text-nowrap">Pekerjaan Wali</td>
+                                        <td id="row2">: </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--end::Table container-->
+                    </div>
+                    <!--begin::Body-->
+                </div>
+                <!--end::Tables Widget 11-->
             </div>
             <!--end::Content container-->
         </div>

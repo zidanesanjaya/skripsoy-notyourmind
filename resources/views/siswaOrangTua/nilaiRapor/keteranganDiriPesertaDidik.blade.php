@@ -70,15 +70,15 @@
                                     <div class="card-header border-0 pt-5 w-20">
                                         <div class="mb-1">
                                             <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <a href="{{ url('/asd') }}">
-                                                        <option value="">Pilih Rapor</option>
-                                                    </a>
-                                                    <option value="7C/Ganjil">7C/Ganjil</option>
-                                                    <option value="8D/Genap">8D/Genap</option>
-                                                    <option value="9E/Ganjil">9E/Ganjil</option>
-                                                </select>
+                                            <div class="btn-group">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Pilih Rapor
+                                                </button>
+                                                <ul class="dropdown-menu form-select-solid" aria-labelledby="dropdownMenuButton">
+                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">7C/Ganjil</a></li>
+                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">8D/Genap</a></li>
+                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">9E/Ganjil</a></li>
+                                                </ul>
                                             </div>
                                             <!--end::Input-->
                                         </div>

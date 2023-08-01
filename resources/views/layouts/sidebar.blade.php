@@ -111,15 +111,17 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{url('/kelolaKelasdanWaliKelasAdmin')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                    <a class="menu-link" href="{{url('/kelolaKelasAdmin')}}" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">
-                                <span class="material-symbols-outlined">face_4</span>
+                                <span class="material-symbols-outlined">
+                                    backup_table
+                                </span>
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Kelola Wali Kelas</span>
+                        <span class="menu-title">Kelola Kelas</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

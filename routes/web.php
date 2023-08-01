@@ -37,8 +37,8 @@ Route::get('/dashboardAdmin', function () {
 Route::get('/masterMataPelajaranAdmin', function () {
     return view('admin/masterMataPelajaranAdmin');
 });
-Route::get('/kelolaKelasdanWaliKelasAdmin', function () {
-    return view('admin/kelolaKelasdanWaliKelasAdmin');
+Route::get('/kelolaKelasAdmin', function () {
+    return view('admin/kelolaKelasAdmin');
 });
 Route::get('/updateInformasiAdmin', function () {
     return view('admin/updateInformasiAdmin');

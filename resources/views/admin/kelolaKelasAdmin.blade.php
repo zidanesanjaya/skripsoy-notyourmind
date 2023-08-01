@@ -24,7 +24,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Kelola Kelas dan Wali Kelas</li>
+                        <li class="breadcrumb-item text-muted">Kelola Kelas</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -45,7 +45,7 @@
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bold fs-3 mb-1">Data Kelas</span>
                         </h3>
-                        <div class="card-toolbar">
+                        <div class="card-toolbar align-items-end justify-content-end ms-auto">
                             <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#tambahKelas">
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                 <span class="svg-icon svg-icon-3">
@@ -58,19 +58,6 @@
                                 Tambah Kelas
                             </a>
                         </div>
-                        <div class="card-toolbar align-items-end justify-content-end ms-auto">
-                            <a href="#" class="btn btn-sm btn-light btn-active-success" data-bs-toggle="modal" data-bs-target="#tambahWaliKelas">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                <span class="svg-icon svg-icon-3">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
-                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                                Tambah Wali Kelas
-                            </a>
-                        </div>
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
@@ -81,33 +68,35 @@
                             <table id="dataWaliKelas" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
                                 <thead>
                                     <tr class="fw-bold text-muted bg-light">
-                                        <th class="px-5">No.</th>
+                                        <th class="min-w-20px w-20px px-5">No.</th>
                                         <!-- <th class="ps-4 min-w-150px w-300px rounded-start">Nama</th> -->
-                                        <th class="min-w-20px">Kelas</th>
-                                        <th class="min-w-20px">Fase</th>
-                                        <th class="min-w-120px">Wali Kelas</th>
-                                        <!-- <th class="min-w-50px w-100px text-center">Mata Pelajaran</th> -->
+                                        <th class="min-w-20px w-50px text-center">Kelas</th>
+                                        <th class="min-w-20px w-50px text-center">Fase</th>
+                                        <th class="min-w-75px w-150px text-center">Wali Kelas</th>
+                                        <th class="min-w-30px w-50px text-center">Kelola</th>
                                         <th class="min-w-100px w-50px text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="listWaliKelas">
                                     <tr>
                                         <td class="px-5">1.</td>
-                                        <td class="px-5">7</td>
-                                        <td>A</td>
+                                        <td class="text-center">7</td>
+                                        <td class="text-center">A</td>
                                         <td>Bapak Nosa</td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editWaliKelas" data-id="${data.id}" onclick="editAnggota(this)">
-                                                <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
-                                                <span class="svg-icon svg-icon-3">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
-                                                        <path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor" />
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                            </a>
-                                            <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                            <div class="row m-1">
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm btn-success w-100" data-bs-toggle="modal" data-bs-target="#tambahWaliKelas">
+                                                        Wali Kelas
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-12 my-1">
+                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#kelolaMatpelKelas">Mata Pelajaran</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -318,7 +307,7 @@
 </div>
 <!--end::Modal - Tambah Data Kelas-->
 
-<!--begin::Modal - Tambah Data Wali Kelas-->
+<!--begin::Modal - Kelola Wali Kelas-->
 <div class="modal fade" id="tambahWaliKelas" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -355,7 +344,7 @@
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
+                        <div class="col-md-12 fv-row">
                             <!--begin::Label-->
                             <label class="required fs-6 fw-semibold mb-2">Guru</label>
                             <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas" name="kelas">
@@ -363,19 +352,6 @@
                                 <option value="Bapak Nosa">Bapak Nosa</option>
                                 <option value="Bapak Vatqi">Bapak Vatqi</option>
                                 <option value="Bapak Buji">Bapak Buji</option>
-                            </select>
-                            <!--end::Label-->
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Kelas/Fase</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Fase..." name="kelas">
-                                <option value="">Pilih Kelas/Fase...</option>
-                                <option value="7/A">7/A</option>
-                                <option value="8/B">8/B</option>
-                                <option value="9/C">9/C</option>
                             </select>
                             <!--end::Label-->
                         </div>
@@ -401,10 +377,10 @@
     </div>
     <!--end::Modal dialog-->
 </div>
-<!--end::Modal - Tambah Data Wali Kelas-->
+<!--end::Modal - Kelola Wali Kelas-->
 
-<!--begin::Modal - Edit Data Wali Kelas-->
-<div class="modal fade" id="editWaliKelas" tabindex="-1" aria-hidden="true">
+<!--begin::Modal - Kelola Mata Pelajaran Kelas-->
+<div class="modal fade" id="kelolaMatpelKelas" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
@@ -431,42 +407,197 @@
                 <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
                     @csrf
                     <!--begin::Heading-->
-                    <div class="mb-13 text-center">
+                    <div class="mb-2 text-center">
                         <!--begin::Title-->
-                        <h1 class="mb-3">Edit Wali Kelas</h1>
+                        <h1>Kelola Mata Pelajaran Kelas 7C (as Kelas & Fase)</h1>
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="row g-9 mb-8">
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Guru</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas" name="kelas">
-                                <option value="">Pilih Guru...</option>
-                                <option value="Bapak Nosa">Bapak Nosa</option>
-                                <option value="Bapak Vatqi">Bapak Vatqi</option>
-                                <option value="Bapak Buji">Bapak Buji</option>
-                            </select>
-                            <!--end::Label-->
+                    <div class="card">
+                        <!--begin::Header-->
+                        <div class="card-header border-0 pt-5">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bold fs-3 mb-1">Pilih Mata Pelajaran</span>
+                            </h3>
                         </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Kelas/Fase</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Fase..." name="kelas">
-                                <option value="">Pilih Kelas/Fase...</option>
-                                <option value="7/A">7/A</option>
-                                <option value="8/B">8/B</option>
-                                <option value="9/C">9/C</option>
-                            </select>
-                            <!--end::Label-->
+                        <!--end::Header-->
+
+                        <!--begin::Table container-->
+                        <div class="table-responsive">
+                            <!--begin::Table-->
+                            <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
+                                <thead>
+                                    <tr class="fw-bold bg-light">
+                                        <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
+                                        <th class="px-5 min-w-50px p-120px text-center">Guru</th>
+                                        <th class="min-w-50px w-50px text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-5">Pendidikan Agama Islam</td>
+                                        <td class="px-5">Bapak Puji</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Bahasa Inggris</td>
+                                        <td class="px-5">Bapak Nosa</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                        <td class="px-5">Bapak Vatqi</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Pendidikan Agama Islam</td>
+                                        <td class="px-5">Bapak Puji</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Bahasa Inggris</td>
+                                        <td class="px-5">Bapak Nosa</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                        <td class="px-5">Bapak Vatqi</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Pendidikan Agama Islam</td>
+                                        <td class="px-5">Bapak Puji</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Bahasa Inggris</td>
+                                        <td class="px-5">Bapak Nosa</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                        <td class="px-5">Bapak Vatqi</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Pendidikan Agama Islam</td>
+                                        <td class="px-5">Bapak Puji</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Bahasa Inggris</td>
+                                        <td class="px-5">Bapak Nosa</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                        <td class="px-5">Bapak Vatqi</td>
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--end::Table-->
                         </div>
-                        <!--end::Col-->
+                        <!--end::Table container-->
                     </div>
-                    <!--end::Input group-->
+                    <!--begin::Content-->
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <!--begin::Content container-->
+                        <div id="kt_app_content_container" class="app-container container-xxl">
+                            <!--begin::Tables Widget 11-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">List Mata Pelajaran yang Telah di Pilih</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
+                                            <thead>
+                                                <tr class="fw-bold bg-light">
+                                                    <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
+                                                    <th class="px-5 min-w-50px p-120px text-center">Guru</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="px-5">Pendidikan Agama Islam</td>
+                                                    <td class="px-5">Bapak Puji</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-5">Bahasa Inggris</td>
+                                                    <td class="px-5">Bapak Nosa</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                                    <td class="px-5">Bapak Vatqi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <!--end::Content container-->
+                    </div>
+                    <!--end::Content-->
                     <!--begin::Actions-->
                     <div class="text-center">
                         <button type="reset" id="tambahKelas_cancel" class="btn btn-light me-3">Cancel</button>
@@ -486,7 +617,7 @@
     </div>
     <!--end::Modal dialog-->
 </div>
-<!--end::Modal - Edit Data Wali Kelas-->
+<!--end::Modal - Kelola Mata Pelajaran Kelas-->
 
 @endsection
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

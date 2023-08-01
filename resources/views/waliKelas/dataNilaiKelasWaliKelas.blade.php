@@ -68,7 +68,7 @@
                                         <th class="min-w-100px w-200px text-center text-nowrap">Nama Siswa</th>
                                         <th class="min-w-50px w-100px text-center text-nowrap">Semester</th>
                                         <th class="min-w-70px w-100px text-center text-nowrap">Tahun Akademik</th>
-                                        <th class="min-w-150px w-50px text-center text-nowrap">Nilai Rapor</th>
+                                        <th class="min-w-50px w-150px text-center text-nowrap">Nilai Rapor</th>
                                         <th class="min-w-50px w-50px text-center">Show</th>
                                     </tr>
                                 </thead>

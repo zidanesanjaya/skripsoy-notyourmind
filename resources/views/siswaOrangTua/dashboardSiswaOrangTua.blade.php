@@ -18,7 +18,7 @@
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">
-                            <a href="{{ url('/dashboardWaliKelas') }}" class="text-muted text-hover-primary">Home</a>
+                            <a href="{{ url('/dashboardSiswaOrangTua') }}" class="text-muted text-hover-primary">Home</a>
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
@@ -41,94 +41,158 @@
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Content container-->
             <div id="kt_app_content_container" class="app-container container-xxl">
-                <!--begin::Row-->
-                <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
-                    <!--begin::Col-->
-                    <div class="col-xl-4">
-                        <!--begin::Card widget 3-->
-                        <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100" style="background-color: #71ce7d;background-image:url('/media/svg/shapes/wave-bg-dark.svg'); background-size: auto;">
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end mb-3">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-4hx text-white fw-bold me-6">Data </span>
-                                    <div class="fw-bold fs-1 text-white">
-                                        <span class="d-block">Siswa Kelas</span>
+                <!--begin::details View-->
+                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                    <!--begin::Card header-->
+                    <div class="card-header cursor-pointer">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bold m-0">Profil Siswa</h3>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Card body-->
+                    <div class="card-body p-9">
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Nama Peserta Didik</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">Aisyah Fatin Sholikah</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Nomor Induk Siswa (NIS)</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">9925</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Nomor Induk Siswa Nasional (NISN)</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">2104295256</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Tempat, Tanggal Lahir</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">Tangerang Selatan, 22 November 2008</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Jenis Kelamin</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">Laki - Laki</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Agama</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">Islam</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Alamat</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">JL. IKAN GURAMI NO. 19 RT 02 RW 06 TUNJUNGSEKAR LOWOKWARU</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Nomor Telepon/Hp</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800"></span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">Kelas</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">VII (Tujuh)</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Notice-->
+                        <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">
+                            <!--begin::Icon-->
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
+                            <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor" />
+                                    <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor" />
+                                    <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                            <!--end::Icon-->
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-stack flex-grow-1">
+                                <!--begin::Content-->
+                                <div class="fw-semibold">
+                                    <h4 class="text-gray-900 fw-bold">We need your attention!</h4>
+                                    <div class="fs-6 text-gray-700">Your payment was declined. To start using tools, please
+                                        <a class="fw-bold" href="../../demo1/dist/account/billing.html">Add Payment Method</a>.
                                     </div>
                                 </div>
-                                <!--end::Info-->
+                                <!--end::Content-->
                             </div>
-                            <!--end::Card body-->
-                            <!--begin::Card footer-->
-                            <a href="{{url('/dataSiswaWaliKelas')}}">
-                                <div class="card-footer d-flex" style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                    <span class="text-white">Selengkapnya</span>
-                                    <span class="material-symbols-outlined text-white ms-auto bd-highlight">arrow_right_alt</span>
-                                </div>
-                            </a>
-                            <!--end::Card footer-->
+                            <!--end::Wrapper-->
                         </div>
-                        <!--end::Card widget 3-->
+                        <!--end::Notice-->
                     </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-xl-4">
-                        <!--begin::Card widget 3-->
-                        <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100" style="background-color: #4FC0D0;background-image:url('/media/svg/shapes/wave-bg-dark.svg'); background-size: auto;">
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end mb-3">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-4hx text-white fw-bold me-6">Data </span>
-                                    <div class="fw-bold fs-1 text-white">
-                                        <span class="d-block">Nilai Kelas</span>
-                                    </div>
-                                </div>
-                                <!--end::Info-->
-                            </div>
-                            <!--end::Card body-->
-                            <!--begin::Card footer-->
-                            <a href="{{url('/dataNilaiKelasWaliKelas')}}">
-                                <div class="card-footer d-flex" style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                    <span class="text-white">Selengkapnya</span>
-                                    <span class="material-symbols-outlined text-white ms-auto bd-highlight">arrow_right_alt</span>
-                                </div>
-                            </a>
-                            <!--end::Card footer-->
-                        </div>
-                        <!--end::Card widget 3-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-xl-4">
-                        <!--begin::Card widget 3-->
-                        <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-xl-100" style="background-color: #5e1cf8;background-image:url('/media/svg/shapes/wave-bg-dark.svg'); background-size: auto;">
-                            <!--begin::Card body-->
-                            <div class="card-body d-flex align-items-end mb-3">
-                                <!--begin::Info-->
-                                <div class="d-flex align-items-center">
-                                    <span class="fs-4hx text-white fw-bold me-6">Leger </span>
-                                    <div class="fw-bold fs-1 text-white">
-                                        <span class="d-block">Siswa</span>
-                                    </div>
-                                </div>
-                                <!--end::Info-->
-                            </div>
-                            <!--end::Card body-->
-                            <!--begin::Card footer-->
-                            <a href="{{url('/legerNilaiWaliKelas')}}">
-                                <div class="card-footer d-flex" style="border-top: 1px solid rgba(255, 255, 255, 0.3);background: rgba(0, 0, 0, 0.15);">
-                                    <span class="text-white">Selengkapnya</span>
-                                    <span class="material-symbols-outlined text-white ms-auto bd-highlight">arrow_right_alt</span>
-                                </div>
-                            </a>
-                            <!--end::Card footer-->
-                        </div>
-                        <!--end::Card widget 3-->
-                    </div>
-                    <!--end::Col-->
+                    <!--end::Card body-->
                 </div>
-                <!--end::Row-->
+                <!--end::details View-->
             </div>
             <!--end::Content container-->
         </div>

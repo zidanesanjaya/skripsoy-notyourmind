@@ -27,8 +27,8 @@ Route::get('/welcome', function () {
 Route::get('/login_admin', function () {
     return view('auth/login');
 });
-Route::get('/kepalaSekolah', function () {
-    return view('auth/kepalaSekolah/loginKepalaSekolah');
+Route::get('/loginkepalasekolahdanguru', function () {
+    return view('auth/kepalaSekolahdanGuru/loginKepalaSekolahdanGuru');
 });
 // End Login Section
 

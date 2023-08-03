@@ -65,9 +65,9 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Page bg image-->
 		<style>
 			body {
-				background-image: url('/images/depanSekolahwithopacity.jpg');
+				background-image: url('/images/guruwithopacity.jpg');
+				background-size: contain;
 			}
-
 		</style>
 		<!--end::Page bg image-->
 		<!--begin::Authentication - Sign-in -->
@@ -82,8 +82,18 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Logo-->
 					<!--begin::Title-->
-					<h2 class="text-white fw-bold m-2">Sistem Informasi Rapor Online</h2>
-					<h1 class="text-white fw-bold m-2">SMP Muhammadiyah 1 Malang</h1>
+					<div class="row d-flex justify-content-center">
+						<div class="col-sm-12">
+							<span>
+								<h2 class="text-white fw-bold m-2">Sistem Informasi Rapor Online</h2>
+							</span>
+						</div>
+						<div class="col-sm-12">
+							<span>
+								<h1 class="text-white fw-bold m-2 fs-2hx">SMP Muhammadiyah 1 Malang</h1>
+							</span>
+						</div>
+					</div>
 					<!--end::Title-->
 				</div>
 				<!--begin::Aside-->
@@ -100,39 +110,10 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Heading-->
 							<div class="text-center mb-11">
 								<!--begin::Title-->
-								<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+								<h1 class="text-dark fw-bolder mb-3">Log In Kepala Sekolah dan Guru</h1>
 								<!--end::Title-->
-								<!--begin::Subtitle-->
-								<div class="text-gray-500 fw-semibold fs-6">Your Social Campaigns</div>
-								<!--end::Subtitle=-->
 							</div>
 							<!--begin::Heading-->
-							<!--begin::Login options-->
-							<div class="row g-3 mb-9">
-								<!--begin::Col-->
-								<div class="col-md-6">
-									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="/media/svg/brand-logos/google-icon.svg" class="h-15px me-3" />Sign in with Google</a>
-									<!--end::Google link=-->
-								</div>
-								<!--end::Col-->
-								<!--begin::Col-->
-								<div class="col-md-6">
-									<!--begin::Google link=-->
-									<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="/media/svg/brand-logos/apple-black.svg" class="theme-light-show h-15px me-3" />
-										<img alt="Logo" src="/media/svg/brand-logos/apple-black-dark.svg" class="theme-dark-show h-15px me-3" />Sign in with Apple</a>
-									<!--end::Google link=-->
-								</div>
-								<!--end::Col-->
-							</div>
-							<!--end::Login options-->
-							<!--begin::Separator-->
-							<div class="separator separator-content my-14">
-								<span class="w-125px text-gray-500 fw-semibold fs-7">Or with email</span>
-							</div>
-							<!--end::Separator-->
 							<!--begin::Input group=-->
 							<div class="fv-row mb-8">
 								<!--begin::Email-->
@@ -150,7 +131,7 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
 								<div></div>
 								<!--begin::Link-->
-								<a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a>
+								<!-- <a href="../../demo1/dist/authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a> -->
 								<!--end::Link-->
 							</div>
 							<!--end::Wrapper-->
@@ -158,7 +139,7 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="d-grid mb-10">
 								<button type="submit" id="kt_sign_in_submit" class="btn btn-primary">
 									<!--begin::Indicator label-->
-									<span class="indicator-label">Sign In</span>
+									<span class="indicator-label">Log In</span>
 									<!--end::Indicator label-->
 									<!--begin::Indicator progress-->
 									<span class="indicator-progress">Please wait...
@@ -167,11 +148,6 @@ License: For each use you must have a valid license purchased only from above li
 								</button>
 							</div>
 							<!--end::Submit button-->
-							<!--begin::Sign up-->
-							<div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet?
-								<a href="../../demo1/dist/authentication/layouts/creative/sign-up.html" class="link-primary">Sign up</a>
-							</div>
-							<!--end::Sign up-->
 						</form>
 						<!--end::Form-->
 					</div>

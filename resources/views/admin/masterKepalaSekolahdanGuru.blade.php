@@ -175,6 +175,16 @@
 						</select>
 					</div>
 					<!--end::Input group-->
+					<!--begin::Input group-->
+					<div class="d-flex flex-column mb-8 fv-row">
+						<!--begin::Label-->
+						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+							<span class="required">Password</span>
+						</label>
+						<!--end::Label-->
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Password" name="password" />
+					</div>
+					<!--end::Input group-->
 					<!--begin::Actions-->
 					<div class="text-center">
 						<button type="reset" id="tambahDataAnggota_cancel" class="btn btn-light me-3">Cancel</button>
@@ -274,6 +284,16 @@
 							<option value="Guru">Guru</option>
 							<option value="Karyawan">Karyawan</option>
 						</select>
+					</div>
+					<!--end::Input group-->
+					<!--begin::Input group-->
+					<div class="d-flex flex-column mb-8 fv-row">
+						<!--begin::Label-->
+						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+							<span class="required">Password</span>
+						</label>
+						<!--end::Label-->
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Password" name="password" />
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->

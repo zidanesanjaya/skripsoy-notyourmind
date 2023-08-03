@@ -23,10 +23,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-
-// Beginning Login Section
+// Begin Login Section
 Route::get('/login_admin', function () {
-    return view('auth/admin/adminLogin');
+    return view('auth/login');
+});
+Route::get('/kepalaSekolah', function () {
+    return view('auth/kepalaSekolah/loginKepalaSekolah');
 });
 // End Login Section
 
@@ -42,6 +44,9 @@ Route::get('/kelolaKelasAdmin', function () {
 });
 Route::get('/updateInformasiAdmin', function () {
     return view('admin/updateInformasiAdmin');
+});
+Route::get('/profilAdmin', function () {
+    return view('admin/profilAdmin');
 });
 
 Route::controller(AnggotaControllers::class)->name('tableAnggota.')->prefix('tableAnggota')->group(function () {
@@ -66,6 +71,9 @@ Route::get('/menuDataNilaiSiswaKepalaSekolah', function () {
 Route::get('/dataGuruKepalaSekolah', function () {
     return view('kepalaSekolah/dataGuruKepalaSekolah');
 });
+Route::get('/profilKepalaSekolah', function () {
+    return view('kepalaSekolah/profilKepalaSekolah');
+});
 // End Kepala Sekolah Section
 
 // Begin Guru Section
@@ -77,6 +85,9 @@ Route::get('/dataSiswaGuru', function () {
 });
 Route::get('/inputNilaiSiswaGuru', function () {
     return view('guru/inputNilaiSiswaGuru');
+});
+Route::get('/profilGuru', function () {
+    return view('guru/profilGuru');
 });
 // End Guru Section
 
@@ -92,6 +103,9 @@ Route::get('/dataNilaiKelasWaliKelas', function () {
 });
 Route::get('/legerNilaiWaliKelas', function () {
     return view('waliKelas/legerNilaiWaliKelas');
+});
+Route::get('/profilWaliKelas', function () {
+    return view('waliKelas/profilWaliKelas');
 });
 // End Wali Kelas Section
 

@@ -157,6 +157,38 @@
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
                         <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="{{ url('/profilAdmin') }}" class="menu-link px-5">My Profile</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="{{ url('/profilKepalaSekolah') }}" class="menu-link px-5">My Profile (as Kepala Sekolah)</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="{{ url('/profilGuru') }}" class="menu-link px-5">My Profile (as Guru)</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="{{ url('/profilWaliKelas') }}" class="menu-link px-5">My Profile (as Wali Kelas)</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+                        <!--begin::Menu item-->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <div class="menu-item px-5">

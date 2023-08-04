@@ -207,11 +207,6 @@
                                         <td class="text-center">
                                             <div class="row m-1">
                                                 <div class="col-12">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#nilaiAsesmenGuru">Ekstra</a>
-                                                </div>
-                                            </div>
-                                            <div class="row m-1">
-                                                <div class="col-12">
                                                     <input type="text" class="form-control form-control-solid text-center" placeholder="Nilai" name="nilaiAsesmen" />
                                                 </div>
                                             </div>

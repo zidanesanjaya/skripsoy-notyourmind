@@ -83,13 +83,16 @@
                                         <td class="text-center">
                                             <div class="row m-1">
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-Success w-100" data-bs-toggle="modal" data-bs-target="#nilaiKeseluruhanSiswaKepalaSekolah">Keseluruhan</a>
+                                                    <div href="#" class="btn btn-sm fw-bold btn-Success w-100" data-bs-toggle="modal" data-bs-target="#nilaiKeseluruhanSiswaKepalaSekolah">Keseluruhan</div>
                                                 </div>
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-primary w-100" data-bs-toggle="modal" data-bs-target="#nilaiRaporSiswaKepalaSekolah">Rapor</a>
+                                                    <div href="#" class="btn btn-sm fw-bold btn-primary w-100" data-bs-toggle="modal" data-bs-target="#nilaiRaporSiswaKepalaSekolah">Rapor</div>
                                                 </div>
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#nilaiProfilPelajarPancasila">Pancasila</a>
+                                                    <div href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#nilaiProfilPelajarPancasila">Pancasila</div>
+                                                </div>
+                                                <div class="col-md-12 my-1">
+                                                    <div href="#" class="btn btn-sm fw-bold btn-warning w-100" data-bs-toggle="modal" data-bs-target="#inputNilaiEkstra">Input Nilai Ekstra</div>
                                                 </div>
                                             </div>
                                         </td>
@@ -812,8 +815,9 @@
                             </div>
                         </div>
                     </div>
+                    <!--end::Card header-->
                 </div>
-                <!--end::Card header-->
+                <!--end::Products-->
                 <!--begin::Card body-->
                 <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
                     <!--begin::Table-->
@@ -968,15 +972,210 @@
                 </div>
                 <!--end::Card body-->
             </div>
-            <!--end::Products-->
+            <!--end::Modal body-->
         </div>
-        <!--end::Modal body-->
+        <!--end::Modal content-->
     </div>
-    <!--end::Modal content-->
-</div>
-<!--end::Modal dialog-->
+    <!--end::Modal dialog-->
 </div>
 <!--end::Modal Nilai Profil Pelajar Pancasila-->
+
+<!--begin::Modal Input Nilai Ekstra-->
+<div class="modal fade" id="inputNilaiEkstra" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal header-->
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--begin::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <!--begin:Form-->
+                <form id="nilaiAsesmenGuru_form" class="form">
+                    @csrf
+                    <!--begin::Heading-->
+                    <div class="mb-13 text-center">
+                        <!--begin::Title-->
+                        <h1 class="mb-3">Input Nilai Esktrakulikuler</h1>
+                        <!--end::Title-->
+                    </div>
+                    <!--end::Heading-->
+                    <!--begin::Input group-->
+                    <div class="row g-9 mb-8">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span class="required">Esktrakulikuler Wajib</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="" value="Tapak Suci" disabled />
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span class="required">Nilai</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai" name="nilaiEkstraWajib1" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row g-9 mb-8">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span class="required">Esktrakulikuler Wajib</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="" value="Hisbul Wathan" disabled />
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span class="required">Nilai</span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai" name="nilaiEkstraWajib2" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row g-9 mb-8">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2">Esktrakulikuler Pilihan 1 <span class="text-danger fs-8">(Jika Ada)</span></label>
+                            <!--end::Label-->
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Esktrakulikuler" name="ekstrakulikuler1">
+                                <option value=""></option>
+                                <option value="English Club">English Club</option>
+                                <option value="Konten Creator">Konten Creator</option>
+                                <option value="E-Sport">E-Sport</option>
+                                <option value="Tari">Tari</option>
+                                <option value="Drumband">Drumband</option>
+                                <option value="Bina Vokal">Bina Vokal</option>
+                                <option value="Band">Band</option>
+                                <option value="Futsal">Futsal</option>
+                            </select>
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span>Nilai <span class="text-danger fs-8">(Jika Ada)</span></span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai" name="nilai" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row g-9 mb-8">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2">Esktrakulikuler Pilihan 2 <span class="text-danger fs-8">(Jika Ada)</span></label>
+                            <!--end::Label-->
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Esktrakulikuler" name="ekstrakulikuler2">
+                                <option value=""></option>
+                                <option value="English Club">English Club</option>
+                                <option value="Konten Creator">Konten Creator</option>
+                                <option value="E-Sport">E-Sport</option>
+                                <option value="Tari">Tari</option>
+                                <option value="Drumband">Drumband</option>
+                                <option value="Bina Vokal">Bina Vokal</option>
+                                <option value="Band">Band</option>
+                                <option value="Futsal">Futsal</option>
+                            </select>
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span>Nilai <span class="text-danger fs-8">(Jika Ada)</span></span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai" name="nilai" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row g-9 mb-8">
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="fs-6 fw-semibold mb-2">Esktrakulikuler Pilihan 3 <span class="text-danger fs-8">(Jika Ada)</span></label>
+                            <!--end::Label-->
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Esktrakulikuler" name="ekstrakulikuler3">
+                                <option value=""></option>
+                                <option value="English Club">English Club</option>
+                                <option value="Konten Creator">Konten Creator</option>
+                                <option value="E-Sport">E-Sport</option>
+                                <option value="Tari">Tari</option>
+                                <option value="Drumband">Drumband</option>
+                                <option value="Bina Vokal">Bina Vokal</option>
+                                <option value="Band">Band</option>
+                                <option value="Futsal">Futsal</option>
+                            </select>
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col-md-6 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                                <span>Nilai <span class="text-danger fs-8">(Jika Ada)</span></span>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai" name="nilai" />
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="text-center">
+                        <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
+                        <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
+                            <span class="indicator-label">Submit</span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end:Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal Input Nilai Ekstra-->
 
 @endsection
 <!-- begin::Link Javascript -->

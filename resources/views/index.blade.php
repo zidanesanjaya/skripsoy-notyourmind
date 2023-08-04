@@ -65,11 +65,7 @@ License: For each use you must have a valid license purchased only from above li
         <!--begin::Page bg image-->
         <style>
             body {
-                background-image: url('/media/auth/bg10.jpeg');
-            }
-
-            [data-theme="dark"] body {
-                background-image: url('/media/auth/bg10-dark.jpeg');
+                background-image: url('/images/depansekolahwithopacity.jpg');
             }
         </style>
         <!--end::Page bg image-->
@@ -84,10 +80,10 @@ License: For each use you must have a valid license purchased only from above li
                     <img class="theme-dark-show mx-auto mw-100 w-150px w-lg-300px mb-10 mb-lg-20" src="/media/auth/agency-dark.png" alt="" />
                     <!--end::Image-->
                     <!--begin::Title-->
-                    <h1 class="text-gray-800 fs-2qx fw-bold text-center mb-7">Sistem Informasi Rapor Online</h1>
+                    <h1 class="text-white fs-2qx fw-bold text-center mb-7">Sistem Informasi Rapor Online</h1>
                     <!--end::Title-->
                     <!--begin::Text-->
-                    <div class="text-gray-600 fs-base text-center fw-semibold">
+                    <div class="text-white fs-base text-center fw-semibold">
                         Sistem Informasi Rapor Online SMP Muhammadiyah 1 Malang adalah suatu platform digital yang memungkinkan para siswa, orang tua, dan guru untuk mengakses dan melihat rapor siswa secara online. Sistem ini dikembangkan untuk meningkatkan efisiensi dan keterbukaan dalam proses penilaian dan pelaporan hasil belajar siswa.
                     </div>
                     <!--end::Text-->
@@ -110,7 +106,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <img class="w-90px h-90px mb-5" src="/images/logohead.png" alt="Logo">
                                 <!--end::Logo=-->
                                 <!--begin::Title-->
-                                <h1 class="text-dark fw-bolder mb-3">Log In</h1>
+                                <h1 class="text-dark fw-bolder mb-3">Log In Siswa dan Orang Tua</h1>
                             </div>
                             <!--begin::Heading-->
                             <!--begin::Input group=-->

@@ -42,6 +42,9 @@ Route::get('/masterMataPelajaranAdmin', function () {
 Route::get('/kelolaKelasAdmin', function () {
     return view('admin/kelolaKelasAdmin');
 });
+Route::get('/kelolaProjekPancasilaAdmin', function () {
+    return view('admin/kelolaProjekPancasilaAdmin');
+});
 Route::get('/updateInformasiAdmin', function () {
     return view('admin/updateInformasiAdmin');
 });

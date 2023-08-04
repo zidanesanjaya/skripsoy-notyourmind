@@ -227,8 +227,8 @@
 							<label class="required fs-6 fw-semibold mb-2">Semester</label>
 							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Semester" name="target_assign">
 								<option value="">Pilih Semester...</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
+								<option value="Ganjil">Ganjil</option>
+								<option value="Genap">Genap</option>
 							</select>
 						</div>
 						<!--end::Col-->
@@ -327,8 +327,8 @@
 							<label class="required fs-6 fw-semibold mb-2">Semester</label>
 							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Semester" name="target_assign">
 								<option value="">Pilih Semester...</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
+								<option value="Ganjil">Ganjil</option>
+								<option value="Genap">Genap</option>
 							</select>
 						</div>
 						<!--end::Col-->

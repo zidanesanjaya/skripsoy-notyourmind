@@ -218,10 +218,10 @@
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-12">
                             <!-- begin::search -->
-                            <div class="d-flex align-items-center py-10">
+                            <div class="d-flex align-items-center">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
                                 <span class="svg-icon svg-icon-1 position-absolute ms-4">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,9 +234,24 @@
                             </div>
                             <!-- end::search -->
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             <!--begin::Actions-->
-                            <div class="d-flex justify-content-end py-10">
+                            <div class="d-flex justify-content-end py-5">
+                                <!--begin::Input-->
+                                <div>
+                                    <select class="form-select form-select-primary">
+                                        <option>Simpan Data Ke Mata Pelajaran</option>
+                                        <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
+                                        <option value="Bahasa Arab">Bahasa Arab</option>
+                                    </select>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Actions-->
+                        </div>
+                        <div class="col-sm-6">
+                            <!--begin::Actions-->
+                            <div class="d-flex justify-content-end py-5">
                                 <button type="submit" id="tambahDataSiswa_submit" class="btn btn-primary">
                                     <span class="indicator-label">Simpan</span>
                                 </button>

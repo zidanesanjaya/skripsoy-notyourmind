@@ -55,7 +55,8 @@
 										<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="currentColor" />
 									</svg>
 								</span>
-								<!--end::Svg Icon-->Filter</div>
+								<!--end::Svg Icon-->Filter
+							</div>
 							<!--end::Menu toggle-->
 							<!--begin::Menu 1-->
 							<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_633e6e070bf4a">
@@ -395,28 +396,6 @@
 								</tbody>
 							</table>
 						</div>
-						<div class="row justify-content-around">
-							<div class="row">
-								<div class="col-6">
-									<h3 class="card-title align-items-start flex-column">
-										Jumlah Nilai
-									</h3>
-								</div>
-								<div class="col-6">
-									<h3 class="card-title align-items-start flex-column">
-										Rata - Rata Nilai
-									</h3>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-6">
-									<div class="btn btn-sm fw-bold btn-primary">1102.7</div>
-								</div>
-								<div class="col-6">
-									<div class="btn btn-sm fw-bold btn-success">84.82</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<!--end::Card header-->
 					<!--begin::Card body-->
@@ -425,6 +404,25 @@
 						<table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_ecommerce_sales_table" style="cursor:context-menu">
 							<!--begin::Table head-->
 							<thead>
+								<!--begin::Table row-->
+								<tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+									<th class="min-w-150px"></th>
+									<th class="min-w-50px text-center">Bab 1</th>
+									<th class="min-w-50px text-center">Bab 2</th>
+									<th class="min-w-50px text-center">Bab 3</th>
+									<th class="min-w-50px text-center">Bab 4</th>
+									<th class="min-w-50px text-center">Bab 5</th>
+									<th class="min-w-50px text-center">Bab 6</th>
+									<th class="min-w-50px text-center">Bab 7</th>
+									<th class="min-w-50px text-center">Bab 8</th>
+									<th class="min-w-50px text-center">Bab 9</th>
+									<th class="min-w-50px text-center">Bab 10</th>
+									<th class="min-w-50px w-100px text-center"></th>
+									<th class="min-w-50px text-center"></th>
+									<th class="min-w-50px text-center"></th>
+									<th class="min-w-50px text-center"></th>
+								</tr>
+								<!--end::Table row-->
 								<!--begin::Table row-->
 								<tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
 									<th class="min-w-150px">Mata Pelajaran</th>
@@ -438,10 +436,10 @@
 									<th class="min-w-50px text-center">Sumatif 8</th>
 									<th class="min-w-50px text-center">Sumatif 9</th>
 									<th class="min-w-50px text-center">Sumatif 10</th>
-									<th class="min-w-50px w-100px text-center">NA Sumatif Lingkup Materi</th>
+									<th class="min-w-50px w-100px text-center text-nowrap">NA Sumatif Lingkup Materi</th>
 									<th class="min-w-50px text-center">PTS</th>
 									<th class="min-w-50px text-center">PAS</th>
-									<th class="min-w-50px text-center">NA Sumatif Akhir Semester</th>
+									<th class="min-w-50px text-center text-nowrap">NA Sumatif Akhir Semester</th>
 								</tr>
 								<!--end::Table row-->
 							</thead>

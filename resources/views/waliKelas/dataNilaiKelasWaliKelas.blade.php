@@ -839,10 +839,10 @@
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-800 fw-bold fs-7 text-uppercase gs-0">
                                 <th class="min-w-100px w-200px text-center">Ajang Kompetensi dan Kreativitas Siswa</th>
-                                <th class="min-w-30px w-75px text-center">BB</th>
-                                <th class="min-w-30px w-75px text-center">MB</th>
-                                <th class="min-w-30px w-75px text-center">BSH</th>
-                                <th class="min-w-30px w-75px text-center">SB</th>
+                                <th class="min-w-30px w-50px text-center">BB</th>
+                                <th class="min-w-30px w-50px text-center">MB</th>
+                                <th class="min-w-30px w-50px text-center">BSH</th>
+                                <th class="min-w-30px w-50px text-center">SB</th>
                             </tr>
                             <!--end::Table row-->
                         </thead>
@@ -858,17 +858,49 @@
                                     <td></td>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                             </div>
                             <div>
@@ -880,17 +912,49 @@
                                     <td></td>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                             </div>
                             <div>
@@ -902,17 +966,49 @@
                                     <td></td>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-gray-800 text-center table-active"></td>
-                                    <td class="text-gray-800 text-center">V</td>
-                                    <td class="text-gray-800 text-center table-active">V</td>
-                                    <td class="text-gray-800 text-center"></td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center table-active">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                            <input class="form-check-input" type="checkbox" value="1">
+                                        </div>
+                                    </td>
                                 </tr>
                             </div>
                         </tbody>

@@ -24,7 +24,7 @@
 						</li>
 						<!--end::Item-->
 						<!--begin::Item-->
-						<li class="breadcrumb-item text-muted">Master Data Kepala Sekolah, Guru, dan Karyawan</li>
+						<li class="breadcrumb-item text-muted">Master Data Kepala Sekolah, dan Guru</li>
 						<!--end::Item-->
 					</ul>
 					<!--end::Breadcrumb-->
@@ -171,7 +171,6 @@
 							<option value=""></option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
-							<option value="Karyawan">Karyawan</option>
 						</select>
 					</div>
 					<!--end::Input group-->

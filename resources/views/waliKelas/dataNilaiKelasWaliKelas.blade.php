@@ -89,7 +89,7 @@
                                                     <div href="#" class="btn btn-sm fw-bold btn-primary w-100" data-bs-toggle="modal" data-bs-target="#nilaiRaporSiswaKepalaSekolah">Rapor</div>
                                                 </div>
                                                 <div class="col-md-12 my-1">
-                                                    <div href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#nilaiProfilPelajarPancasila">Pancasila</div>
+                                                    <div href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#nilaiProfilPelajarPancasila">Input Nilai Pancasila</div>
                                                 </div>
                                                 <div class="col-md-12 my-1">
                                                     <div href="#" class="btn btn-sm fw-bold btn-warning w-100" data-bs-toggle="modal" data-bs-target="#inputNilaiEkstra">Input Nilai Ekstra</div>
@@ -734,337 +734,371 @@
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Modal body-->
-            <div id="kt_app_content_container" class="app-container container-xxl">
-                <!--begin::Products-->
-                <div class="card card-flush">
-                    <!--begin::Modal header-->
-                    <div class="modal-header">
-                        <!--begin::Modal title-->
-                        <h2>Nilai Penguatan Profil Pelajar Pancasila</h2>
-                        <!--end::Modal title-->
-                        <!--begin::Close-->
-                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                            <span class="svg-icon svg-icon-1">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
+            <form action="#">
+                <div id="kt_app_content_container" class="app-container container-xxl">
+                    <!--begin::Products-->
+                    <div class="card card-flush">
+                        <!--begin::Modal header-->
+                        <div class="modal-header">
+                            <!--begin::Modal title-->
+                            <h2>Nilai Penguatan Profil Pelajar Pancasila</h2>
+                            <!--end::Modal title-->
+                            <!--begin::Close-->
+                            <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                <span class="svg-icon svg-icon-1">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                        <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                            </div>
+                            <!--end::Close-->
                         </div>
-                        <!--end::Close-->
-                    </div>
-                    <!--end::Modal header-->
-                    <!--begin::Card header-->
-                    <div class="card-header d-flex align-items-center">
-                        <div class="table-responsive pt-3">
-                            <table>
-                                <tbody class="text-nowrap">
-                                    <tr>
-                                        <td>Nama Peserta Didik</td>
-                                        <td class="px-5">: Aisyah Fatin Sholikah</td>
-                                        <td class="px-15">Kelas</td>
-                                        <td>: 7</td>
-                                    </tr>
-                                    <tr>
-                                        <td>NISN</td>
-                                        <td class="px-5">: 2104295256</td>
-                                        <td class="px-15">Fase</td>
-                                        <td>: D</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sekolah</td>
-                                        <td class="px-5">: SMP Muhammadiyah 1 Malang</td>
-                                        <td class="px-15">Semester</td>
-                                        <td>: Ganjil</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alamat</td>
-                                        <td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
-                                        <td class="px-15">Tahun Pelajaran</td>
-                                        <td>: 2022/2023</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row m-1">
-                            <div class="col-sm-6">
-                                <!--begin::Input-->
-                                <div class="py-5">
-                                    <select class="form-select form-select-solid">
-                                        <option>Pilih Lihat Projek</option>
-                                        <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
-                                        <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
-                                        <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
-                                    </select>
+                        <!--end::Modal header-->
+                        <!--begin::Card header-->
+                        <div class="card-header d-flex align-items-center">
+                            <div class="table-responsive pt-3">
+                                <table>
+                                    <tbody class="text-nowrap">
+                                        <tr>
+                                            <td>Nama Peserta Didik</td>
+                                            <td class="px-5">: Aisyah Fatin Sholikah</td>
+                                            <td class="px-15">Kelas</td>
+                                            <td>: 7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NISN</td>
+                                            <td class="px-5">: 2104295256</td>
+                                            <td class="px-15">Fase</td>
+                                            <td>: D</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sekolah</td>
+                                            <td class="px-5">: SMP Muhammadiyah 1 Malang</td>
+                                            <td class="px-15">Semester</td>
+                                            <td>: Ganjil</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alamat</td>
+                                            <td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
+                                            <td class="px-15">Tahun Pelajaran</td>
+                                            <td>: 2022/2023</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row m-1">
+                                <div class="col-sm-6">
+                                    <!--begin::Input-->
+                                    <div class="py-5">
+                                        <select class="form-select form-select-solid">
+                                            <option>Pilih Lihat Projek</option>
+                                            <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
+                                            <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
+                                            <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
                                 </div>
-                                <!--end::Input-->
-                            </div>
-                            <div class="col-sm-6">
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end py-3">
-                                    <!--begin::Add product-->
-                                    <button class="btn btn-info">Unduh Rapor Projek Penguatan Profil Pelajar Pancasila</button>
-                                    <!--end::Add product-->
+                                <div class="col-sm-6">
+                                    <!--begin::Card toolbar-->
+                                    <div class="card-toolbar flex-row-fluid justify-content-end py-3">
+                                        <!--begin::Add product-->
+                                        <button class="btn btn-info">Unduh Rapor Projek Penguatan Profil Pelajar Pancasila</button>
+                                        <!--end::Add product-->
+                                    </div>
+                                    <!--end::Card toolbar-->
                                 </div>
-                                <!--end::Card toolbar-->
                             </div>
                         </div>
+                        <!--end::Card header-->
                     </div>
-                    <!--end::Card header-->
-                </div>
-                <!--end::Products-->
-                <!--begin::Card body-->
-                <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
-                    <!--begin::Table-->
-                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
-                        <!--begin::Table Footer-->
-                        <thead>
-                            <tr style="background-color: #f2f2f2;">
-                                <th class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Projek 1: Ajang Kompetensi dan Kreativitas Siswa</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis a voluptate minus hic nulla illum voluptatem magnam vel dolores ex ratione sapiente ut omnis optio dicta, qui quod rerum in facere. Totam quae voluptas optio eveniet dicta? Animi, saepe neque necessitatibus, perferendis itaque dignissimos vel, delectus iste mollitia voluptate suscipit ad quae officia accusantium totam doloremque. Praesentium, corporis earum itaque minima amet aspernatur iusto. At totam quaerat eos eius eaque iste ipsa libero cum corporis unde. Molestias explicabo harum accusantium nobis quod rerum veniam in corrupti excepturi voluptatum, quia minus facere maiores natus? Ad fuga molestiae doloremque molestias voluptatem? Repellat.</td>
-                            </tr>
-                        </thead>
-                        <!--end::Table Footer-->
-                    </table>
-                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
-                        <!--begin::Table head-->
-                        <thead>
-                            <!--begin::Table row-->
-                            <tr class="text-start text-gray-800 fw-bold fs-7 text-uppercase gs-0">
-                                <th class="min-w-100px w-200px text-center">Ajang Kompetensi dan Kreativitas Siswa</th>
-                                <th class="min-w-30px w-50px text-center">BB</th>
-                                <th class="min-w-30px w-50px text-center">MB</th>
-                                <th class="min-w-30px w-50px text-center">BSH</th>
-                                <th class="min-w-30px w-50px text-center">SB</th>
-                            </tr>
-                            <!--end::Table row-->
-                        </thead>
-                        <!--end::Table head-->
-                        <!--begin::Table body-->
-                        <tbody class="fw-semibold text-gray-600">
-                            <div>
+                    <!--end::Products-->
+                    <!--begin::Card body-->
+                    <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
+                        <!--begin::Table-->
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                            <!--begin::Table Footer-->
+                            <thead>
                                 <tr style="background-color: #f2f2f2;">
-                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
+                                    <th class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Projek 1: Ajang Kompetensi dan Kreativitas Siswa</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                                 <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
+                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis a voluptate minus hic nulla illum voluptatem magnam vel dolores ex ratione sapiente ut omnis optio dicta, qui quod rerum in facere. Totam quae voluptas optio eveniet dicta? Animi, saepe neque necessitatibus, perferendis itaque dignissimos vel, delectus iste mollitia voluptate suscipit ad quae officia accusantium totam doloremque. Praesentium, corporis earum itaque minima amet aspernatur iusto. At totam quaerat eos eius eaque iste ipsa libero cum corporis unde. Molestias explicabo harum accusantium nobis quod rerum veniam in corrupti excepturi voluptatum, quia minus facere maiores natus? Ad fuga molestiae doloremque molestias voluptatem? Repellat.</td>
                                 </tr>
-                            </div>
-                            <div>
+                            </thead>
+                            <!--end::Table Footer-->
+                        </table>
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                            <!--begin::Table head-->
+                            <thead>
+                                <!--begin::Table row-->
+                                <tr class="text-start text-gray-800 fw-bold fs-7 text-uppercase gs-0">
+                                    <th class="min-w-100px w-200px text-center">Ajang Kompetensi dan Kreativitas Siswa</th>
+                                    <th class="min-w-30px w-50px text-center">BB</th>
+                                    <th class="min-w-30px w-50px text-center">MB</th>
+                                    <th class="min-w-30px w-50px text-center">BSH</th>
+                                    <th class="min-w-30px w-50px text-center">SB</th>
+                                </tr>
+                                <!--end::Table row-->
+                            </thead>
+                            <!--end::Table head-->
+                            <!--begin::Table body-->
+                            <tbody class="fw-semibold text-gray-600">
+                                <div>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td class="text-gray-800 text-hover-primary fw-bold px-5">Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td class="text-gray-800 text-hover-primary fw-bold px-5">Berkebhinekaan Global</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                                <div>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td class="text-gray-800 text-hover-primary fw-bold px-5">Bergotong Royong</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-gray-800 px-3">
+                                            <!--begin::Input-->
+                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center table-active">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </tbody>
+                            <!--end::Table body-->
+                        </table>
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                            <!--begin::Table Footer-->
+                            <tfoot>
                                 <tr style="background-color: #f2f2f2;">
-                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Berkebhinekaan Global</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
+                                    <td class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Catatan Proses</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
+                                    <td class="text-gray-800 px-3">
+                                        <!--begin::Input-->
+                                        <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                        <!--end::Input-->
                                     </td>
                                 </tr>
-                            </div>
-                            <div>
-                                <tr style="background-color: #f2f2f2;">
-                                    <td class="text-gray-800 text-hover-primary fw-bold px-5">Bergotong Royong</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                            </tfoot>
+                            <!--end::Table Footer-->
+                        </table>
+                        <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
+                            <h2>Keterangan Tingkat Pencapaian Siswa</h2>
+                            <!--begin::Table head-->
+                            <tfoot>
+                                <!--begin::Table row-->
                                 <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti tempore ipsa quo facilis quisquam temporibus esse, sit doloremque repellendus voluptate aliquid inventore optio tempora consectetur reiciendis, beatae voluptatum mollitia? Doloremque aliquid aspernatur illum vitae, nulla voluptate ea optio soluta quos quibusdam, magnam nemo omnis commodi neque, sint ullam eveniet. Ut.</td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center table-active">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-lg form-check-custom form-check-solid d-flex justify-content-center">
-                                            <input class="form-check-input" type="checkbox" value="1">
-                                        </div>
-                                    </td>
-                                </tr>
-                            </div>
-                        </tbody>
-                        <!--end::Table body-->
-                    </table>
-                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
-                        <!--begin::Table Footer-->
-                        <tfoot>
-                            <tr style="background-color: #f2f2f2;">
-                                <td class="text-gray-800 text-hover-primary fw-bold table-striped px-5">Catatan Proses</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="text-gray-800 px-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis a voluptate minus hic nulla illum voluptatem magnam vel dolores ex ratione sapiente ut omnis optio dicta, qui quod rerum in facere. Totam quae voluptas optio eveniet dicta? Animi, saepe neque necessitatibus, perferendis itaque dignissimos vel, delectus iste mollitia voluptate suscipit ad quae officia accusantium totam doloremque. Praesentium, corporis earum itaque minima amet aspernatur iusto. At totam quaerat eos eius eaque iste ipsa libero cum corporis unde. Molestias explicabo harum accusantium nobis quod rerum veniam in corrupti excepturi voluptatum, quia minus facere maiores natus? Ad fuga molestiae doloremque molestias voluptatem? Repellat.</td>
-                            </tr>
-                        </tfoot>
-                        <!--end::Table Footer-->
-                    </table>
-                    <table class="table align-middle table-row-dashed fs-6 gy-5 table-responsive" style="cursor:context-menu">
-                        <h2>Keterangan Tingkat Pencapaian Siswa</h2>
-                        <!--begin::Table head-->
-                        <tfoot>
-                            <!--begin::Table row-->
-                            <tr>
-                                <th class="min-w-30px w-75px text-center fw-bold">BB</th>
-                                <td class="text-gray-800 text-center">Belum Berkembang</td>
-                                <td class="text-gray-800 text-center">Siswa masih membutuhkan bimbingan dalam mengembangkan kemampuan</td>
+                                    <th class="min-w-30px w-75px text-center fw-bold table-active">BB</th>
+                                    <td class="text-gray-800 text-center">Belum Berkembang</td>
+                                    <td class="text-gray-800 text-center table-active">Siswa masih membutuhkan bimbingan dalam mengembangkan kemampuan</td>
 
 
-                            </tr>
-                            <tr>
-                                <th class="min-w-30px w-75px text-center fw-bold">MB</th>
-                                <td class="text-gray-800 text-center">Mulai Berkembang</td>
-                                <td class="text-gray-800 text-center">Siswa mulai mengembangkan kemampuan namun masih belum konsisten</td>
-                            </tr>
-                            <tr>
-                                <th class="min-w-30px w-75px text-center fw-bold">BSH</th>
-                                <td class="text-gray-800 text-center">Siswa telah mengembangkan kemampuan hingga berada dalam tahap konsisten</td>
-                                <td class="text-gray-800 text-center">Siswa mengembangkan kemampuannya melampaui harapan</td>
-                            </tr>
-                            <tr>
-                                <th class="min-w-30px w-75px text-center fw-bold">SB</th>
-                                <td class="text-gray-800 text-center">Sangat Berkembang</td>
-                                <td class="text-gray-800 text-center">Siswa mengembangkan kemampuannya melampaui harapan</td>
-                            </tr>
-                            <!--end::Table row-->
-                        </tfoot>
-                        <!--end::Table head-->
-                    </table>
-                    <!--end::Table-->
+                                </tr>
+                                <tr>
+                                    <th class="min-w-30px w-75px text-center fw-bold table-active">MB</th>
+                                    <td class="text-gray-800 text-center">Mulai Berkembang</td>
+                                    <td class="text-gray-800 text-center table-active">Siswa mulai mengembangkan kemampuan namun masih belum konsisten</td>
+                                </tr>
+                                <tr>
+                                    <th class="min-w-30px w-75px text-center fw-bold table-active">BSH</th>
+                                    <td class="text-gray-800 text-center">Siswa telah mengembangkan kemampuan hingga berada dalam tahap konsisten</td>
+                                    <td class="text-gray-800 text-center table-active">Siswa mengembangkan kemampuannya melampaui harapan</td>
+                                </tr>
+                                <tr>
+                                    <th class="min-w-30px w-75px text-center fw-bold table-active">SB</th>
+                                    <td class="text-gray-800 text-center">Sangat Berkembang</td>
+                                    <td class="text-gray-800 text-center table-active">Siswa mengembangkan kemampuannya melampaui harapan</td>
+                                </tr>
+                                <!--end::Table row-->
+                            </tfoot>
+                            <!--end::Table head-->
+                        </table>
+                        <!--end::Table-->
+                    </div>
+                    <!--end::Card body-->
                 </div>
-                <!--end::Card body-->
-            </div>
+                <!--begin::Actions-->
+                <div class="text-center pt-5">
+                    <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
+                    <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
+                        <span class="indicator-label">Submit</span>
+                    </button>
+                </div>
+                <!--end::Actions-->
+            </form>
             <!--end::Modal body-->
         </div>
         <!--end::Modal content-->

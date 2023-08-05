@@ -78,7 +78,7 @@
                                 <tbody id="listWaliKelas">
                                     <tr>
                                         <td class="px-5">1.</td>
-                                        <td class="text-center">Ajang Kompetensi dan Kreativitas Siswa</td>
+                                        <td>Ajang Kompetensi dan Kreativitas Siswa</td>
                                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, voluptatum odio mollitia reiciendis delectus exercitationem numquam, ad deserunt repellendus odit, neque eum est dolore expedita esse nihil adipisci eius inventore quibusdam cumque obcaecati nobis ipsam? Similique magni ut est voluptate, veniam ea! Quasi quod molestiae ad, tempora aperiam rem consequuntur!</td>
                                         <td class="text-center">
                                             <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editProjekPancasila">
@@ -120,7 +120,6 @@
     <!--end::Content wrapper-->
 </div>
 <!--end:::Main-->
-
 
 <!--begin::Modal - Tambah Projek Pancasila-->
 <div class="modal fade" id="tambahProjekPancasila" tabindex="-1" aria-hidden="true">

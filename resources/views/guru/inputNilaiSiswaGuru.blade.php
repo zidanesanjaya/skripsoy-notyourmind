@@ -247,7 +247,6 @@
 </div>
 <!--end:::Main-->
 
-
 <!--begin::Modal - Upload File-->
 <div class="modal fade" id="importNilaiAsesmen" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
@@ -333,114 +332,6 @@
 </div>
 <!--end::Modal - Upload File-->
 
-<!--begin::Modal - Nilai Asesmen Guru-->
-<div class="modal fade" id="nilaiAsesmenGuru" tabindex="-1" aria-hidden="true">
-    <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-650px">
-        <!--begin::Modal content-->
-        <div class="modal-content rounded">
-            <!--begin::Modal header-->
-            <div class="modal-header pb-0 border-0 justify-content-end">
-                <!--begin::Close-->
-                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                    <span class="svg-icon svg-icon-1">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                        </svg>
-                    </span>
-                    <!--end::Svg Icon-->
-                </div>
-                <!--end::Close-->
-            </div>
-            <!--begin::Modal header-->
-            <!--begin::Modal body-->
-            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
-                <!--begin:Form-->
-                <form id="nilaiAsesmenGuru_form" class="form">
-                    @csrf
-                    <!--begin::Heading-->
-                    <div class="mb-13 text-center">
-                        <!--begin::Title-->
-                        <h1 class="mb-3">Input Nilai Asesmen</h1>
-                        <!--end::Title-->
-                    </div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="row g-9 mb-8">
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Sumatif</label>
-                            <!--end::Label-->
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Sumatif..." name="sumatif">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                                <span class="required">Ke - </span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" />
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                            <span class="required">E-mail</span>
-                        </label>
-                        <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan E-Mail" name="email" />
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="d-flex flex-column mb-8 fv-row">
-                        <label class="required fs-6 fw-semibold mb-2">Jabatan</label>
-                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="jabatan">
-                            <option value="">Pilih Jabatan...</option>
-                            <option value="Kepala Sekolah">Kepala Sekolah</option>
-                            <option value="Guru">Guru</option>
-                            <option value="Karyawan">Karyawan</option>
-                        </select>
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center">
-                        <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
-                        <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
-                            <span class="indicator-label">Submit</span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                </form>
-                <!--end:Form-->
-            </div>
-            <!--end::Modal body-->
-        </div>
-        <!--end::Modal content-->
-    </div>
-    <!--end::Modal dialog-->
-</div>
-<!--end::Modal - Nilai Asesmen Guru-->
-
 <!--begin::Modal - Kelola Asesmen Guru-->
 <div class="modal fade" id="kelolaAsesmenGuru" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
@@ -501,7 +392,7 @@
                         <div class="col-md-6 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                                <span class="required">Nama Sumatif</span>
+                                <span>Nama Sumatif</span>
                             </label>
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Sumatif" name="namaSumatif" />
@@ -551,5 +442,6 @@
     <!--end::Modal dialog-->
 </div>
 <!--end::Modal - Kelola Asesmen Guru-->
+
 @endsection
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

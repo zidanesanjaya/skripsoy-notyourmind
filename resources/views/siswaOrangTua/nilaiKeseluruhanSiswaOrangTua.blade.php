@@ -98,6 +98,25 @@
                                 <thead>
                                     <!--begin::Table row-->
                                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                        <th class="min-w-150px"></th>
+                                        <th class="min-w-50px text-center">Bab 1</th>
+                                        <th class="min-w-50px text-center">Bab 2</th>
+                                        <th class="min-w-50px text-center">Bab 3</th>
+                                        <th class="min-w-50px text-center">Bab 4</th>
+                                        <th class="min-w-50px text-center">Bab 5</th>
+                                        <th class="min-w-50px text-center">Bab 6</th>
+                                        <th class="min-w-50px text-center">Bab 7</th>
+                                        <th class="min-w-50px text-center">Bab 8</th>
+                                        <th class="min-w-50px text-center">Bab 9</th>
+                                        <th class="min-w-50px text-center">Bab 10</th>
+                                        <th class="min-w-50px w-100px text-center"></th>
+                                        <th class="min-w-50px text-center"></th>
+                                        <th class="min-w-50px text-center"></th>
+                                        <th class="min-w-50px text-center"></th>
+                                    </tr>
+                                    <!--end::Table row-->
+                                    <!--begin::Table row-->
+                                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                         <th class="min-w-150px text-center">Mata Pelajaran</th>
                                         <th class="min-w-50px text-center">Sumatif 1</th>
                                         <th class="min-w-50px text-center">Sumatif 2</th>
@@ -109,10 +128,10 @@
                                         <th class="min-w-50px text-center">Sumatif 8</th>
                                         <th class="min-w-50px text-center">Sumatif 9</th>
                                         <th class="min-w-50px text-center">Sumatif 10</th>
-                                        <th class="min-w-50px w-100px text-center">NA Sumatif Lingkup Materi</th>
+                                        <th class="min-w-50px w-100px text-center text-nowrap">NA Sumatif Lingkup Materi</th>
                                         <th class="min-w-50px text-center">PTS</th>
                                         <th class="min-w-50px text-center">PAS</th>
-                                        <th class="min-w-50px text-center">NA Sumatif Akhir Semester</th>
+                                        <th class="min-w-50px text-center text-nowrap">NA Sumatif Akhir Semester</th>
                                     </tr>
                                     <!--end::Table row-->
                                 </thead>

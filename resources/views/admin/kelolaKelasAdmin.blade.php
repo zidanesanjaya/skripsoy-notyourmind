@@ -198,94 +198,6 @@
                         <!--end::Col-->
                     </div>
                     <!--end::Input group-->
-                    <!--begin::Content-->
-                    <div id="kt_app_content" class="app-content flex-column-fluid">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-xxl">
-                            <!--begin::Tables Widget 11-->
-                            <div class="card">
-                                <!--begin::Header-->
-                                <div class="card-header border-0 pt-5">
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">List Kelas</span>
-                                    </h3>
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Body-->
-                                <div class="card-body">
-                                    <!--begin::Table container-->
-                                    <div class="table-responsive">
-                                        <!--begin::Table-->
-                                        <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
-                                            <thead>
-                                                <tr class="fw-bold text-muted bg-light">
-                                                    <th class="px-5 min-w-20px">No.</th>
-                                                    <th class="px-5 min-w-20px">Kelas</th>
-                                                    <th class="px-5 min-w-20px">Fase</th>
-                                                    <th class="min-w-150px w-50px text-center">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="px-5">1.</td>
-                                                    <td class="px-5">7</td>
-                                                    <td class="px-5">A</td>
-                                                    <td class="text-center">
-                                                        <a href="/deleteTahunAkademik/'+data[i].id+'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                            <span class="svg-icon svg-icon-3">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                </svg>
-                                                            </span><!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">2.</td>
-                                                    <td class="px-5">8</td>
-                                                    <td class="px-5">B</td>
-                                                    <td class="text-center">
-                                                        <a href="/deleteTahunAkademik/'+data[i].id+'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                            <span class="svg-icon svg-icon-3">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                </svg>
-                                                            </span><!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">3.</td>
-                                                    <td class="px-5">9</td>
-                                                    <td class="px-5">C</td>
-                                                    <td class="text-center">
-                                                        <a href="/deleteTahunAkademik/'+data[i].id+'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                            <span class="svg-icon svg-icon-3">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                    <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                </svg>
-                                                            </span><!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!--end::Table-->
-                                    </div>
-                                    <!--end::Table container-->
-                                </div>
-                                <!--begin::Body-->
-                            </div>
-                        </div>
-                        <!--end::Content container-->
-                    </div>
-                    <!--end::Content-->
                     <!--begin::Actions-->
                     <div class="text-center">
                         <button type="reset" id="tambahKelas_cancel" class="btn btn-light me-3">Cancel</button>
@@ -402,7 +314,7 @@
             </div>
             <!--begin::Modal header-->
             <!--begin::Modal body-->
-            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0">
                 <!--begin:Form-->
                 <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
                     @csrf
@@ -413,9 +325,59 @@
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
-                    <div class="card">
+                    <!--begin::Content-->
+                    <div id="kt_app_content" class="app-content flex-column-fluid">
+                        <!--begin::Content container-->
+                        <div id="kt_app_content_container" class="app-container container-xxl">
+                            <!--begin::Tables Widget 11-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">List Mata Pelajaran yang Telah di Pilih</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
+                                            <thead>
+                                                <tr class="fw-bold bg-light">
+                                                    <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
+                                                    <th class="px-5 min-w-50px p-120px text-center">Guru</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="px-5">Pendidikan Agama Islam</td>
+                                                    <td class="px-5">Bapak Puji</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-5">Bahasa Inggris</td>
+                                                    <td class="px-5">Bapak Nosa</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-5">Teknologi Informasi dan Komputer</td>
+                                                    <td class="px-5">Bapak Vatqi</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <!--end::Content container-->
+                    </div>
+                    <!--end::Content-->
+                    <div class="card pb-15">
                         <!--begin::Header-->
-                        <div class="card-header border-0 pt-5">
+                        <div class="card-header border-0">
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bold fs-3 mb-1">Pilih Mata Pelajaran</span>
                             </h3>
@@ -548,56 +510,6 @@
                         </div>
                         <!--end::Table container-->
                     </div>
-                    <!--begin::Content-->
-                    <div id="kt_app_content" class="app-content flex-column-fluid">
-                        <!--begin::Content container-->
-                        <div id="kt_app_content_container" class="app-container container-xxl">
-                            <!--begin::Tables Widget 11-->
-                            <div class="card">
-                                <!--begin::Header-->
-                                <div class="card-header border-0 pt-5">
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">List Mata Pelajaran yang Telah di Pilih</span>
-                                    </h3>
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Body-->
-                                <div class="card-body">
-                                    <!--begin::Table container-->
-                                    <div class="table-responsive">
-                                        <!--begin::Table-->
-                                        <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
-                                            <thead>
-                                                <tr class="fw-bold bg-light">
-                                                    <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
-                                                    <th class="px-5 min-w-50px p-120px text-center">Guru</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="px-5">Pendidikan Agama Islam</td>
-                                                    <td class="px-5">Bapak Puji</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">Bahasa Inggris</td>
-                                                    <td class="px-5">Bapak Nosa</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                                    <td class="px-5">Bapak Vatqi</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!--end::Table-->
-                                    </div>
-                                    <!--end::Table container-->
-                                </div>
-                                <!--begin::Body-->
-                            </div>
-                        </div>
-                        <!--end::Content container-->
-                    </div>
-                    <!--end::Content-->
                     <!--begin::Actions-->
                     <div class="text-center">
                         <button type="reset" id="tambahKelas_cancel" class="btn btn-light me-3">Cancel</button>

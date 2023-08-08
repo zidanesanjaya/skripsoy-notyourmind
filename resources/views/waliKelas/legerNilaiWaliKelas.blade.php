@@ -43,7 +43,7 @@
                     <!--begin::Header-->
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold fs-3 mb-1">Data Nilai Siswa Kelas (kelas & fase)</span>
+                            <span class="card-label fw-bold fs-3 mb-1">Data Nilai Siswa Kelas (tingkat & fase)</span>
                         </h3>
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
@@ -66,7 +66,7 @@
                                         <th class="min-w-100px w-150px text-center ">Nama Siswa</th>
                                         <th class="min-w-50px w-50px text-center">Semester</th>
                                         <th class="min-w-50px w-50px text-center">Tahun Akademik</th>
-                                        <th class="min-w-50px w-50px text-center">Nilai Yang Kosong</th>
+                                        <th class="min-w-50px w-50px text-center">Nilai Yang Kosong/Dibawah KKM</th>
                                         <th class="min-w-50px w-50px text-center text-nowrap">Leger Nilai</th>
                                         <th class="min-w-50px w-50px text-center">Jumlah</th>
                                         <th class="min-w-50px w-50px text-center text-nowrap">Rata - Rata</th>

@@ -57,7 +57,7 @@
                                         </svg>
                                     </span>
                                     <!--end::Svg Icon-->
-                                    Tambah Siswa
+                                    Tambah Data Kelas
                                 </a>
                             </div>
                         </div>
@@ -89,12 +89,12 @@
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Kelas:</label>
+                                    <label class="form-label fw-semibold">Tingkat:</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
                                         <select class="form-select form-select-solid">
-                                            <option value="">Pilih Kelas...</option>
+                                            <option value="">Pilih Tingkat...</option>
                                             <option value="7">7</option>
                                             <option value="8">8</option>
                                             <option value="9">9</option>
@@ -108,12 +108,12 @@
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Fase:</label>
+                                    <label class="form-label fw-semibold">Kelas:</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
                                         <select class="form-select form-select-solid">
-                                            <option value="">Pilih Fase...</option>
+                                            <option value="">Pilih Kelas...</option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -142,6 +142,8 @@
                                         <th class="px-5 min-w-20px w-20px">No.</th>
                                         <th class="ps-4 min-w-20px w-20px">NIS</th>
                                         <th class="min-w-50px w-100px rounded-start">NISN</th>
+                                        <th class="ps-4 min-w-20px w-20px">Tingkat</th>
+                                        <th class="ps-4 min-w-20px w-20px">Kelas</th>
                                         <th class="min-w-100px w-150px">Nama Siswa</th>
                                         <th class="min-w-150px w-50px text-center">Aksi</th>
                                     </tr>
@@ -151,6 +153,8 @@
                                         <td class="px-5">1.</td>
                                         <td class="px-5">9925</td>
                                         <td>2104295256</td>
+                                        <td class="px-5">7</td>
+                                        <td class="px-5">C</td>
                                         <td>Aisyah Fatin Sholikah</td>
                                         <td class="text-center">
                                             <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
@@ -214,26 +218,11 @@
                     <!--begin::Heading-->
                     <div class="text-center">
                         <!--begin::Title-->
-                        <h1>Tambah Data Siswa</h1>
+                        <h1>Tambah Data Kelas yang Diajarkan</h1>
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
                     <div class="row d-flex justify-content-center">
-                        <div class="col-sm-12">
-                            <!-- begin::search -->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                                <span class="svg-icon svg-icon-1 position-absolute ms-4">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor"></rect>
-                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor"></path>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                                <input id="cariSiswaGuru" type="text" class="form-control form-control-solid w-250px ps-14" placeholder="Cari Siswa">
-                            </div>
-                            <!-- end::search -->
-                        </div>
                         <div class="col-sm-6">
                             <!--begin::Actions-->
                             <div class="d-flex justify-content-end py-5">
@@ -265,18 +254,29 @@
                         <thead>
                             <tr class="fw-bold text-muted bg-light">
                                 <th class="px-5 min-w-20px">No.</th>
-                                <th class="ps-4 min-w-20px">NIS</th>
-                                <th class="min-w-50px w-100px rounded-start">NISN</th>
-                                <th class="min-w-100px w-150px">Nama Siswa</th>
+                                <th class="ps-4 min-w-20px">Tingkat</th>
+                                <th class="ps-4 min-w-20px">Kelas</th>
+                                <th class="min-w-100px w-150px">Wali Kelas</th>
                                 <th class="min-w-50px w-50px text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="listSiswa">
                             <tr>
                                 <td class="px-5">1.</td>
-                                <td class="px-5">9925</td>
-                                <td>2104295256</td>
-                                <td>Aisyah Fatin Sholikah</td>
+                                <td class="px-5">7</td>
+                                <td class="px-5">C</td>
+                                <td>Bapak Nosa</td>
+                                <td class="text-center d-flex justify-content-center align-items-center">
+                                    <div class="form-check form-check-lg form-check-custom form-check-solid">
+                                        <input class="form-check-input" type="checkbox" value="1">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-5">2.</td>
+                                <td class="px-5">8</td>
+                                <td class="px-5">D</td>
+                                <td>Bapak Puji</td>
                                 <td class="text-center d-flex justify-content-center align-items-center">
                                     <div class="form-check form-check-lg form-check-custom form-check-solid">
                                         <input class="form-check-input" type="checkbox" value="1">

@@ -70,8 +70,8 @@
                                     <tr class="fw-bold text-muted bg-light">
                                         <th class="min-w-20px w-20px px-5">No.</th>
                                         <!-- <th class="ps-4 min-w-150px w-300px rounded-start">Nama</th> -->
+                                        <th class="min-w-20px w-50px text-center">Tingkat</th>
                                         <th class="min-w-20px w-50px text-center">Kelas</th>
-                                        <th class="min-w-20px w-50px text-center">Fase</th>
                                         <th class="min-w-75px w-150px text-center">Wali Kelas</th>
                                         <th class="min-w-30px w-50px text-center">Kelola</th>
                                         <th class="min-w-100px w-50px text-center">Aksi</th>
@@ -126,7 +126,6 @@
 </div>
 <!--end:::Main-->
 
-
 <!--begin::Modal - Tambah Data Kelas-->
 <div class="modal fade" id="tambahKelas" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
@@ -151,24 +150,31 @@
             <!--begin::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <!--begin::Heading-->
+                <div class="mb-13 text-center">
+                    <!--begin::Title-->
+                    <h1 class="mb-3">Tambah Kelas</h1>
+                    <!--end::Title-->
+                </div>
+                <!--end::Heading-->
+                <div class="row g-9 mb-8">
+                    <div class="col-sm-6 fv-row">
+                        <button class="btn btn-danger" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#hapusDataSiswaKelas">
+                            <span class="indicator-label">Hapus Data Siswa Kelas</span>
+                        </button>
+                    </div>
+                </div>
                 <!--begin:Form-->
                 <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
                     @csrf
-                    <!--begin::Heading-->
-                    <div class="mb-13 text-center">
-                        <!--begin::Title-->
-                        <h1 class="mb-3">Tambah Kelas</h1>
-                        <!--end::Title-->
-                    </div>
-                    <!--end::Heading-->
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Kelas</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas" name="kelas">
-                                <option value="">Pilih Kelas...</option>
+                            <label class="required fs-6 fw-semibold mb-2">Tingkat</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tingkat" name="kelas">
+                                <option value="">Pilih Tingkat...</option>
                                 <option value="7">7</option>
                                 <option value="8">8</option>
                                 <option value="9">9</option>
@@ -179,9 +185,9 @@
                         <!--begin::Col-->
                         <div class="col-md-6 fv-row">
                             <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Fase</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Fase..." name="kelas">
-                                <option value="">Pilih Fase...</option>
+                            <label class="required fs-6 fw-semibold mb-2">Kelas</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas..." name="kelas">
+                                <option value="">Pilih Kelas...</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
@@ -200,11 +206,9 @@
                     <!--end::Input group-->
                     <!--begin::Actions-->
                     <div class="text-center">
-                        <button type="reset" id="tambahKelas_cancel" class="btn btn-light me-3">Cancel</button>
+                        <button type="reset" id="tambahKelas_cancel" class="btn btn-light me-3">Batal</button>
                         <button type="submit" id="tambahKelas_submit" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
-                            <span class="indicator-progress">Please wait...
-                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
                     </div>
                     <!--end::Actions-->
@@ -218,6 +222,63 @@
     <!--end::Modal dialog-->
 </div>
 <!--end::Modal - Tambah Data Kelas-->
+
+<!--begin::Modal - Hapus Data Siswa Kelas-->
+<div class="modal fade" id="hapusDataSiswaKelas" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content rounded">
+            <!--begin::Modal header-->
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--begin::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                <!--begin::Heading-->
+                <h1 class="text-warning fw-bold fs-1 mb-5 text-center">WARNING!!!</h1>
+                <h3 class="text-dark fw-bold fs-3 mb-5">Menghapus Data Siswa Kelas Akan Menghapus Semua Data Siswa Pada Masing - Masing Kelas</h3>
+                <!--end::Heading-->
+                <!--begin::Notice-->
+                <div class="text-muted fw-semibold mb-10">Kalau Yakin, Ketik "Saya Yakin Menghapus Data Siswa Kelas"</div>
+                <!--end::Notice-->
+                <!--begin::Form-->
+                <form class="form" action="#">
+                    <!--begin::Input group-->
+                    <div class="mb-10 fv-row">
+                        <input type="text" class="form-control form-control-lg form-control-solid" required />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Actions-->
+                    <div class="d-flex flex-center">
+                        <button type="reset" class="btn btn-light me-3" data-bs-toggle="modal" data-bs-target="#tambahKelas">Batal</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="indicator-label">Yakin</span>
+                        </button>
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+<!--end::Modal - Hapus Data Siswa Kelas-->
 
 <!--begin::Modal - Kelola Wali Kelas-->
 <div class="modal fade" id="tambahWaliKelas" tabindex="-1" aria-hidden="true">
@@ -258,9 +319,9 @@
                         <!--begin::Col-->
                         <div class="col-md-12 fv-row">
                             <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Guru</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas" name="kelas">
-                                <option value="">Pilih Guru...</option>
+                            <label class="required fs-6 fw-semibold mb-2">Wali Kelas</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Wali Kelas" name="kelas">
+                                <option value="">Pilih Wali Kelas...</option>
                                 <option value="Bapak Nosa">Bapak Nosa</option>
                                 <option value="Bapak Vatqi">Bapak Vatqi</option>
                                 <option value="Bapak Buji">Bapak Buji</option>

@@ -61,9 +61,9 @@
                                     <div>
                                         <select class="form-select form-select-solid">
                                             <option value="">Pilih Kelas</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
+                                            <option value="7C">7C</option>
+                                            <option value="8D">8D</option>
+                                            <option value="9E">9E</option>
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -77,8 +77,8 @@
                                     <div>
                                         <select class="form-select form-select-solid">
                                             <option value="">Pilih Semester</option>
-                                            <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
-                                            <option value="Bahasa Arab">Bahasa Arab</option>
+                                            <option value="Ganjil">Ganjil</option>
+                                            <option value="Genap">Genap</option>
                                         </select>
                                     </div>
                                     <!--end::Input-->

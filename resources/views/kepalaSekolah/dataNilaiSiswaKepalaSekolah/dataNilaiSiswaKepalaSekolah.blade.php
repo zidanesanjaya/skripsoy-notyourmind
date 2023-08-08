@@ -75,15 +75,15 @@
 										<div class="row">
 											<div class="col-3">
 												<!--begin::Label-->
-												<label class="form-label fw-semibold py-4">Kelas:</label>
+												<label class="form-label fw-semibold py-4">Tingkat:</label>
 												<!--end::Label-->
 											</div>
 											<div class="col-9">
 												<!--begin::Input-->
 												<div>
-													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Kelas" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
+													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Tingkat" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
 														<option value=""></option>
-														<option value="Semua Kelas">Semua Kelas</option>
+														<option value="Semua Kelas">Semua Tingkat</option>
 														<option value="7">7</option>
 														<option value="8">8</option>
 														<option value="9">9</option>
@@ -99,15 +99,15 @@
 										<div class="row">
 											<div class="col-3">
 												<!--begin::Label-->
-												<label class="form-label fw-semibold py-4">Fase:</label>
+												<label class="form-label fw-semibold py-4">Kelas:</label>
 												<!--end::Label-->
 											</div>
 											<div class="col-9">
 												<!--begin::Input-->
 												<div>
-													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Fase" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
+													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Kelas" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
 														<option value=""></option>
-														<option value="All">All</option>
+														<option value="Semua Kelas">Semua Kelas</option>
 														<option value="A">A</option>
 														<option value="B">B</option>
 														<option value="C">C</option>
@@ -134,7 +134,7 @@
 												<div>
 													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Semester" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
 														<option value=""></option>
-														<option value="All">All</option>
+														<option value="Semua Semester">All</option>
 														<option value="Ganjil">Ganjil</option>
 														<option value="Genap">Genap</option>
 													</select>
@@ -157,7 +157,7 @@
 												<div>
 													<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih Tahun Akademik" data-dropdown-parent="#kt_menu_633e6e070bf4a" data-allow-clear="true">
 														<option value=""></option>
-														<option value="All">All</option>
+														<option value="Semua Tahun Akademik">Semua Tahun Akademik</option>
 														<option value="2022/2023">2022/2023</option>
 														<option value="2023/2024">2023/2024</option>
 														<option value="2024/2025">2024/2025</option>
@@ -170,7 +170,7 @@
 									<!--end::Input group-->
 									<!--begin::Actions-->
 									<div class="d-flex justify-content-end">
-										<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
+										<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Terapkan</button>
 									</div>
 									<!--end::Actions-->
 								</div>
@@ -193,8 +193,8 @@
 										<th class="ps-4 min-w-20px text-center text-nowrap">NIS</th>
 										<th class="min-w-50px w-100px rounded-start text-center text-nowrap">NISN</th>
 										<th class="min-w-100px w-200px text-center text-nowrap">Nama Siswa</th>
+										<th class="min-w-50px text-center text-nowrap">Tingkat</th>
 										<th class="min-w-50px text-center text-nowrap">Kelas</th>
-										<th class="min-w-50px text-center text-nowrap">Fase</th>
 										<th class="min-w-50px text-center text-nowrap">Semester</th>
 										<th class="min-w-70px text-center text-nowrap">Tahun Akademik</th>
 										<th class="min-w-150px w-50px text-center text-nowrap">Nilai</th>

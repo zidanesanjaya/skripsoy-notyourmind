@@ -55,15 +55,17 @@
                             <table id="dataanggota" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
                                 <thead>
                                     <tr class="fw-bold text-muted bg-light">
-                                        <th class="px-5 min-w-20px">No.</th>
-                                        <th class="ps-4 min-w-150px w-300px rounded-start">Nama Guru</th>
-                                        <th class="min-w-20px">Email</th>
-                                        <th class="min-w-70px">Mata Pelajaran</th>
+                                        <th class="px-5 min-w-20px w-20px text-center">No.</th>
+                                        <th class="min-w-20px w-50px text-center">NBM</th>
+                                        <th class="ps-4 min-w-75px w-100px rounded-start text-center">Nama Guru</th>
+                                        <th class="min-w-20px w-50px text-center">Email</th>
+                                        <th class="min-w-70px w-100px text-center">Mata Pelajaran</th>
                                     </tr>
                                 </thead>
                                 <tbody id="listAnggota">
                                     <tr>
                                         <td class="px-5">1. </td>
+                                        <td class="px-5">1222.086</td>
                                         <td class="px-5">Bapak Nosa</td>
                                         <td>nosa@example.com</td>
                                         <td>Bahasa Inggris</td>

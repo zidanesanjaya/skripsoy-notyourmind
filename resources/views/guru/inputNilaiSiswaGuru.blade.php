@@ -24,7 +24,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Data Siswa (mata pelajaran)</li>
+                        <li class="breadcrumb-item text-muted">Input Nilai Siswa</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -45,7 +45,7 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Input Nilai Siswa</span>
                             </h3>
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar">
@@ -113,12 +113,12 @@
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Kelas:</label>
+                                    <label class="form-label fw-semibold">Tingkat:</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
                                         <select class="form-select form-select-solid">
-                                            <option value="">Pilih Kelas...</option>
+                                            <option value="">Pilih Tingkat...</option>
                                             <option value="7">7</option>
                                             <option value="8">8</option>
                                             <option value="9">9</option>
@@ -132,12 +132,12 @@
                             <div class="card-header border-0 pt-5 w-20">
                                 <div class="mb-10">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-semibold">Fase:</label>
+                                    <label class="form-label fw-semibold">Kelas:</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
                                         <select class="form-select form-select-solid">
-                                            <option value="">Pilih Fase...</option>
+                                            <option value="">Pilih Kelas...</option>
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -226,8 +226,28 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!</td>
+                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!
+                                            <!--begin::Input-->
+                                            <div>
+                                                <select class="form-select form-select-solid">
+                                                    <option value="">Pilih Deskripsi Tertinggi...</option>
+                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
+                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input-->
+                                        </td>
+                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!
+                                            <!--begin::Input-->
+                                            <div>
+                                                <select class="form-select form-select-solid">
+                                                    <option value="">Pilih Deskripsi Terendah...</option>
+                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
+                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input-->
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -119,6 +119,10 @@
 									<td id="row2">: Ganjil</td>
 								</tr>
 								<tr>
+									<td id="row1" class="text-gray-800 fw-bold text-nowrap">Fase</td>
+									<td id="row2">: D</td>
+								</tr>
+								<tr>
 									<td id="row1" class="text-gray-800 fw-bold text-nowrap">Tahun Pelajaran</td>
 									<td id="row2">: 2023/2024</td>
 								</tr>
@@ -213,7 +217,7 @@
 							<label class="fs-6 fw-semibold mb-2">Alamat Sekolah</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="" name="alamatSekolah" value="Jl. Brigjen Slamet Riadi No. 134 Oro - Oro Dowo Malang" disabled />
+							<input type="text" class="form-control form-control-solid" placeholder="" name="alamatSekolah" value="" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
@@ -305,13 +309,23 @@
 						<!--end::Input group-->
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
+							<!--begin::Label-->
+							<label class="fs-6 fw-semibold mb-2">NBM</label>
+							<!--end::Label-->
+							<!--begin::Input-->
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" value="" />
+							<!--end::Input-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="fv-row mb-7">
 							<div class="row">
 								<div class="col-sm-4">
 									<!--begin::Label-->
-									<label class="fs-6 fw-semibold mb-2">NBM</label>
+									<label class="fs-6 fw-semibold mb-2">Fase</label>
 									<!--end::Label-->
 									<!--begin::Input-->
-									<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" value="1222.086" />
+									<input type="text" class="form-control form-control-solid" placeholder="Masukkan Fase" name="fase" value="" />
 									<!--end::Input-->
 								</div>
 								<div class="col-sm-4">

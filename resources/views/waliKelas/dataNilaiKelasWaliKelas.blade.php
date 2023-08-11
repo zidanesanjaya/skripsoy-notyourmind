@@ -48,7 +48,7 @@
                         <!--begin::Card toolbar-->
                         <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                             <!--begin::Add product-->
-                            <a class="btn btn-info">Unduh Semua Rapor</a>
+                            <a href="{{ url('/raporDownloadAll') }}" target="_blank" class="btn btn-info">Unduh Semua Rapor</a>
                             <!--end::Add product-->
                         </div>
                         <!--end::Card toolbar-->
@@ -106,7 +106,7 @@
                                                     <!--end::Switch-->
                                                 </div>
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#">Unduh</a>
+                                                    <a href="{{ url('/rapor') }}" target="_blank" class="btn btn-sm fw-bold btn-info w-100">Unduh</a>
                                                 </div>
                                             </div>
                                         </td>

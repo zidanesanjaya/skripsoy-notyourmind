@@ -104,6 +104,12 @@ Route::get('/dataSiswaWaliKelas', function () {
 Route::get('/dataNilaiKelasWaliKelas', function () {
     return view('waliKelas/dataNilaiKelasWaliKelas');
 });
+Route::get('/rapor', function () {
+    return view('rapor/rapor');
+});
+Route::get('/raporDownloadAll', function () {
+    return view('rapor/raporDownloadAll');
+});
 Route::get('/legerNilaiWaliKelas', function () {
     return view('waliKelas/legerNilaiWaliKelas');
 });

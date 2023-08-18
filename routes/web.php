@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnggotaControllers;
 use App\Http\Controllers\tahunAkademikControllers;
+use App\Http\Controllers\KaryawanControllers;
 use App\Models\Anggota;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('karyawan', KaryawanControllers::class);
+
 
 Route::get('/', function () {
     return view('index');

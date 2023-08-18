@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\DetailKaryawan;
+use Illuminate\Support\Facades\DB;
 
-class MataPelajaranControllers extends Controller
+
+class KaryawanControllers extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +18,15 @@ class MataPelajaranControllers extends Controller
      */
     public function index()
     {
-        //
+        $results = DB::select("
+            SELECT u.id, u.username, u.email, u.role, dk.nama_lengkap
+            FROM users as u
+            LEFT JOIN detail_karyawan as dk ON u.id = dk.id_user
+        ");
+
+        // echo json_encode($results);
+
+        return view('admin.masterKepalaSekolahdanGuru' , ['results'=>$results]);
     }
 
     /**
@@ -34,7 +47,20 @@ class MataPelajaranControllers extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            'username' => $request->nbm,
+            'role' => $request->role,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        DetailKaryawan::create([
+            'id_user' => $user->id,
+            'nama_lengkap' => $request->nama_lengkap,
+            'jabatan' => $request->role
+        ]);
+
+        return back()->with('success','Data Karyawan Telah Ditambahkan');
     }
 
     /**

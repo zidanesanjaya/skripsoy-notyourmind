@@ -733,89 +733,89 @@
     <div class="modal-dialog modal-dialog-centered mw-1000px">
         <!--begin::Modal content-->
         <div class="modal-content">
-            <!--begin::Modal body-->
-            <form action="#">
-                <div id="kt_app_content_container" class="app-container container-xxl">
-                    <!--begin::Products-->
-                    <div class="card card-flush">
-                        <!--begin::Modal header-->
-                        <div class="modal-header">
-                            <!--begin::Modal title-->
-                            <h2>Nilai Penguatan Profil Pelajar Pancasila</h2>
-                            <!--end::Modal title-->
-                            <!--begin::Close-->
-                            <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                                <span class="svg-icon svg-icon-1">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                                        <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </div>
-                            <!--end::Close-->
+            <div id="kt_app_content_container" class="app-container container-xxl">
+                <!--begin::Products-->
+                <div class="card card-flush">
+                    <!--begin::Modal header-->
+                    <div class="modal-header">
+                        <!--begin::Modal title-->
+                        <h2>Nilai Penguatan Profil Pelajar Pancasila</h2>
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
                         </div>
-                        <!--end::Modal header-->
-                        <!--begin::Card header-->
-                        <div class="card-header d-flex align-items-center">
-                            <div class="table-responsive pt-3">
-                                <table>
-                                    <tbody class="text-nowrap">
-                                        <tr>
-                                            <td>Nama Peserta Didik</td>
-                                            <td class="px-5">: Aisyah Fatin Sholikah</td>
-                                            <td class="px-15">Kelas</td>
-                                            <td>: 7</td>
-                                        </tr>
-                                        <tr>
-                                            <td>NISN</td>
-                                            <td class="px-5">: 2104295256</td>
-                                            <td class="px-15">Fase</td>
-                                            <td>: D</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sekolah</td>
-                                            <td class="px-5">: SMP Muhammadiyah 1 Malang</td>
-                                            <td class="px-15">Semester</td>
-                                            <td>: Ganjil</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alamat</td>
-                                            <td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
-                                            <td class="px-15">Tahun Pelajaran</td>
-                                            <td>: 2022/2023</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="row m-1">
-                                <div class="col-sm-6">
-                                    <!--begin::Input-->
-                                    <div class="py-5">
-                                        <select class="form-select form-select-solid">
-                                            <option>Pilih Lihat Projek</option>
-                                            <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
-                                            <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
-                                            <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                                <div class="col-sm-6">
-                                    <!--begin::Card toolbar-->
-                                    <div class="card-toolbar flex-row-fluid justify-content-end py-3">
-                                        <!--begin::Add product-->
-                                        <button class="btn btn-info">Unduh Rapor Projek Penguatan Profil Pelajar Pancasila</button>
-                                        <!--end::Add product-->
-                                    </div>
-                                    <!--end::Card toolbar-->
-                                </div>
-                            </div>
-                        </div>
-                        <!--end::Card header-->
+                        <!--end::Close-->
                     </div>
-                    <!--end::Products-->
+                    <!--end::Modal header-->
+                    <!--begin::Card header-->
+                    <div class="card-header d-flex align-items-center">
+                        <div class="table-responsive pt-3">
+                            <table>
+                                <tbody class="text-nowrap">
+                                    <tr>
+                                        <td>Nama Peserta Didik</td>
+                                        <td class="px-5">: Aisyah Fatin Sholikah</td>
+                                        <td class="px-15">Kelas</td>
+                                        <td>: 7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NISN</td>
+                                        <td class="px-5">: 2104295256</td>
+                                        <td class="px-15">Fase</td>
+                                        <td>: D</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sekolah</td>
+                                        <td class="px-5">: SMP Muhammadiyah 1 Malang</td>
+                                        <td class="px-15">Semester</td>
+                                        <td>: Ganjil</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td class="px-5">: JL. Brigjen Slamet Riadi 134 Malang</td>
+                                        <td class="px-15">Tahun Pelajaran</td>
+                                        <td>: 2022/2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row m-1">
+                            <div class="col-sm-6">
+                                <!--begin::Input-->
+                                <div class="py-5">
+                                    <select class="form-select form-select-solid">
+                                        <option>Pilih Lihat Projek</option>
+                                        <option value="Ajang Kompetisi dan Kreativitas Siswa">Ajang Kompetisi dan Kreativitas Siswa</option>
+                                        <option value="Serba Serbi Malangku">Serba Serbi Malangku</option>
+                                        <option value="Sampahku Masa Depanku">Sampahku Masa Depanku</option>
+                                    </select>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <div class="col-sm-6">
+                                <!--begin::Card toolbar-->
+                                <div class="card-toolbar flex-row-fluid justify-content-end py-3">
+                                    <!--begin::Add product-->
+                                    <a target="_blank" href="{{ url('/raporPancasila') }}"><button class="btn btn-info">Unduh Rapor Projek Penguatan Profil Pelajar Pancasila</button></a>
+                                    <!--end::Add product-->
+                                </div>
+                                <!--end::Card toolbar-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Card header-->
+                </div>
+                <!--end::Products-->
+                <!--begin::Modal body-->
+                <form action="#">
                     <!--begin::Card body-->
                     <div class="card-body pt-0" style="overflow-x:auto; border-collapse: collapse;">
                         <!--begin::Table-->
@@ -860,7 +860,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -887,7 +887,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -922,7 +922,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -949,7 +949,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -984,7 +984,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -1011,7 +1011,7 @@
                                     <tr>
                                         <td class="text-gray-800 px-3">
                                             <!--begin::Input-->
-                                            <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                            <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Deskripsi Nilai Siswa"></textarea>
                                             <!--end::Input-->
                                         </td>
                                         <td class="text-center table-active">
@@ -1048,7 +1048,7 @@
                                 <tr>
                                     <td class="text-gray-800 px-3">
                                         <!--begin::Input-->
-                                        <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                                        <textarea name="textarea_input" class="form-control form-control-solid" placeholder="Isi Catatan Proses"></textarea>
                                         <!--end::Input-->
                                     </td>
                                 </tr>
@@ -1089,15 +1089,15 @@
                         <!--end::Table-->
                     </div>
                     <!--end::Card body-->
-                </div>
-                <!--begin::Actions-->
-                <div class="text-center pt-5">
-                    <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
-                    <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
-                        <span class="indicator-label">Submit</span>
-                    </button>
-                </div>
-                <!--end::Actions-->
+            </div>
+            <!--begin::Actions-->
+            <div class="text-center pt-5">
+                <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
+                <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
+                    <span class="indicator-label">Submit</span>
+                </button>
+            </div>
+            <!--end::Actions-->
             </form>
             <!--end::Modal body-->
         </div>

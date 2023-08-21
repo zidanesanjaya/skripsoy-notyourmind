@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div style="margin: auto;">
+  <div>
     <table style="border-collapse: collapse; margin-left: 157.67pt" cellspacing="0">
       <tr style="height: 9pt">
         <td style="width: 102pt">

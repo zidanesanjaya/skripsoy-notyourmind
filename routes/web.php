@@ -108,8 +108,8 @@ Route::get('/dataSiswaWaliKelas', function () {
 Route::get('/dataNilaiKelasWaliKelas', function () {
     return view('waliKelas/dataNilaiKelasWaliKelas');
 });
-Route::get('/rapor', function () {
-    return view('rapor/rapor');
+Route::get('/raporPancasila', function () {
+    return view('rapor/pancasila');
 });
 Route::get('/raporDownloadAll', function () {
     return view('rapor/raporDownloadAll');

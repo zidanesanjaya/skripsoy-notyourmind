@@ -145,6 +145,9 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end::Submit button-->
                         </form>
                         <!--end::Form-->
+                        <div class="text-gray-500 text-end fw-semibold fs-6 pt-lg-20">Login Sebagai
+                            <a href="{{ url('/loginkepalasekolahdanguru') }}" class="link-primary">Guru</a>
+                        </div>
                     </div>
                     <!--end::Content-->
                 </div>

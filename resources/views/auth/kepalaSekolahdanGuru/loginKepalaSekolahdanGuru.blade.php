@@ -114,13 +114,25 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Title-->
 							</div>
 							<!--begin::Heading-->
+							<!--begin::Input group-->
+							<div class="fv-row mb-8">
+								<!--begin::Select2-->
+								<select class="form-select mb-2" name="tax" data-control="select2" data-hide-search="true" data-placeholder="Log In Sebagai">
+									<option></option>
+									<option value="Kepala Sekolah">Kepala Sekolah</option>
+									<option value="Guru">Guru</option>
+								</select>
+								<!--end::Select2-->
+							</div>
+							<!--end::Input group-->
 							<!--begin::Input group=-->
 							<div class="fv-row mb-8">
-								<!--begin::Email-->
-								<input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
-								<!--end::Email-->
+								<!--begin::Username-->
+								<input type="text" placeholder="Username" name="username" autocomplete="off" class="form-control bg-transparent" />
+								<!--end::Username-->
 							</div>
 							<!--end::Input group=-->
+							<!--begin::Input group=-->
 							<div class="fv-row mb-3">
 								<!--begin::Password-->
 								<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent" />

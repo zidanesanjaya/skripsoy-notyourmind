@@ -8,7 +8,7 @@
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
-  <div style="border-style: solid; width: 487.5pt;">
+  <div style="border-style: solid; width: 487.5pt; background-image: url('/images/logohead.png'); background-repeat: no-repeat; background-size: cover;">
     <table style="border-collapse: collapse; margin-left: 70pt" cellspacing="0">
       <tr style="height: 50pt;">
         <td style="width: 70pt;">

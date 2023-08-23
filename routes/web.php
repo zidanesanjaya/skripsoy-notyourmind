@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnggotaControllers;
 use App\Http\Controllers\tahunAkademikControllers;
 use App\Http\Controllers\KaryawanControllers;
+use App\Http\Controllers\MataPelajaranControllers;
 use App\Models\Anggota;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('karyawan', KaryawanControllers::class);
-
+Route::resource('mapel', MataPelajaranControllers::class);
+Route::post('/store_tahun_akademik',[MataPelajaranControllers::class,'store_tahun_akademik'])->name('store.tahun_akademik');
+Route::get('/tahun_akademik/index',[MataPelajaranControllers::class,'index_tahun_akademik'])->name('index.tahun_akademik');
+Route::get('/tahun_akademik/destroy/{id}',[MataPelajaranControllers::class,'destroy_tahun_akademik'])->name('destroy.tahun_akademik');
+Route::get('/mata_pelajaran/destroy/{id}',[MataPelajaranControllers::class,'destroy_mapel'])->name('destroy.mapel');
 
 Route::get('/', function () {
     return view('index');

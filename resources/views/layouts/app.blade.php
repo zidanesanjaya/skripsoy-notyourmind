@@ -39,6 +39,19 @@ License: For each use you must have a valid license purchased only from above li
                         @yield('content')
 					<!--end:::Main-->
                     <!--Begin:::Footer-->
+					@if (\Session::has('success'))
+						<!-- Success Alert -->
+						<div id="success-alert" class="alert alert-success alert-dismissible fade show">
+							{{ session('success') }}
+							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+						</div>
+					@elseif (\Session::has('danger'))
+						<!-- Error Alert -->
+						<div id="error-alert" class="alert alert-danger alert-dismissible fade show">
+							{{ session('danger') }}
+							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+						</div>
+					@endif
                         @include('layouts.footer')
                     <!--end:::Footer-->
 				</div>
@@ -63,5 +76,13 @@ License: For each use you must have a valid license purchased only from above li
 			@include('layouts.js')
 		<!--end::Javascript-->
 	</body>
+
+	<script>
+		// Menghilangkan notifikasi setelah beberapa waktu
+		setTimeout(function() {
+			document.getElementById('success-alert')?.remove();
+			document.getElementById('error-alert')?.remove();
+		}, 3000);
+	</script>
 	<!--end::Body-->
 </html>

@@ -166,7 +166,7 @@
       </tr>
     </table>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
@@ -321,7 +321,7 @@
       </tr>
     </table>
 
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
@@ -476,7 +476,7 @@
       </tr>
     </table>
 
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
@@ -691,58 +691,113 @@
 
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           Mengetahui,
         </td>
-        <td style="border-style: solid; text-align: center; width: 120pt;">
+        <td style="text-align: center; width: 120pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           Malang, 23 Juni 2023
         </td>
       </tr>
       <tr>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           Orang Tua
         </td>
-        <td style="border-style: solid; text-align: center; width: 120pt;">
+        <td style="text-align: center; width: 120pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           Wali Kelas
         </td>
       </tr>
-      <tr style="height: 90pt;">
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+      <tr style="height: 80pt;">
+        <td style="text-align: center; width: 100pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 120pt;">
+        <td style="text-align: center; width: 120pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           
         </td>
       </tr>
       <tr>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           _________________
         </td>
-        <td style="border-style: solid; text-align: center; width: 120pt;">
+        <td style="text-align: center; width: 120pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 100pt; text-decoration: underline;">
+        <td style="text-align: center; width: 100pt; text-decoration: underline;">
           Artari Febrianti, S.Pd
         </td>
       </tr>
-      <tr>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+      <tr style="height: 20pt;">
+        <td style="text-align: center; width: 100pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 120pt;">
+        <td style="text-align: center; width: 120pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center; width: 100pt;">
+        <td style="text-align: center; width: 100pt;">
           NBM. 1344.195
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="text-align: center; width: 120pt;">
+          Mengetahui,
+        </td>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="text-align: center; width: 120pt;">
+          Kepala Sekolah
+        </td>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+      </tr>
+      <tr style="height: 80pt;">
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="text-align: center; width: 120pt;">
+          
+        </td>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="text-align: center; width: 120pt; text-decoration: underline;">
+          Yanur Setyaningrum, M.Pd
+        </td>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="text-align: center; width: 120pt;">
+          NBM. 1222.086
+        </td>
+        <td style="text-align: center; width: 100pt;">
+          
         </td>
       </tr>
     </table>

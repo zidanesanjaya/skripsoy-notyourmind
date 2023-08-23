@@ -23,25 +23,25 @@
 </head>
 
 <body style="font-family: Arial, Helvetica, sans-serif;">
-  <div style="width: 487.5pt; background-image: url(''); background-repeat: no-repeat; background-size: cover; opacity: 1; position: absolute;">
+  <div style="width: 514.5pt;">
     <img class="bgCover" src="/images/logohead.png" alt="">
-    <table style="border-collapse: collapse; margin-left: 70pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 80pt;" cellspacing="0">
       <tr style="height: 50pt; width: 200pt;">
-        <td style="width: 70pt; border-style: solid;">
+        <td style="width: 70pt;">
           <img src="/images/logohead.png" alt="" style="width: height; height: 65px;">
         </td>
-        <td style="width: 120%; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-align: center; border-style: solid;">
+        <td style="width: 100%; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-align: center;">
           RAPOR PROJEK<br> PENGUATAN PROFIL PELAJAR PANCASILA
         </td>
-        <td style="width: 60pt; text-align: end; border-style: solid;">
-          <img src="/images/stiker.png" alt="" style="width: height; height: 65px;">
+        <td style="width: 60pt; text-align: end;">
+          <img src="/images/stiker.png" alt="" style="width: height; height: 50px;">
         </td>
       </tr>
     </table>
 
     <br><br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt;" cellspacing="0">
       <tr>
         <td style="width: 100pt;">
           Nama Sekolah
@@ -123,7 +123,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
           PROYEK 1: Ajang Kompetensi dan Kreativitas Siswa
@@ -138,7 +138,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
           PROYEK 2: Serba Serbi Malangku
@@ -153,7 +153,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
           PROYEK 3: Sampahku Masa Depanku
@@ -169,7 +169,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
           Ajang Kompetensi dan Kreativitas Siswa
@@ -308,7 +308,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
         <td style="height: 20pt; font-weight: bold; vertical-align: text-top;">
           Catatan Proses
@@ -324,7 +324,7 @@
     <br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
           Ajang Kompetensi dan Kreativitas Siswa
@@ -463,7 +463,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
         <td style="height: 20pt; font-weight: bold; vertical-align: text-top;">
           Catatan Proses
@@ -479,7 +479,7 @@
     <br><br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
           Ajang Kompetensi dan Kreativitas Siswa
@@ -618,7 +618,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
         <td style="height: 20pt; font-weight: bold; vertical-align: text-top;">
           Catatan Proses
@@ -634,7 +634,7 @@
     <br><br><br><br><br><br><br><br>
 
     <img class="bgCover" src="/images/logohead.png" alt="">
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr style="height: 40pt;">
         <td style="font-size: larger; text-align: center; font-weight: bold;">
           KETERANGAN TINGKAT PENCAPAIAN SISWA
@@ -642,7 +642,7 @@
       </tr>
     </table>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
         <td style="border-style: solid; font-weight: bold; text-align: center;">
           BB
@@ -689,7 +689,7 @@
 
     <br>
 
-    <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
+    <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
         <td style="text-align: center; width: 100pt;">
           Mengetahui,

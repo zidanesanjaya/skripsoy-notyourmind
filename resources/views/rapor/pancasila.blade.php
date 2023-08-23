@@ -691,14 +691,58 @@
 
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
-        <td style="border-style: solid; text-align: center;">
+        <td style="border-style: solid; text-align: center; width: 100pt;">
           Mengetahui,
+        </td>
+        <td style="border-style: solid; text-align: center; width: 120pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          Malang, 23 Juni 2023
+        </td>
+      </tr>
+      <tr>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          Orang Tua
+        </td>
+        <td style="border-style: solid; text-align: center; width: 120pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          Wali Kelas
+        </td>
+      </tr>
+      <tr style="height: 90pt;">
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 120pt;">
+          
         </td>
         <td style="border-style: solid; text-align: center; width: 100pt;">
           
         </td>
-        <td style="border-style: solid; text-align: center;">
-          Malang, 23 Juni 2023
+      </tr>
+      <tr>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          _________________
+        </td>
+        <td style="border-style: solid; text-align: center; width: 120pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 100pt; text-decoration: underline;">
+          Artari Febrianti, S.Pd
+        </td>
+      </tr>
+      <tr>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 120pt;">
+          
+        </td>
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          NBM. 1344.195
         </td>
       </tr>
     </table>

@@ -312,7 +312,6 @@
 							<option value="">Pilih Jabatan...</option>
 							<option value="Kepala Sekolah">Kepala Sekolah</option>
 							<option value="Guru">Guru</option>
-							<option value="Karyawan">Karyawan</option>
 						</select>
 					</div>
 					<!--end::Input group-->

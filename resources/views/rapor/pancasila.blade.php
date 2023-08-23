@@ -691,14 +691,14 @@
 
     <table style="border-collapse: collapse; margin-left: 40pt; font-size: smaller; width: 409pt;" cellspacing="0">
       <tr>
-        <td style="border-style: solid;">
-          1
+        <td style="border-style: solid; text-align: center;">
+          Mengetahui,
         </td>
-        <td style="border-style: solid;">
-          1
+        <td style="border-style: solid; text-align: center; width: 100pt;">
+          
         </td>
-        <td style="border-style: solid;">
-          1
+        <td style="border-style: solid; text-align: center;">
+          Malang, 23 Juni 2023
         </td>
       </tr>
     </table>

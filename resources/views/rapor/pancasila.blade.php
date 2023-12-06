@@ -50,7 +50,7 @@
           :
         </td>
         <td style="width: 200pt;">
-          SMP Muhammadiyah 1 Malang
+          {{$data_diri->nama_sekolah}}
         </td>
         <td style="width: 40pt;">
           Kelas
@@ -59,7 +59,7 @@
           :
         </td>
         <td style="width: 80pt;">
-          VII (Tujuh)
+          {{$data_diri->tingkat}}
         </td>
       </tr>
       <tr>
@@ -70,7 +70,7 @@
           :
         </td>
         <td style="width: 200pt;">
-          Jl. Brigjen Slamet Riadi 134 Malang
+          {{$data_diri->alamat_sekolah}}
         </td>
         <td style="width: 40pt;">
           Fase
@@ -79,7 +79,7 @@
           :
         </td>
         <td style="width: 80pt;">
-          D
+          {{$data_diri->fase}}
         </td>
       </tr>
       <tr>
@@ -90,7 +90,7 @@
           :
         </td>
         <td style="width: 200pt;">
-          Devy Yuliana Putri
+          {{$data_diri->nama_lengkap}}
         </td>
         <td style="width: 40pt;">
           TA
@@ -99,7 +99,7 @@
           :
         </td>
         <td style="width: 80pt;">
-          2022/2023
+          {{$data_diri->tahun_pelajaran}}
         </td>
       </tr>
       <tr>
@@ -110,7 +110,7 @@
           :
         </td>
         <td style="width: 200pt;">
-          0102230527
+          {{$data_diri->nisn}}
         </td>
         <td style="width: 40pt;">
         </td>
@@ -126,12 +126,12 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
-          PROYEK 1: Ajang Kompetensi dan Kreativitas Siswa
+          PROYEK 1: {{$pancasila[0]->nama_project ?? null}}
         </td>
       </tr>
       <tr>
         <td style="height: 110pt; width: 50pt; text-align: justify; border-style: solid; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus vitae congue mauris rhoncus aenean. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Volutpat odio facilisis mauris sit amet massa vitae. Quam vulputate dignissim suspendisse in est ante. Odio pellentesque diam volutpat commodo sed. Sed enim ut sem viverra aliquet eget.
+          {{$pancasila[0]->deskripsi ?? null}}
         </td>
       </tr>
     </table>
@@ -141,12 +141,12 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
-          PROYEK 2: Serba Serbi Malangku
+          PROYEK 2: {{$pancasila[1]->nama_project ?? null}}
         </td>
       </tr>
       <tr>
         <td style="height: 110pt; width: 50pt; text-align: justify; border-style: solid; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus vitae congue mauris rhoncus aenean. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Volutpat odio facilisis mauris sit amet massa vitae. Quam vulputate dignissim suspendisse in est ante. Odio pellentesque diam volutpat commodo sed. Sed enim ut sem viverra aliquet eget.
+        {{$pancasila[1]->deskripsi ?? null}}
         </td>
       </tr>
     </table>
@@ -156,12 +156,12 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr>
         <td style="height: 25pt; width: 375pt; padding-left: 30pt; font-weight: bold;">
-          PROYEK 3: Sampahku Masa Depanku
+          PROYEK 3: {{$pancasila[2]->nama_project ?? null}}
         </td>
       </tr>
       <tr>
         <td style="height: 110pt; width: 50pt; text-align: justify; border-style: solid; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu cursus vitae congue mauris rhoncus aenean. Vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Volutpat odio facilisis mauris sit amet massa vitae. Quam vulputate dignissim suspendisse in est ante. Odio pellentesque diam volutpat commodo sed. Sed enim ut sem viverra aliquet eget.
+        {{$pancasila[2]->deskripsi ?? null}}
         </td>
       </tr>
     </table>
@@ -172,7 +172,7 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
-          Ajang Kompetensi dan Kreativitas Siswa
+        {{$pancasila[0]->nama_project ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
           BB
@@ -189,119 +189,167 @@
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia
+        {{$pancasila[0]->sub_proyek1 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[0]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? ''== 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[0]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila1  ?? '' == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Berkebhinekaan Global
+        {{$pancasila[0]->sub_proyek2 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[0]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? ''  == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[0]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Bergotong Royong
+        {{$pancasila[0]->sub_proyek3 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[0]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[0]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
     </table>
@@ -316,7 +364,7 @@
       </tr>
       <tr>
         <td style="height: 50pt; vertical-align: text-top; border-style: solid;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit amet aliquam id. Nisi lacus sed viverra tellus in hac. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. Urna neque viverra justo nec ultrices dui sapien eget. Lorem donec massa sapien faucibus et molestie ac. Risus feugiat in ante metus dictum at.
+          {{$nilaiPancasila1[0]->catatan ?? null}}
         </td>
       </tr>
     </table>
@@ -327,10 +375,10 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
-          Ajang Kompetensi dan Kreativitas Siswa
+        {{$pancasila[1]->nama_project ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          BB
+         BB
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
           MB
@@ -344,119 +392,167 @@
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia
+        {{$pancasila[1]->sub_proyek1 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[1]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila1 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila1 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila1 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila1 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[1]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila1 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila1 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila1 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila1 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Berkebhinekaan Global
+        {{$pancasila[1]->sub_proyek2 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[1]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila2 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila2 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila2 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila2 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[1]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila2 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila2 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila2 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila2 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Bergotong Royong
+        {{$pancasila[1]->sub_proyek3 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[1]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila3 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila3 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila3 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[1]->nilai_pancasila3 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[1]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila3 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila3 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila3 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[1]->nilai_pancasila3 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
     </table>
@@ -471,7 +567,7 @@
       </tr>
       <tr>
         <td style="height: 50pt; vertical-align: text-top; border-style: solid;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit amet aliquam id. Nisi lacus sed viverra tellus in hac. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. Urna neque viverra justo nec ultrices dui sapien eget. Lorem donec massa sapien faucibus et molestie ac. Risus feugiat in ante metus dictum at.
+        {{$nilaiPancasila1[1]->catatan ?? null}}
         </td>
       </tr>
     </table>
@@ -482,7 +578,7 @@
     <table style="border-collapse: collapse; margin-left: 55pt; font-size: smaller;" cellspacing="0">
       <tr style="height: 30pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top; font-weight: bold;">
-          Ajang Kompetensi dan Kreativitas Siswa
+        {{$pancasila[2]->nama_project ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
           BB
@@ -499,119 +595,167 @@
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Beriman, Bertakwa Kepada Tuhan Yang Maha Esa, dan Berakhlak Mulia
+        {{$pancasila[2]->sub_proyek1 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[2]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila1 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila1 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila1 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila1 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[2]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila1 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila1 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila1 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila1 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Berkebhinekaan Global
+        {{$pancasila[2]->sub_proyek2 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[2]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila2 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila2 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila2 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila2 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[2]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila2 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila2 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila2 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila2 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr>
         <td style="border-right: solid; border-left: solid; width: 230pt; vertical-align: text-top; background-color: #D0D0D0;" colspan="5">
-          Bergotong Royong
+        {{$pancasila[2]->sub_proyek3 ?? null}}
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila1[2]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
       <tr style="height: 76pt;">
         <td style="border-style: solid; width: 230pt; vertical-align: text-top;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aliquam id diam maecenas ultricies mi. Amet est placerat in egestas. Lobortis scelerisque fermentum dui faucibus in.
+        {{$nilaiPancasila2[2]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila3 ?? null ) == 'BB')
           V
+          @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila3 ?? null ) == 'MB')
           V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila3 ?? null ) == 'BSH')
+          V
+          @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(($nilaiPancasila2[2]->nilai_pancasila3 ?? null ) == 'SB')
+          V
+          @endif
         </td>
       </tr>
     </table>
@@ -626,7 +770,7 @@
       </tr>
       <tr>
         <td style="height: 50pt; vertical-align: text-top; border-style: solid;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam vulputate ut pharetra sit amet aliquam id. Nisi lacus sed viverra tellus in hac. Id consectetur purus ut faucibus pulvinar elementum integer enim neque. Urna neque viverra justo nec ultrices dui sapien eget. Lorem donec massa sapien faucibus et molestie ac. Risus feugiat in ante metus dictum at.
+        {{$nilaiPancasila1[2]->catatan ?? null}}
         </td>
       </tr>
     </table>
@@ -698,7 +842,8 @@
           
         </td>
         <td style="text-align: center; width: 100pt;">
-          Malang, 23 Juni 2023
+          {{$data_diri->tanggal}}
+
         </td>
       </tr>
       <tr>
@@ -731,7 +876,7 @@
           
         </td>
         <td style="text-align: center; width: 100pt; text-decoration: underline;">
-          Artari Febrianti, S.Pd
+          {{$data_diri->nama_wali_kelas}}
         </td>
       </tr>
       <tr style="height: 20pt;">
@@ -742,7 +887,7 @@
           
         </td>
         <td style="text-align: center; width: 100pt;">
-          NBM. 1344.195
+          NBM. {{$data_diri->nbm_wali_kelas}}
         </td>
       </tr>
       <tr>
@@ -783,7 +928,7 @@
           
         </td>
         <td style="text-align: center; width: 120pt; text-decoration: underline;">
-          Yanur Setyaningrum, M.Pd
+          {{$data_diri->nama_kepala}}
         </td>
         <td style="text-align: center; width: 100pt;">
           
@@ -794,7 +939,7 @@
           
         </td>
         <td style="text-align: center; width: 120pt;">
-          NBM. 1222.086
+          NBM. {{$data_diri->nbm_kepala}}
         </td>
         <td style="text-align: center; width: 100pt;">
           

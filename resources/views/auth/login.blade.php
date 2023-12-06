@@ -85,7 +85,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Input group=-->
 							<div class="fv-row mb-8">
 								<!--begin::Email-->
-								<input id="email" type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent @error('email') is-invalid @enderror" value="{{ old('enauk') }}" required autocomplete="email" autofocus />
+								<input id="username" type="text" placeholder="Username" name="username" autocomplete="off" class="form-control bg-transparent @error('username') is-invalid @enderror" value="{{ old('username') }}" required autocomplete="username" autofocus />
 
 								@error('email')
 								<span class="invalid-feedback" role="alert">
@@ -131,12 +131,33 @@ License: For each use you must have a valid license purchased only from above li
 			<!--end::Body-->
 			<!--begin::Aside-->
 			<div class="d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 order-lg-2" style="background-color: rgba(0, 0, 0, 0.33);">
-				<img class="w-100 h-100" src="/images/depanSekolahwithopacity.jpg" alt="" style="background-color: rgba(0, 0, 0, 0.33);">
+				<img class="w-100 h-100" src="/images/depansekolahwithopacity.jpg" alt="" style="background-color: rgba(0, 0, 0, 0.33);">
 			</div>
 			<!--end::Aside-->
 		</div>
 		<!--end::Authentication - Sign-in-->
 	</div>
+	@if (\Session::has('danger'))
+	<div class="container" style="position:absolute;bottom:0;width:40%;" id="error-alert">
+		<div class="alert alert-danger float-left mr-3" role="alert">
+			{{ session('danger') }}
+		</div>
+	</div>
+	@elseif (\Session::has('success'))
+	<div class="container" style="position:absolute;bottom:0;width:40%;" id="success-alert">
+		<div class="alert alert-success float-left mr-3" role="alert">
+			{{ session('success') }}
+		</div>
+	</div>
+	@endif
+
+
+    <script>
+    	setTimeout(function() {
+			document.getElementById('success-alert')?.remove();
+			document.getElementById('error-alert')?.remove();
+		}, 3000);
+	</script>
 	<!--end::Root-->
 	<!--begin::Javascript-->
 	<script>

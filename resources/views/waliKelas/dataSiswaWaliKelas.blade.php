@@ -45,7 +45,7 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa Kelas (tingkat & kelas)</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Data Siswa Kelas {{$data_wali->tingkat}} {{$data_wali->kelas}}</span>
                             </h3>
                             <div class="card-toolbar">
                                 <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#tambahDataSiswa">
@@ -81,28 +81,35 @@
                                     </tr>
                                 </thead>
                                 <tbody id="listSiswa">
+                                    @foreach($data AS $key => $results)
                                     <tr>
-                                        <td class="px-5">1.</td>
-                                        <td class="px-5">9925</td>
-                                        <td>2104295256</td>
-                                        <td>Aisyah Fatin Sholikah</td>
+                                        <td class="px-5">{{$key+1}}</td>
+                                        <td class="px-5">{{$results->nis}}</td>
+                                        <td>{{$results->nisn}}</td>
+                                        <td>{{$results->nama_lengkap}}</td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal" data-bs-target="#keteranganDiriPesertaDidik">Detail</a>
+                                            <a href="#" class="btn btn-sm btn-primary me-2" onclick="getModal('{{$results->nama_lengkap}}','{{$results->nis}}','{{$results->nisn}}','{{$results->tempat}}','{{$results->tanggal_lahir}}','{{$results->jenis_kelamin}}' , '{{$results->agama}}' , '{{$results->status}}' , '{{$results->anak_ke}}' , '{{$results->alamat_siswa}}' , '{{$results->no_hp}}' , '{{$results->sekolah_asal}}' , '{{$results->nama_ayah}}' , '{{$results->nama_ibu}}' ,'{{$results->alamat_ortu}}' , '{{$results->no_hp_ortu}}' ,  '{{$results->nama_wali}}' ,  '{{$results->pekerjaan_wali}}' ,  '{{$results->alamat_wali}}' ,  '{{$results->no_hp_wali}}');" data-bs-toggle="modal" data-bs-target="#keteranganDiriPesertaDidik">Detail</a>
                                         </td>
                                         <td class="text-center">
-                                            <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-color-danger btn-sm">
-                                                <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                <span class="svg-icon svg-icon-3">
-                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                        <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                        <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                    </svg>
-                                                </span>
-                                                <!--end::Svg Icon-->
-                                            </a>
+                                            <form action="{{route('delete.siswa_kelas')}}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="nisn" value="{{$results->nisn}}">
+
+                                                <button type="submit" class="btn btn-icon btn-bg-light btn-color-danger btn-sm">
+                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                    <span class="svg-icon svg-icon-3">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
+                                                            <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
+                                                            <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
+                                                        </svg>
+                                                    </span>
+                                                    <!--end::Svg Icon-->
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -146,7 +153,7 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="tambahDataSiswa_form" method="post" class="form" action="">
+                <form id="tambahDataSiswa_form" method="post" class="form" action="{{route('update.siswa_kelas')}}">
                     @csrf
                     <!--begin::Heading-->
                     <div class="text-center">
@@ -154,6 +161,7 @@
                         <h1>Tambah Data Siswa</h1>
                         <!--end::Title-->
                     </div>
+                    <input type="hidden" value="{{$data_wali->id}}" name="id_kelas">
                     <!--end::Heading-->
                     <div class="row">
                         <div class="col-6">
@@ -167,7 +175,7 @@
                                     </svg>
                                 </span>
                                 <!--end::Svg Icon-->
-                                <input id="cariSiswaGuru" type="text" class="form-control form-control-solid w-250px ps-14" placeholder="Cari Siswa">
+                                <input type="text" class="form-control form-control-solid w-250px ps-14" placeholder="Cari Siswa" id="myInput" onkeyup="myFunction()">
                             </div>
                             <!-- end::search -->
                         </div>
@@ -194,17 +202,19 @@
                             </tr>
                         </thead>
                         <tbody id="listSiswa">
+                            @foreach($siswa AS $key => $results)
                             <tr>
-                                <td class="px-5">1.</td>
-                                <td class="px-5">9925</td>
-                                <td>2104295256</td>
-                                <td>Aisyah Fatin Sholikah</td>
+                                <td class="px-5">{{$key+1}}</td>
+                                <td class="px-5">{{$results->username}}</td>
+                                <td>{{$results->nisn}}</td>
+                                <td>{{$results->nama_lengkap}}</td>
                                 <td class="text-center d-flex justify-content-center align-items-center">
                                     <div class="form-check form-check-lg form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" value="1">
+                                        <input class="form-check-input" type="checkbox" name="siswa[]" value="{{$results->nisn}}">
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <!--end::Table-->
@@ -227,7 +237,9 @@
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Form-->
-            <form class="form" action="#" id="kt_modal_add_customer_form" data-kt-redirect="../../demo1/dist/apps/customers/list.html">
+            <form class="form" method="post" action="{{route('siswa.update',0)}}" id="kt_modal_add_customer_form">
+                @csrf
+                @method('patch')
                 <!--begin::Modal header-->
                 <div class="modal-header" id="kt_modal_add_customer_header">
                     <!--begin::Modal title-->
@@ -257,7 +269,8 @@
                             <label class="required fs-6 fw-semibold mb-2">Nama Peserta Didik (Lengkap)</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" value="Aisyah Fatin Sholikah" disabled />
+                            <input type="hidden" name="dataSiswa" value="1">
+                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" value="" id="name_edit" disabled />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -267,7 +280,7 @@
                             <label class="required fs-6 fw-semibold mb-2">Nomor Induk Siswa (NIS)</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" value="9925" disabled />
+                            <input type="text" class="form-control form-control-solid" placeholder="" name="nis" value="" id="nis_edit" disabled />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -277,7 +290,7 @@
                             <label class="required fs-6 fw-semibold mb-2">Nomor Induk Siswa Nasional (NISN)</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="" name="name" value="2104295256" disabled />
+                            <input type="text" class="form-control form-control-solid" placeholder="" name="nisn" value="" id="nisn_edit" readonly />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -288,8 +301,8 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="input-group mb-5">
-                                <input type="text" class="form-control form-control-solid" placeholder="Tempat" aria-label="Username" />
-                                <input id="datepicker" type="date" class="form-control" />
+                                <input type="text" class="form-control form-control-solid" placeholder="tempat" name="tempat"  id="tempat_edit"aria-label="Username" />
+                                <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir_edit"/>
                             </div>
                             <!--end::Input-->
                         </div>
@@ -302,7 +315,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Jenis Kelamin</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <select class="form-select form-select-solid" aria-label="Jenis Kelamin">
+                                    <select class="form-select form-select-solid" aria-label="Jenis Kelamin" id="jenis_kelamin_edit" name="jenis_kelamin">
                                         <option>Pilih Jenis Kelamin</option>
                                         <option value="Laki - Laki">Laki - Laki</option>
                                         <option value="Perempuan">Perempuan</option>
@@ -314,7 +327,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Agama</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Agama" name="agama" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Agama" id="agama_edit" name="agama" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -328,7 +341,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Status Dalam Keluarga</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Status Dalam Keluarga" name="statusDalamKeluarga" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Status Dalam Keluarga" id="status_edit"  name="status" />
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-sm-4">
@@ -336,7 +349,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Anak Ke-</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="" name="anakKe" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="" name="anak_ke" id="anak_ke_edit" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -350,7 +363,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Alamat Peserta Didik</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat" name="alamat" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat" id="alamat_siswa_edit" name="alamat_siswa" />
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-sm-6">
@@ -358,7 +371,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Nomor Telepon/Hp</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon/Hp" name="nomorHp" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon/Hp" id="no_hp_edit" name="no_hp" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -370,7 +383,7 @@
                             <label class="required fs-6 fw-semibold mb-2">Sekolah Asal (SD/MTs, Sebutkan)</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Sekolah Asal" name="sekolahAsal" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Sekolah Asal" name="sekolah_asal" id="sekolah_asal_edit" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -387,30 +400,7 @@
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <div class="row">
-                                <div class="col-sm-4">
-                                    <!--begin::Label-->
-                                    <label class="required fs-6 fw-semibold mb-2">NPSN</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="NPSN" name="npsn" value="" />
-                                    <!--end::Input-->
-                                </div>
-                                <div class="col-sm-4">
-                                    <!--begin::Label-->
-                                    <label class="required fs-6 fw-semibold mb-2">Di Kelas</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Kelas" name="" value="" />
-                                    <!--end::Input-->
-                                </div>
-                                <div class="col-sm-4">
-                                    <!--begin::Label-->
-                                    <label class="required fs-6 fw-semibold mb-2">Tanggal</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <input id="datepicker" type="date" class="form-control" />
-                                    <!--end::Input-->
-                                </div>
+                               
                             </div>
                         </div>
                         <!--end::Input group-->
@@ -422,7 +412,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Nama Ayah</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Ayah" name="namaAyah" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Ayah" name="nama_ayah" value="" id="nama_ayah_edit"/>
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-sm-6">
@@ -430,7 +420,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Nama Ibu</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Ibu" name="namaIbu" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Ibu" name="nama_ibu" id="nama_ibu_edit" value="" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -444,7 +434,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Alamat Orang Tua</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat Orang Tua" name="alamatOrangTua" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat Orang Tua" name="alamat_ortu" id="alamat_ortu_edit" value="" />
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-sm-6">
@@ -452,7 +442,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Nomor Telepon / Hp Orang Tua</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon / HP" name="nomorOrangTua" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon / HP" name="no_hp_ortu" id="no_hp_ortu_edit" value="" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -464,7 +454,7 @@
                             <label class="required fs-6 fw-semibold mb-2">Nama Wali</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Wali" name="namaWali" value="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Wali" name="nama_wali" id="nama_wali_edit" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -476,7 +466,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Alamat Wali</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat Wali" name="alamatWali" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Alamat Wali" name="alamat_wali" id="alamat_wali_edit" value="" />
                                     <!--end::Input-->
                                 </div>
                                 <div class="col-sm-6">
@@ -484,7 +474,7 @@
                                     <label class="required fs-6 fw-semibold mb-2">Nomor Telepon / Hp Wali</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon / Hp Wali" name="nomorWali" value="" />
+                                    <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nomor Telepon / Hp Wali" name="no_hp_wali" id="no_hp_wali_edit" value="" />
                                     <!--end::Input-->
                                 </div>
                             </div>
@@ -495,7 +485,7 @@
                             <label class="required fs-6 fw-semibold mb-2">Pekerjaan Wali</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Pekerjaan Wali" name="pekerjaanWali" value="" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Pekerjaan Wali" name="pekerjaan_wali" id="pekerjaan_wali_edit" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -526,6 +516,63 @@
     $('#datepicker').datepicker({
         uiLibrary: 'bootstrap5'
     });
+
+    function getModal(nama , nis , nisn , tempat , tanggal_lahir , jenis_kelamin , agama , status , anak_ke , alamat_siswa , no_hp , sekolah_asal , nama_ayah , nama_ibu , alamat_ortu , no_hp_ortu , nama_wali , pekerjaan_wali ,alamat_wali  , no_hp_wali){
+        console.log(no_hp_wali);
+        $("#name_edit").val(nama);
+        $("#nis_edit").val(nis);
+        $("#nisn_edit").val(nisn);
+        $("#tempat_edit").val(tempat);
+        $("#tanggal_lahir_edit").val(tanggal_lahir);
+        $("#jenis_kelamin_edit").val(jenis_kelamin);
+        $("#agama_edit").val(agama);
+        $("#status_edit").val(status);
+        $("#anak_ke_edit").val(anak_ke);
+        $("#alamat_siswa_edit").val(alamat_siswa);
+        $("#no_hp_edit").val(no_hp);
+        $("#sekolah_asal_edit").val(sekolah_asal);
+        $("#nama_ayah_edit").val(nama_ayah);
+        $("#nama_ibu_edit").val(nama_ibu);
+        $("#alamat_ortu_edit").val(alamat_ortu);
+        $("#nama_wali_edit").val(nama_wali);
+        $("#alamat_wali_edit").val(alamat_wali);
+        $("#pekerjaan_wali_edit").val(pekerjaan_wali);
+        $("#no_hp_wali_edit").val(no_hp_wali);
+
+    }
+
+    function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, j, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("modalTambahDataSiswaGuru");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows
+    for (i = 0; i < tr.length; i++) {
+        var display = "none"; // Default to hiding the row
+
+        // Loop through all columns in the current row
+        for (j = 0; j < tr[i].cells.length; j++) {
+            td = tr[i].getElementsByTagName("td")[j];
+            
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+
+                // Check if the current column contains the search filter
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    display = "";
+                    break; // No need to check other columns once a match is found
+                }
+            }
+        }
+
+        // Set the display property for the current row
+        tr[i].style.display = display;
+    }
+}
+
 </script>
 @endsection
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

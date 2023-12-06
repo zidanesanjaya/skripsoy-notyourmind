@@ -12,6 +12,7 @@ class MataPelajaran extends Model
     protected $fillable = [
         'id',
         'nama_mapel',
+        'kkm',
         'id_guru',
         'semester',
         'id_tahun_akademik'

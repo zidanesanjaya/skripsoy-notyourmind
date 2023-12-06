@@ -179,9 +179,11 @@
                             <div class="d-flex flex-stack flex-grow-1">
                                 <!--begin::Content-->
                                 <div class="fw-semibold">
-                                    <h4 class="text-gray-900 fw-bold">We need your attention!</h4>
-                                    <div class="fs-6 text-gray-700">Your payment was declined. To start using tools, please
-                                        <a class="fw-bold" href="../../demo1/dist/account/billing.html">Add Payment Method</a>.
+                                    <h4 class="text-gray-900 fw-bold">
+                                        Rapor Anda Belum Tersedia!
+                                    </h4>
+                                    <div class="fs-6 text-gray-700">
+                                        Pastikan anda telah membayar biaya administrasi
                                     </div>
                                 </div>
                                 <!--end::Content-->

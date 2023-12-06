@@ -82,6 +82,7 @@
 								<thead>
 									<tr class="fw-bold text-muted bg-light">
 										<th class="ps-4 min-w-150px w-300px rounded-start">Mata Pelajaran</th>
+										<th class="min-w-25px">KKM</th>
 										<th class="min-w-25px">Semester</th>
 										<th class="min-w-125px">Guru</th>
 										<th class="min-w-50px w-100px text-center">Tahun Akademik</th>
@@ -89,14 +90,15 @@
 									</tr>
 								</thead>
 								<tbody>
-								@foreach($mataPelajaran as $key)
+									@foreach($mataPelajaran as $key)
 									<tr>
 										<td class="px-5">{{$key->nama_mapel}}</td>
+										<td>{{$key->kkm}}</td>
 										<td class="px-5">{{$key->semester}}</td>
 										<td>{{$key->nama_lengkap}}</td>
 										<td class="text-center">{{$key->tahun_akademik}}</td>
 										<td class="text-center">
-											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran">
+											<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editMataPelajaran" onclick="editMapel({{$key->id}})">
 												<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 												<span class="svg-icon svg-icon-3">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +121,7 @@
 											</a>
 										</td>
 									</tr>
-								@endforeach
+									@endforeach
 								</tbody>
 							</table>
 							<!--end::Table-->
@@ -191,7 +193,7 @@
 							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Guru" name="id_guru">
 								<option value="">Pilih Guru...</option>
 								@foreach($guru as $key)
-									<option value="{{$key->id}}">{{$key->nama_lengkap}}</option>
+								<option value="{{$key->id}}">{{$key->nama_lengkap}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -209,14 +211,24 @@
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
-					<div class="d-flex flex-column mb-8">
-						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tahun Akademik" name="id_tahun_akademik">
-							<option value="">Pilih Tahun Akademik...</option>
+					<div class="row g-9 mb-8">
+						<div class="col-md-6 fv-row">
+							<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
+							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tahun Akademik" name="id_tahun_akademik">
+								<option value="">Pilih Tahun Akademik...</option>
 								@foreach($tahunAkademik as $key)
-									<option value="{{$key->id}}">{{$key->tahun_akademik}}</option>
+								<option value="{{$key->id}}">{{$key->tahun_akademik}}</option>
 								@endforeach
-						</select>
+							</select>
+						</div>
+						<div class="col-md-6 fv-row">
+							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+								<span class="required">Input Nilai KKM</span>
+							</label>
+							<!--end::Label-->
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai KKM" name="kkm" />
+						</div>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->
@@ -265,13 +277,16 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="editMataPelajaran_form" class="form" action="/mataPelajaranAdmin">
+				<form id="editMataPelajaran_form" class="form" method="post" action="{{route('mapel.update' , 0)}}">
+					@csrf
+					@method('PATCH')
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
 						<h1 class="mb-3">Edit Mata Pelajaran</h1>
 						<!--end::Title-->
 					</div>
+					<input type="hidden" name="id_mapel" id="id_mapel">
 					<!--end::Heading-->
 					<!--begin::Input group-->
 					<div class="d-flex flex-column mb-8 fv-row">
@@ -280,7 +295,7 @@
 							<span class="required">Nama Mata Pelajaran</span>
 						</label>
 						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Mata Pelajaran" name="nama_mapel" />
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Mata Pelajaran" name="nama_mapel" id="edit_mapel_name" />
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
@@ -288,10 +303,10 @@
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
 							<label class="required fs-6 fw-semibold mb-2">Guru</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Guru" name="id_guru">
+							<select class="form-select form-select-solid" id="edit_guru" data-placeholder="Pilih Guru" name="id_guru">
 								<option value="">Pilih Guru...</option>
 								@foreach($guru as $key)
-									<option value="{{$key->id}}">{{$key->nama_lengkap}}</option>
+								<option value="{{$key->id}}">{{$key->nama_lengkap}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -299,7 +314,7 @@
 						<!--begin::Col-->
 						<div class="col-md-6 fv-row">
 							<label class="required fs-6 fw-semibold mb-2">Semester</label>
-							<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Semester" name="semester">
+							<select class="form-select form-select-solid" data-placeholder="Pilih Semester" id="edit_semester" name="semester">
 								<option value="">Pilih Semester...</option>
 								<option value="Ganjil">Ganjil</option>
 								<option value="Genap">Genap</option>
@@ -309,12 +324,23 @@
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
-					<div class="d-flex flex-column mb-8">
-						<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
-						<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Tahun Akademik" name="id_tahun_akademik">
-							<option value="">Pilih Tahun Akademik...</option>
-							<option value="2023/2024">2023/2024</option>
-						</select>
+					<div class="row g-9 mb-8">
+						<div class="col-md-6 fv-row">
+							<label class="fs-6 fw-semibold mb-2">Tahun Akademik</label>
+							<select class="form-select form-select-solid" data-placeholder="Pilih Tahun Akademik" id="edit_tahun_akademik" name="id_tahun_akademik">
+								@foreach($tahunAkademik AS $key)
+								<option value="{{$key->id}}">{{$key->tahun_akademik}}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="col-md-6 fv-row">
+							<!--begin::Label-->
+							<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+								<span class="required">Input Nilai KKM</span>
+							</label>
+							<!--end::Label-->
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nilai KKM" name="kkm" id="edit_kkm" />
+						</div>
 					</div>
 					<!--end::Input group-->
 					<!--begin::Actions-->
@@ -444,8 +470,30 @@
 		loadTable();
 	});
 
+	function editMapel(id) {
+		$.ajax({
+			url: '/get-mapel/' + id,
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				console.log(data);
+				// Sukses, data tersedia di variabel 'data'
+				$("#id_mapel").val(data.id);
+				$("#edit_mapel_name").val(data.nama_mapel);
+				$("#edit_guru").val(data.id_guru);
+				$("#edit_semester").val(data.semester);
+				$("#edit_tahun_akademik").val(data.id_tahun_akademik);
+
+			},
+			error: function(xhr, status, error) {
+				// Terjadi kesalahan dalam permintaan
+				console.error('Gagal mengambil data. Status:', status, 'Error:', error);
+			}
+		});
+	}
+
 	document.getElementById('inputTahunAkademik_submit').addEventListener('click', function(e) {
-		e.preventDefault(); 
+		e.preventDefault();
 
 		var tahunAkademik = document.getElementById('tahunAkademik').value;
 
@@ -454,17 +502,19 @@
 			})
 			.then(function(response) {
 				loadTable();
+				location.reload(); // Me-refresh halaman setelah POST berhasil
 			})
 			.catch(function(error) {
-				console.log(error.response.data); 
+				console.log(error.response.data);
 			});
 	});
+
 
 	function loadTable() {
 		$.ajax({
 			url: '/tahun_akademik/index',
 			method: 'GET',
-			dataType: 'json', // Menentukan bahwa respons akan berupa JSON
+			dataType: 'json',
 			success: function(data) {
 
 				console.log(data);
@@ -473,7 +523,7 @@
 				for (var i = 0; i < data.length; i++) {
 					var row = '<tr>' +
 						'<td class="px-5">' + data[i].tahun_akademik + '</td>' +
-						'<td class="text-center"><a href="tahun_akademik/destroy/'+data[i].id+'" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"><!--begin::Svg Icon | path: icons/duotune/general/gen027.svg--><span class="svg-icon svg-icon-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" /><path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" /><path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" /></svg></span><!--end::Svg Icon--></a></td>' +
+						'<td class="text-center"><a href="tahun_akademik/destroy/' + data[i].id + '" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"><!--begin::Svg Icon | path: icons/duotune/general/gen027.svg--><span class="svg-icon svg-icon-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" /><path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" /><path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" /></svg></span><!--end::Svg Icon--></a></td>' +
 						'</tr>'
 					tbody.append(row);
 				}

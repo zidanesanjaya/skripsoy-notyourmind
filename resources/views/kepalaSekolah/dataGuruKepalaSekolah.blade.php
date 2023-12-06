@@ -63,13 +63,15 @@
                                     </tr>
                                 </thead>
                                 <tbody id="listAnggota">
-                                    <tr>
-                                        <td class="px-5">1. </td>
-                                        <td class="px-5">1222.086</td>
-                                        <td class="px-5">Bapak Nosa</td>
-                                        <td>nosa@example.com</td>
-                                        <td>Bahasa Inggris</td>
-                                    </tr>
+                                    @foreach($data AS $index => $key)
+                                        <tr>
+                                            <td class="px-5">{{($index+1)}}</td>
+                                            <td class="px-5">{{$key->username}}</td>
+                                            <td class="px-5">{{$key->nama_lengkap}}</td>
+                                            <td>{{$key->email}}</td>
+                                            <td>{{$key->nama_mapel}}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!--end::Table-->

@@ -70,18 +70,28 @@
                                     <tr class="fw-bold text-muted bg-light">
                                         <th class="min-w-20px w-20px px-5">No.</th>
                                         <!-- <th class="ps-4 min-w-150px w-300px rounded-start">Nama</th> -->
-                                        <th class="min-w-50px w-100px text-center">Nama Projek</th>
-                                        <th class="min-w-50px w-100px text-center">Deskripsi</th>
-                                        <th class="min-w-20px w-20px text-center">Aksi</th>
+                                        <th class="min-w-50px w-100px">Nama Projek</th>
+                                        <th class="min-w-50px w-100px">Deskripsi</th>
+                                        <th class="min-w-50px w-100px">Sub Proyek 1</th>
+                                        <th class="min-w-50px w-100px">Sub Proyek 2</th>
+                                        <th class="min-w-50px w-100px">Sub Proyek 3</th>
+                                        <th class="min-w-20px w-20px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="listWaliKelas">
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                    @foreach($pancasila as $key => $data)
                                     <tr>
-                                        <td class="px-5">1.</td>
-                                        <td>Ajang Kompetensi dan Kreativitas Siswa</td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, voluptatum odio mollitia reiciendis delectus exercitationem numquam, ad deserunt repellendus odit, neque eum est dolore expedita esse nihil adipisci eius inventore quibusdam cumque obcaecati nobis ipsam? Similique magni ut est voluptate, veniam ea! Quasi quod molestiae ad, tempora aperiam rem consequuntur!</td>
+                                        <td class="px-5">{{($i++)}}</td>
+                                        <td>{{$data->nama_project}}</td>
+                                        <td>{{$data->deskripsi}}</td>
+                                        <td>{{$data->sub_proyek1}}</td>
+                                        <td>{{$data->sub_proyek2}}</td>
+                                        <td>{{$data->sub_proyek3}}</td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editProjekPancasila">
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" onclick="getPancasila({{$data->id}});" data-bs-toggle="modal" data-bs-target="#editProjekPancasila">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +101,7 @@
                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </a>
-                                            <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
+                                            <a href="{{route('destroy.pancasila' , $data->id)}}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,6 +114,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -146,7 +157,8 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="tambahProjekPancasila_form" class="form" action="#" autocomplete="off">
+                <form id="tambahProjekPancasila_form" class="form" action="{{route('update.updatePancasila')}}" autocomplete="off" method="post">
+                    @csrf
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
@@ -161,17 +173,47 @@
                             <span class="required">Nama Projek</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Projek Pancasila" name="target_title" />
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Projek Pancasila" name="nama_project" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
-                    <div class="fv-row mb-10">
+                    <div class="fv-row mb-8">
                         <!--begin::Label-->
                         <label class="required fw-semibold fs-6 mb-2">Deskripsi</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                        <textarea name="deskripsi" class="form-control form-control-solid"></textarea>
                         <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek1" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek2" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-10 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek3" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
@@ -196,7 +238,7 @@
 <!--end::Modal - Tambah Projek Pancasila-->
 
 <!--begin::Modal - Edit Projek Pancasila-->
-<div class="modal fade" id="editProjekPancasila" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editProjekPancasila"  tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
@@ -220,7 +262,8 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="editProjekPancasila_form" class="form" action="#" autocomplete="off">
+                <form id="editProjekPancasila_form" class="form" action="{{route('update.updatePancasila')}}" method="post" autocomplete="off">
+                    @csrf
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
@@ -229,13 +272,14 @@
                     </div>
                     <!--end::Heading-->
                     <!--begin::Input group-->
+                    <input type="hidden" name="id" id="id_edit">
                     <div class="d-flex flex-column mb-8 fv-row">
                         <!--begin::Label-->
                         <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
                             <span class="required">Nama Projek</span>
                         </label>
                         <!--end::Label-->
-                        <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Projek Pancasila" name="target_title" />
+                        <input type="text" class="form-control form-control-solid" id="nama_project_edit" placeholder="Masukkan Nama Projek Pancasila" name="nama_project" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Input group-->
@@ -244,8 +288,38 @@
                         <label class="required fw-semibold fs-6 mb-2">Deskripsi</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <textarea name="textarea_input" class="form-control form-control-solid"></textarea>
+                        <textarea name="deskripsi" id="deskripsi_edit" class="form-control form-control-solid"></textarea>
                         <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" id="sub_proyek1_edit" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek1" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-8 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" id="sub_proyek2_edit" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek2" />
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="d-flex flex-column mb-10 fv-row">
+                        <!--begin::Label-->
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span>Nama Sub Projek</span>
+                        </label>
+                        <!--end::Label-->
+                        <input type="text" class="form-control form-control-solid" id="sub_proyek3_edit" placeholder="Masukkan Nama Sub Projek Pancasila" name="sub_proyek3" />
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
@@ -271,3 +345,33 @@
 
 @endsection
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    function getPancasila(id){
+    $(document).ready(function(){
+        $.ajax({
+            url: '/get-json-pancasila',
+            type: 'get',
+            dataType: 'JSON',
+            success: function(response){
+                var foundProject = response.find(function(project) {
+                    return project.id === id;
+                });
+
+                console.log(foundProject);
+                if (foundProject) {
+                    $("#id_edit").val(foundProject.id);
+                    $("#nama_project_edit").val(foundProject.nama_project);
+                    $("#deskripsi_edit").val(foundProject.deskripsi);
+                    $("#sub_proyek1_edit").val(foundProject.sub_proyek1);
+                    $("#sub_proyek2_edit").val(foundProject.sub_proyek2);
+                    $("#sub_proyek3_edit").val(foundProject.sub_proyek3);
+                } else {
+                    console.log('Proyek dengan ID tersebut tidak ditemukan.');
+                }
+            }
+        });
+    });
+}
+
+</script>

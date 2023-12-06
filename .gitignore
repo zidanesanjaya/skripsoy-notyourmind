@@ -13,8 +13,8 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/public/files/sampleTemplateNilaiAsesmen.xlsx
-*.xlsx
+# /public/files/sampleTemplateNilaiAsesmen.xlsx
+# *.xlsx
 /public/files/rapor.pdf
 /public/files/raporDownloadAll.pdf
 *.pdf

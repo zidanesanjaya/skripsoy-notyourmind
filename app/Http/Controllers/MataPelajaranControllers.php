@@ -18,10 +18,11 @@ class MataPelajaranControllers extends Controller
      */
     public function index()
     {
-        $gurus = DB::table('detail_karyawan')->where('jabatan','guru')->get();
+        
+            $gurus = DB::table('detail_karyawan')->where('jabatan', 'like', '%guru%')->get();
         $tahunAkademik = TahunAkademik::all();
         $mapels = DB::table('mata_pelajaran as mp')
-                ->select('mp.id', 'mp.nama_mapel', 'mp.semester', 'dk.nama_lengkap', 'ta.tahun_akademik')
+                ->select('mp.id', 'mp.nama_mapel', 'mp.semester', 'dk.nama_lengkap', 'ta.tahun_akademik' , 'mp.kkm')
                 ->leftJoin('detail_karyawan as dk', 'mp.id_guru', '=', 'dk.id')
                 ->leftJoin('tahun_akademik as ta', 'mp.id_tahun_akademik', '=', 'ta.id')
                 ->get();
@@ -51,6 +52,7 @@ class MataPelajaranControllers extends Controller
                 'nama_mapel' => $request->nama_mapel,
                 'id_guru' => $request->id_guru,
                 'semester' => $request->semester,
+                'kkm' => $request->kkm,
                 'id_tahun_akademik' => $request->id_tahun_akademik
             ]);
             
@@ -91,7 +93,16 @@ class MataPelajaranControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mapel = MataPelajaran::where('id',$request->id_mapel);
+        $mapel->update([
+            'nama_mapel' => $request->nama_mapel,
+            'id_guru' => $request->id_guru,
+            'semester' => $request->semester,
+            'kkm' => $request->kkm,
+            'id_tahun_akademik' => $request->id_tahun_akademik
+        ]);
+
+        return back()->with('success','Mata Pelajaran Berhasil Di Update');
     }
 
     /**
@@ -122,9 +133,19 @@ class MataPelajaranControllers extends Controller
         return response()->json(TahunAkademik::all());
     }
 
+    public function getMapel($id){
+        $data = MataPelajaran::where('id',$id)->first();
+        return response()->json($data);
+    }
+
     public function destroy_tahun_akademik($id){
-        TahunAkademik::find($id)->delete();
-        return back()->with('danger','Data Berhasil Dihapus');;
+        $check = MataPelajaran::where('id_tahun_akademik',$id)->first();
+        if($check){
+            return back()->with('danger','Gagal Hapus Data');;
+        }else{
+            TahunAkademik::find($id)->delete();
+            return back()->with('danger','Data Berhasil Dihapus');;
+        }
     }
     public function destroy_mapel($id){
         MataPelajaran::find($id)->delete();

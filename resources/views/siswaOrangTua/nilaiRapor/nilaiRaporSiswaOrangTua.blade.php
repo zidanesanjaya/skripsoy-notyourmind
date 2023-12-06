@@ -45,10 +45,10 @@
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bold fs-3 mb-1">Rapor Siswa</span>
+                                    <span class="card-label fw-bold fs-3 mb-1">Laporan Hasil Belajar</span>
                                 </h3>
                                 <div class="card-toolbar">
-                                    <a href="{{ url('/keteranganDiriPesertaDidik') }}" class="btn btn-sm btn-light btn-active-danger">
+                                    <a href="{{ url('/keterangan-siswa') }}" class="btn btn-sm btn-light btn-active-danger">
                                         Kembali
                                     </a>
                                 </div>
@@ -76,9 +76,13 @@
                                             Pilih Rapor
                                         </button>
                                         <ul class="dropdown-menu form-select-solid" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">7C/Ganjil</a></li>
-                                            <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">8D/Genap</a></li>
-                                            <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">9E/Ganjil</a></li>
+                                            @if($detail_siswa->is_show == 1)
+                                                @foreach($data_rapor AS $datas)
+                                                    <li><a class="dropdown-item" href="{{ url('/nilai-rapor-siswa/'.$datas->id_tahun_akademik.'/'.$datas->semester) }}">Laporan Hasil Belajar Kelas {{$datas->tingkat}} / {{$datas->semester}}</a></li>
+                                                @endforeach
+                                                <hr>
+                                                <li><a class="dropdown-item" href="{{ route('data.nilai_pancasila') }}">Rapor Pancasila</a></li>
+                                            @endif
                                         </ul>
                                     </div>
                                     <!--end::Input-->
@@ -120,188 +124,23 @@
                                 <!--end::Table head-->
                                 <!--begin::Table body-->
                                 <tbody class="fw-semibold text-gray-600">
+                                    @foreach($data AS $key => $datas)
                                     <tr>
-                                        <td class="text-center px-2">1.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Agama islam</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">89</td>
+                                        <td class="text-center px-2">{{$key+1}}</td>
+                                        <td class="text-gray-800 text-hover-primary fw-bold">{{$datas->nama_mapel}}</td>
+                                        <td class="text-gray-800 text-hover-primary text-center">{{$datas->nilai_akhir}}</td>
                                         <td class="text-gray-800 fw-bold">
                                             <div class="row">
-                                                Menunjukkan penguasaan tentang materi beriman kepada Allah SWT
+                                                {{$datas->high_deskripsi}}
                                             </div>
                                             <hr>
                                             <div class="row">
-                                                Perlu pendampingan dalam materi perilaku jujur, amanah, tabligh fathonah
+                                                {{$datas->low_deskripsi}}
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center px-2">2.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Kewarganegaraan</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">86</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan pemahaman terhadap Norma dan UUD NRI Tahun 1945 dan mampu menerapkan dalam kehiduan sehari-hari
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam menjelaskan kelahiran Pancasila
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">3.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Indonesia</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan kemampuan untuk mendiskusikan unsur intrinsik, mengenali majas, dan berlatih menyajikan gagasannya dengan menulis cerita fantasi sederhana
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam mengeskpresikan ide melalui latihan menulis puisi rakyat
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">4.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Matematika</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">79</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik dalam mengoperasikan bilangan asli dan bilangan bulat
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bantuan dalam menentukan himpunan penyelesaian pada pertidaksamaan linear satu variabel
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">5.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Alam</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik daam melakukan identifikasi sifat dan karakteristik zat secara kolaboratif, membedakan perubahan fisik dan kimia, melakukan pemisahan campuran sederhana
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam melakukan pengukuran panjang, waktu, dan massa secara kolaboratif
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">6.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Sosial</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik dalam menjelaskan ciri khas kehidupan manusia pra aksara dan membandingkan dengan manusia modern jaman sekarang
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam membuat pohon silsiah keluarga dari pihak ayah dan ibu
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">7.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Inggris</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">82</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik dalam menyapa, memperkenalkan diri, dan menyatakan waktu dalam Bahasa Inggris
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam memperkanalkan orang lain dan mengidentifikasi benda di sekitarnya
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">8.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Seni Budaya</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Sangat memahami tentang unsur-unsur nada
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu pendampingan dalam memahami unsur-unsur nada
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">9.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">83</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik dalam materi olahraga bola
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu pendampingan dalam memahami dan mempraktikkan materi pembelajaran bola basket dan perlu pembimbingan lebih lanjut agar kemampuan tersebut dikuasai secara konsisten
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">10.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Teknologi Ilmu Komputer</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan dalam memahami sistem operasi dan juga jaringan komputer
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam melakukan perakitan komputer
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">11.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Jawa</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">83</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan dalam memahami struktur teks profie tokoh dengan baik
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu bimbingan dalam penggunaan unggah-ungguh basa dan menjabarkan struktur cerita wayang
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">12.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Bahasa Arab</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">93</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik dalam melakukan percakapan tentang At-Ta'aaruf (Perkenalan)
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu pendampingan dalam menulis dan membaca teks tentang Fil Fashli (di dalam kelas )
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center px-2">13.</td>
-                                        <td class="text-gray-800 text-hover-primary fw-bold">Kemuhammadiyahan</td>
-                                        <td class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td class="text-gray-800 fw-bold">
-                                            <div class="row">
-                                                Menunjukkan penguasaan yang baik tentang sejarah hidup dan kepribadian tokoh Muhammadiyah
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                Perlu pendampingan dalam memahami Muhammadiyah sebagai gerakan pendidikan
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    @endforeach
+                                    
                                 </tbody>
                                 <!--end::Table body-->
                             </table>

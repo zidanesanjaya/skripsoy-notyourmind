@@ -75,9 +75,13 @@
                                                     Pilih Rapor
                                                 </button>
                                                 <ul class="dropdown-menu form-select-solid" aria-labelledby="dropdownMenuButton">
-                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">7C/Ganjil</a></li>
-                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">8D/Genap</a></li>
-                                                    <li><a class="dropdown-item" href="{{ url('/nilaiRaporSiswaOrangTua') }}">9E/Ganjil</a></li>
+                                                    @if($data->is_show == 1)
+                                                        @foreach($data_rapor AS $datas)
+                                                            <li><a class="dropdown-item" href="{{ url('/nilai-rapor-siswa/'.$datas->id_tahun_akademik.'/'.$datas->semester) }}">Laporan Hasil Belajar Kelas {{$datas->tingkat}} / {{$datas->semester}}</a></li>
+                                                        @endforeach
+                                                        <hr>
+                                                        <li><a class="dropdown-item" href="{{ route('data.nilai_pancasila') }}">Rapor Pancasila</a></li>
+                                                    @endif
                                                 </ul>
                                             </div>
                                             <!--end::Input-->
@@ -117,52 +121,52 @@
                                     <tr>
                                         <td id="No." class="text-center">1.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nama Peserta Didik</td>
-                                        <td id="row2">: Aisyah Fatin Sholikah</td>
+                                        <td id="row2">: {{$data->nama_lengkap}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">2.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Induk Siswa (NIS)</td>
-                                        <td id="row2">: 9925</td>
+                                        <td id="row2">: {{$data->nis}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">3.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Induk Siswa Nasional (NISN)</td>
-                                        <td id="row2">: 2104295256</td>
+                                        <td id="row2">: {{$data->nisn}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">4.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Tempat, Tanggal Lahir</td>
-                                        <td id="row2">: Tangerang Selatan, 22 November 2008</td>
+                                        <td id="row2">: {{$data->tempat}}, {{$data->tanggal_lahir}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">5.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Jenis Kelamin</td>
-                                        <td id="row2">: Laki - Laki</td>
+                                        <td id="row2">: {{$data->jenis_kelamin}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">6.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Agama</td>
-                                        <td id="row2">: Islam</td>
+                                        <td id="row2">: {{$data->agama}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">7.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Status Dalam Keluarga</td>
-                                        <td id="row2">: Anak Kandung</td>
+                                        <td id="row2">: {{$data->status}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">8.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Anak Ke-</td>
-                                        <td id="row2">: 2</td>
+                                        <td id="row2">: {{$data->anak_ke}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">9.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Alamat Peserta Didik</td>
-                                        <td id="row2">: JL. IKAN GURAMI NO. 19 RT 02 RW 06 TUNJUNGSEKAR LOWOKWARU</td>
+                                        <td id="row2">: {{$data->alamat_siswa}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">10.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Sekolah Asal (SD/MTs, Sebutkan)</td>
-                                        <td id="row2">: SDN TUNJUNGSEKAR 03</td>
+                                        <td id="row2">: {{$data->sekolah_asal}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">11.</td>
@@ -172,12 +176,12 @@
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">NPSN</td>
-                                        <td id="row2">: 20533750</td>
+                                        <td id="row2">: {{$informasi_sekolah->npsn}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Di Kelas</td>
-                                        <td id="row2">: VII (Tujuh)</td>
+                                        <td id="row2">: {{$data->tingkat}} {{$data->kelas}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
@@ -192,22 +196,22 @@
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">a. Nama Ayah</td>
-                                        <td id="row2">: MUHAMMAD KHUMAINI</td>
+                                        <td id="row2">: {{$data->nama_ayah}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">b. Nama Ibu</td>
-                                        <td id="row2">: VIRNA SARI</td>
+                                        <td id="row2">: {{$data->nama_ibu}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">13.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Alamat Orang Tua</td>
-                                        <td id="row2">: JL. IKAN GURAMI NO. 19 RT 02 RW 06 TUNJUNGSEKAR LOWOKWARU</td>
+                                        <td id="row2">: {{$data->alamat_ortu}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Telepon / Hp</td>
-                                        <td id="row2">: </td>
+                                        <td id="row2">: {{$data->no_hp_ortu}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">14.</td>
@@ -217,27 +221,27 @@
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">a. Pekerjaan Ayah</td>
-                                        <td id="row2">: </td>
+                                        <td id="row2">: {{$data->pekerjaan_ayah}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">b. Pekerjaan Ibu</td>
-                                        <td id="row2">: KARYAWAN BUMN</td>
+                                        <td id="row2">: {{$data->pekerjaan_ibu}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">15.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nama Wali</td>
-                                        <td id="row2">: </td>
+                                        <td id="row2">: {{$data->nama_wali}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center"></td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Nomor Telepon / HP</td>
-                                        <td id="row2">: </td>
+                                        <td id="row2">: {{$data->no_hp_wali}}</td>
                                     </tr>
                                     <tr>
                                         <td id="No." class="text-center">17.</td>
                                         <td id="row1" class="text-gray-800 fw-bold text-nowrap">Pekerjaan Wali</td>
-                                        <td id="row2">: </td>
+                                        <td id="row2">: {{$data->pekerjaan_wali}}</td>
                                     </tr>
                                 </tbody>
                             </table>

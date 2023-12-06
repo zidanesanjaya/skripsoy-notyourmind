@@ -106,7 +106,8 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Card body-->
 					<div class="card-body p-10 p-lg-20">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="../../demo1/dist/index.html" action="#">
+						<form class="form w-100" action="{{route('login.user')}}" method="post">
+							@csrf
 							<!--begin::Heading-->
 							<div class="text-center mb-11">
 								<!--begin::Title-->
@@ -117,10 +118,11 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Input group-->
 							<div class="fv-row mb-8">
 								<!--begin::Select2-->
-								<select class="form-select mb-2" name="tax" data-control="select2" data-hide-search="true" data-placeholder="Log In Sebagai">
+								<select class="form-select mb-2" name="role" data-control="select2" data-hide-search="true" data-placeholder="Log In Sebagai" name="role">
 									<option></option>
-									<option value="Kepala Sekolah">Kepala Sekolah</option>
-									<option value="Guru">Guru</option>
+									<option value="kepala_sekolah">Kepala Sekolah</option>
+									<option value="guru">Guru</option>
+									<option value="wali_kelas">Wali Kelas</option>
 								</select>
 								<!--end::Select2-->
 							</div>
@@ -173,6 +175,27 @@ License: For each use you must have a valid license purchased only from above li
 	</div>
 	<!--end::Root-->
 	<!--begin::Javascript-->
+	@if (\Session::has('danger'))
+	<div class="container" style="position:absolute;bottom:0;width:40%;" id="error-alert">
+		<div class="alert alert-danger float-left mr-3" role="alert">
+			{{ session('danger') }}
+		</div>
+	</div>
+	@elseif (\Session::has('success'))
+	<div class="container" style="position:absolute;bottom:0;width:40%;" id="success-alert">
+		<div class="alert alert-success float-left mr-3" role="alert">
+			{{ session('success') }}
+		</div>
+	</div>
+	@endif
+
+
+    <script>
+    	setTimeout(function() {
+			document.getElementById('success-alert')?.remove();
+			document.getElementById('error-alert')?.remove();
+		}, 3000);
+	</script>
 	<script>
 		var hostUrl = "/";
 	</script>

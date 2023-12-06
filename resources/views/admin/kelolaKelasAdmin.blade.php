@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
 <!--begin::Main-->
 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <!--begin::Toolbar-->
@@ -78,25 +80,26 @@
                                     </tr>
                                 </thead>
                                 <tbody id="listWaliKelas">
+                                    @foreach($data AS $data => $key)
                                     <tr>
-                                        <td class="px-5">1.</td>
-                                        <td class="text-center">7</td>
-                                        <td class="text-center">A</td>
-                                        <td>Bapak Nosa</td>
+                                        <td class="px-5">{{($data+1)}}</td>
+                                        <td class="text-center">{{$key->tingkat}}</td>
+                                        <td class="text-center">{{$key->kelas}}</td>
+                                        <td>{{$key->nama_lengkap}}</td>
                                         <td class="text-center">
                                             <div class="row m-1">
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm btn-success w-100" data-bs-toggle="modal" data-bs-target="#tambahWaliKelas">
+                                                    <a href="#" id="wali_kelas_btn" class="btn btn-sm btn-success w-100" data-bs-toggle="modal" data-bs-target="#tambahWaliKelas" onclick="setWaliKelas({{$key->id}});">
                                                         Wali Kelas
                                                     </a>
                                                 </div>
                                                 <div class="col-md-12 my-1">
-                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#kelolaMatpelKelas">Mata Pelajaran</a>
+                                                    <a href="#" class="btn btn-sm fw-bold btn-info w-100" data-bs-toggle="modal" data-bs-target="#kelolaMatpelKelas" onclick="setKelasId({{$key->id}});getKelas({{$key->tingkat}} , '{{$key->kelas}}');">Mata Pelajaran</a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            <a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
+                                            <a href="/deleteKelas/{{$key->id}}" class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm">
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +112,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -165,7 +169,7 @@
                     </div>
                 </div>
                 <!--begin:Form-->
-                <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
+                <form method="post" class="form" action="{{route('kelas.store')}}">
                     @csrf
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
@@ -186,7 +190,7 @@
                         <div class="col-md-6 fv-row">
                             <!--begin::Label-->
                             <label class="required fs-6 fw-semibold mb-2">Kelas</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas..." name="kelas">
+                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Kelas..." name="kelas_name">
                                 <option value="">Pilih Kelas...</option>
                                 <option value="A">A</option>
                                 <option value="B">B</option>
@@ -305,14 +309,16 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
+                <form id="tambahKelas_form" method="post" class="form" action="{{ route('kelas.update',0)}}">
                     @csrf
+                    @method('PATCH')
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
                         <h1 class="mb-3">Tambah Wali Kelas</h1>
                         <!--end::Title-->
                     </div>
+                    <input type="hidden" name="id_kelas" id="id_kelas">
                     <!--end::Heading-->
                     <!--begin::Input group-->
                     <div class="row g-9 mb-8">
@@ -320,11 +326,10 @@
                         <div class="col-md-12 fv-row">
                             <!--begin::Label-->
                             <label class="required fs-6 fw-semibold mb-2">Wali Kelas</label>
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Wali Kelas" name="kelas">
-                                <option value="">Pilih Wali Kelas...</option>
-                                <option value="Bapak Nosa">Bapak Nosa</option>
-                                <option value="Bapak Vatqi">Bapak Vatqi</option>
-                                <option value="Bapak Buji">Bapak Buji</option>
+                            <select class="form-select form-select-solid" data-placeholder="Pilih Wali Kelas" name="wali_kelas" id="add_wali_kelas">
+                                @foreach($wali_kelas AS $key)
+                                    <option value="{{$key->username_user}}">{{$key->nama_lengkap}}</option>
+                                @endforeach
                             </select>
                             <!--end::Label-->
                         </div>
@@ -377,12 +382,12 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0">
                 <!--begin:Form-->
-                <form id="tambahKelas_form" method="post" class="form" action="{{ route('createAnggota')}}">
+                <form id="tambahKelas_form" method="post" class="form" action="/update-mapel">
                     @csrf
                     <!--begin::Heading-->
                     <div class="mb-2 text-center">
                         <!--begin::Title-->
-                        <h1>Kelola Mata Pelajaran Kelas 7C (as Kelas & Fase)</h1>
+                        <h1>Kelola Mata Pelajaran Kelas <span id="class_name"></span></h1>
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
@@ -404,7 +409,7 @@
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
                                         <!--begin::Table-->
-                                        <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
+                                        <table id="kelasTest" class="table align-middle table-striped" style="width:100%">
                                             <thead>
                                                 <tr class="fw-bold bg-light">
                                                     <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
@@ -412,18 +417,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="px-5">Pendidikan Agama Islam</td>
-                                                    <td class="px-5">Bapak Puji</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">Bahasa Inggris</td>
-                                                    <td class="px-5">Bapak Nosa</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                                    <td class="px-5">Bapak Vatqi</td>
-                                                </tr>
+                                                <div id="dataTable"></div>
                                             </tbody>
                                         </table>
                                         <!--end::Table-->
@@ -448,7 +442,7 @@
                         <!--begin::Table container-->
                         <div class="table-responsive">
                             <!--begin::Table-->
-                            <table id="listKelas" class="table align-middle gs-0 table-striped" style="width:100%">
+                            <table class="table align-middle gs-0 table-striped" style="width:100%">
                                 <thead>
                                     <tr class="fw-bold bg-light">
                                         <th class="px-5 min-w-50px p-50px text-center">Mata Pelajaran</th>
@@ -457,114 +451,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <input type="hidden" id="output" name="id_kelas_update">
+                                @foreach($data_mapel AS $key)
                                     <tr>
-                                        <td class="px-5">Pendidikan Agama Islam</td>
-                                        <td class="px-5">Bapak Puji</td>
+                                        <td class="px-5">{{$key->nama_mapel}}</td>
+                                        <td class="px-5">{{$key->nama_lengkap}}</td>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
+                                                <input class="form-check-input" type="checkbox" value="{{$key->id}}" name="id_mapel[]"/>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="px-5">Bahasa Inggris</td>
-                                        <td class="px-5">Bapak Nosa</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                        <td class="px-5">Bapak Vatqi</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Pendidikan Agama Islam</td>
-                                        <td class="px-5">Bapak Puji</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Bahasa Inggris</td>
-                                        <td class="px-5">Bapak Nosa</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                        <td class="px-5">Bapak Vatqi</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Pendidikan Agama Islam</td>
-                                        <td class="px-5">Bapak Puji</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Bahasa Inggris</td>
-                                        <td class="px-5">Bapak Nosa</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                        <td class="px-5">Bapak Vatqi</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Pendidikan Agama Islam</td>
-                                        <td class="px-5">Bapak Puji</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Bahasa Inggris</td>
-                                        <td class="px-5">Bapak Nosa</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-5">Teknologi Informasi dan Komputer</td>
-                                        <td class="px-5">Bapak Vatqi</td>
-                                        <td>
-                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                            </div>
-                                        </td>
-                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -592,5 +490,74 @@
 </div>
 <!--end::Modal - Kelola Mata Pelajaran Kelas-->
 
+<script>
+    var temp_id_kelas = 0;
+  
+    
+    function setWaliKelas(id){
+        $("#id_kelas").val(id);
+    }
+    function getKelas(tingkat , kelas){
+        $("#class_name").empty();
+        $("#class_name").append(tingkat+' '+kelas);
+    }
+    function setKelasId(id) {
+        temp_id_kelas = id;
+        $("#output").val(id);
+
+        $('#kelasTest tbody').empty();
+        // Buat elemen HTML baru
+        $.ajax({
+            url: "/get-kelas-exist/" + temp_id_kelas,
+            type: "GET",
+            dataType: "json",
+            success: function(json) {
+                var newElemen = '';
+                for (let i = 0; i < json.length; i++) {
+                    newElemen +=   '<tr>'+
+                                        '<td>'+json[i].nama_mapel+'</td>'+
+                                        '<td>'+json[i].nama_lengkap+'</td>'+
+                                    '</tr>';    
+                }            
+                $('#kelasTest tbody').append(newElemen);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error:", error);
+            }
+        });
+        // Tambahkan elemen ke halaman
+    }
+
+
+
+    function setMapel(id_mapel){
+        var checkboxElement = document.getElementById('checkboxId');
+        var isChecked = checkboxElement.checked;
+        var csrfToken = document.querySelector('input[name="csrf_token"]').value;
+
+        var data = {
+            id_mapel: id_mapel,
+            id_kelas: temp_id_kelas,
+            isChecked: isChecked
+        };
+
+        fetch('/update-mapel', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data berhasil dikirim:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    </script>
+
 @endsection
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>

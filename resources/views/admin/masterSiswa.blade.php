@@ -76,14 +76,14 @@
 									</tr>
 								</thead>
 								<tbody id="listSiswa">
+									@foreach($siswas as $key => $data)
 									<tr>
-										<td class="px-5">1.</td>
-										<td class="px-5">9925</td>
-										<td>2104295256</td>
-										<td>Aisyah Fatin Sholikah</td>
+										<td class="px-5">{{($key+1)}}</td>
+										<td class="px-5">{{$data->username}}</td>
+										<td>{{$data->nisn}}</td>
+										<td>{{$data->nama_lengkap}}</td>
 										<td class="text-center">
-										<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataSiswa" data-id="${data.id}" onclick="">
-											<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+										<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#editDataSiswa" onclick="editDataSiswa({{$data->id}})" data-id="${data.id}" >
 											<span class="svg-icon svg-icon-3">
 											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor" />
@@ -92,7 +92,7 @@
 											</span>
 											<!--end::Svg Icon-->
 										</a>
-										<a href="/deleteAnggota/${data.id}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+										<a href="{{route('destroy.siswa' , $data->id)}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
 											<span class="svg-icon svg-icon-3">
 											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,6 +105,7 @@
 										</a>
 										</td>
 									</tr>
+									@endforeach
 								</tbody>
 							</table>
 							<!--end::Table-->
@@ -148,7 +149,7 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="tambahDataSiswa_form" method="post" class="form" action="">
+				<form method="post" class="form" action="{{route('siswa.store')}}">
 					@csrf
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
@@ -166,7 +167,7 @@
 								<span class="required">Nomor Induk Siswa</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NIS" name="nis" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NIS" name="nis" required/>
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
@@ -176,7 +177,7 @@
 								<span class="required">Nomor Induk Siswa Nasional</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NISN" name="nisn" />
+							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NISN" name="nisn" required/>
 						</div>
 						<!--end::Col-->
 					</div>
@@ -188,7 +189,7 @@
 							<span class="required">Nama Siswa</span>
 						</label>
 						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Siswa" name="email" />
+						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Siswa" name="nama" required />
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
@@ -247,9 +248,9 @@
 			<!--begin::Modal body-->
 			<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 				<!--begin:Form-->
-				<form id="editDataSiswa_form" method="post" class="form">
+				<form action="{{route('siswa.update',0)}}" method="post" class="form">
 					@csrf
-					@method('put')
+					@method('patch')
 					<!--begin::Heading-->
 					<div class="mb-13 text-center">
 						<!--begin::Title-->
@@ -266,7 +267,7 @@
 								<span class="required">Nomor Induk Siswa</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NIS" name="nis" />
+							<input type="text" id="nis_edit" class="form-control form-control-solid" placeholder="Masukkan NIS" name="nis" />
 						</div>
 						<!--end::Col-->
 						<!--begin::Col-->
@@ -276,7 +277,7 @@
 								<span class="required">Nomor Induk Siswa Nasional</span>
 							</label>
 							<!--end::Label-->
-							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NISN" name="nisn" />
+							<input type="text" id="nisn_edit" class="form-control form-control-solid" placeholder="Masukkan NISN" name="nisn" />
 						</div>
 						<!--end::Col-->
 					</div>
@@ -288,7 +289,7 @@
 							<span class="required">Nama Siswa</span>
 						</label>
 						<!--end::Label-->
-						<input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Siswa" name="email" />
+						<input type="text" id="nama_edit" class="form-control form-control-solid" placeholder="Masukkan Nama Siswa" name="nama" />
 					</div>
 					<!--end::Input group-->
 					<!--begin::Input group-->
@@ -321,5 +322,26 @@
 	<!--end::Modal dialog-->
 </div>
 <!--end::Modal - Edit Data Siswa-->
+
+<script>
+	function editDataSiswa(id) {
+		$.ajax({
+			url: '/get-siswa/'+id,
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				// Sukses, data tersedia di variabel 'data'
+				document.getElementById("nis_edit").value = data[0].username;
+				document.getElementById("nisn_edit").value = data[0].nisn;
+				document.getElementById("nama_edit").value = data[0].nama_lengkap;
+			},
+			error: function(xhr, status, error) {
+				// Terjadi kesalahan dalam permintaan
+				console.error('Gagal mengambil data. Status:', status, 'Error:', error);
+			}
+		});
+	}
+
+
+</script>
 @endsection
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>

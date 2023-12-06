@@ -50,6 +50,7 @@
                         </div>
                         <!--end::Header-->
                     </div>
+                    <input type="hidden" value="{{$auth->nisn}}" id="nisn_get">
                     <!-- end::row header -->
                     <!-- begin::Row Toolbar -->
                     <!--begin::Header-->
@@ -59,11 +60,10 @@
                                 <div class="mb-1">
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Kelas</option>
-                                            <option value="7C">7C</option>
-                                            <option value="8D">8D</option>
-                                            <option value="9E">9E</option>
+                                        <select class="form-select form-select-solid" id="tahunAkademik" onchange="getNilaiSiswa();">
+                                            @foreach($tahunAkademik AS $data)
+                                            <option value="{{$data->id}}">{{$data->tahun_akademik}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -75,8 +75,7 @@
                                 <div class="mb-1">
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Semester</option>
+                                        <select class="form-select form-select-solid" id="semester" onchange="getNilaiSiswa();">
                                             <option value="Ganjil">Ganjil</option>
                                             <option value="Genap">Genap</option>
                                         </select>
@@ -137,229 +136,9 @@
                                 </thead>
                                 <!--end::Table head-->
                                 <!--begin::Table body-->
-                                <tbody class="fw-semibold text-gray-600">
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Pendidikan Agama islam</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Pendidikan Kewarganegaraan</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">80</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">86</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">83.7</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">91</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Bahasa Indonesia</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">86</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">86</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">85.2856</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">82</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">75</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">78.5</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Matematika</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Alam</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Ilmu Pengetahuan Sosial</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Bahasa Inggris</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Seni Budaya</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Pendidikan Jasmani, Olahraga, dan Kesehatan</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Teknologi Ilmu Komputer</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Bahasa Jawa</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Bahasa Arab</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="mataPelajaran" class="px-3 text-gray-800 text-hover-primary fw-bold">Kemuhammadiyahan</td>
-                                        <td id="sumatif1" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif2" class="text-gray-800 text-hover-primary text-center">89</td>
-                                        <td id="sumatif3" class="text-gray-800 text-hover-primary text-center">100</td>
-                                        <td id="sumatif4" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="sumatif5" class="text-gray-800 text-hover-primary text-center">87</td>
-                                        <td id="sumatif6" class="text-gray-800 text-hover-primary text-center">95</td>
-                                        <td id="sumatif7" class="text-gray-800 text-hover-primary text-center">88</td>
-                                        <td id="sumatif8" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif9" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="sumatif10" class="text-gray-800 text-hover-primary text-center"></td>
-                                        <td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">90.143</td>
-                                        <td id="pts" class="text-gray-800 text-hover-primary text-center">92.5</td>
-                                        <td id="pas" class="text-gray-800 text-hover-primary text-center">85</td>
-                                        <td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">88.75</td>
-                                    </tr>
-                                </tbody>
+                                <tbody class="fw-semibold text-gray-600" id="listNilai">
+                               
+                               </tbody>
                                 <!--end::Table body-->
                             </table>
                             <!--end::Table-->
@@ -376,6 +155,70 @@
     <!--end::Content wrapper-->
 </div>
 <!--end:::Main-->
+
+<script>
+
+    $( document ).ready(function() {
+        getNilaiSiswa();
+    });
+    function getNilaiSiswa(){
+        // var tahunAkademik = $("#tahunAkademik").val();
+        var nisn = $('#nisn_get').val();
+        var semester = $("#semester").val();
+
+        var tahunAkademik = 6;
+        
+        $.ajax({
+            url: '/get-json-nilai/'+nisn+'/'+tahunAkademik+'/'+semester,
+            type: 'get',
+            dataType: 'JSON',
+            success: function(response){
+                // console.log(response.data_diri[0]);
+                $(".nama_siswa").empty();
+                $(".nisn_siswa").empty();
+                $(".kelas_tingkat").empty();
+                $(".fase_siswa").empty();
+                $(".semester").empty();
+                $(".tahun_pelajaran").empty();
+
+                $(".nama_siswa").append(response.data_diri[0].nama_lengkap);
+                $(".nisn_siswa").append(response.data_diri[0].nisn);
+                $(".fase_siswa").append(response.data_diri[0].kelas);
+                $(".kelas_tingkat").append(response.data_diri[0].tingkat);
+                $(".semester").append(response.informasi_sekolah[0].semester);
+                $(".tahun_pelajaran").append(response.informasi_sekolah[0].tahun_pelajaran);
+                var len = response.distinctData.length;
+                $("#listNilai").empty();
+
+                for(var i = 0; i < len; i++){
+                    var tr_str = '<tr>'+
+                                    '<td id="mataPelajaran" class="text-gray-800 text-hover-primary fw-bold">'+response.distinctData[i].nama_mapel+'</td>';
+
+                    var sum = 0;
+                    var totalSumatif = response.dataNilai.filter(item => item.id_mapel_kelas === response.distinctData[i].id_mapel_kelas).length;
+                    // console.log(totalSumatif);
+
+                    for (let j = 1; j < 11; j++) {
+                        const dataNilaiFiltered = response.dataNilai.filter(item => item.id_mapel_kelas === response.distinctData[i].id_mapel_kelas && item.sumatif == j);
+                        if (dataNilaiFiltered[0] == null) {
+                            tr_str += '<td id="sumatif' + j + '" class="text-gray-800 text-hover-primary text-center">-</td>';
+                        } else {
+                            sum += dataNilaiFiltered[0].nilai;
+                            tr_str += '<td id="sumatif' + j + '" class="text-gray-800 text-hover-primary text-center">' + dataNilaiFiltered[0].nilai + '</td>';
+                        }
+                    }
+
+                    tr_str += '<td id="naSumatifLingkupMateri" class="text-gray-800 text-hover-primary text-center">'+(sum/totalSumatif).toFixed(2)+'</td>'+
+                            '<td id="pts" class="text-gray-800 text-hover-primary text-center">'+ (response.distinctData[i].pas !== null && response.distinctData[i].pas !== undefined ? response.distinctData[i].pas : 0) +'</td>'+
+                            '<td id="pas" class="text-gray-800 text-hover-primary text-center">'+ (response.distinctData[i].pts !== null && response.distinctData[i].pts !== undefined ? response.distinctData[i].pts : 0) +'</td>'+
+                            '<td id="naSumatifAkhirSemester" class="text-gray-800 text-hover-primary text-center">'+(((sum/totalSumatif) + (response.distinctData[i].pas !== null && response.distinctData[i].pas !== undefined ? response.distinctData[i].pas : 0) + (response.distinctData[i].pts !== null && response.distinctData[i].pts !== undefined ? response.distinctData[i].pts : 0)) / 3).toFixed(2)+'</td>'+
+                        '</tr>';
+                    $("#listNilai").append(tr_str);
+                }
+            }
+        });
+    }
+</script>
 @endsection
 <!-- begin::Link Javascript -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

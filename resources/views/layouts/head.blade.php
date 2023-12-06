@@ -1,6 +1,16 @@
 <head>
     <base href="../"/>
-    <title>Admin</title>
+    @if(session('current_role') === 'admin')
+    <title>Admin || Sistem Rapor Digital SMP Muhammadiyah 1 Malang</title>
+    @elseif(session('current_role') === 'kepala_sekolah')
+    <title>Sistem Rapor Digital SMP Muhammadiyah 1 Malang</title>
+    @elseif(session('current_role') === 'guru')
+    <title>Sistem Rapor Digital SMP Muhammadiyah 1 Malang</title>
+    @elseif(session('current_role') === 'wali_kelas')
+    <title>Sistem Rapor Digital SMP Muhammadiyah 1 Malang</title>
+    @elseif(session('current_role') === 'siswa')
+    <title>Sistem Rapor Digital SMP Muhammadiyah 1 Malang</title>
+    @endif
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Flask & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -29,8 +39,16 @@
     <!--end::Material-Icons-->
     
 	<!--begin::datatable-->
-	<link href="/css/datatables.min.css" rel="stylesheet"/>
+	<!-- <link href="/css/datatables.min.css" rel="stylesheet"/> -->
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" /> -->
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
+	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+
+<!-- Contoh penggunaan CDN DataTables -->
+
+
+
+
 	<!--end::datatable-->
 </head>

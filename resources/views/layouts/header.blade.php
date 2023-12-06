@@ -18,7 +18,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="/media/logos/default-small.svg" class="h-30px" />
+                <img alt="Logo" src="/images/logohead.png" class="h-30px" />
             </a>
         </div>
         <!--end::Mobile logo-->
@@ -146,8 +146,8 @@
                             <div class="menu-content d-flex align-items-center px-3">
                                 <!--begin::Username-->
                                 <div class="d-flex flex-column">
-                                    <div class="fw-bold d-flex align-items-center fs-5">Max Smith</div>
-                                    <a class="fw-semibold text-muted text-hover-primary fs-7" style="cursor: context-menu;">Admin</a>
+                                    <div class="fw-bold d-flex align-items-center fs-5">{{ Auth::user()->username }}</div>
+                                    <a class="fw-semibold text-muted text-hover-primary fs-7" style="cursor: context-menu;">{{ session('current_role') }}</a>
                                 </div>
                                 <!--end::Username-->
                             </div>
@@ -157,37 +157,43 @@
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
                         <!--begin::Menu item-->
-                        <div class="menu-item px-5">
-                            <a href="{{ url('/profilAdmin') }}" class="menu-link px-5">My Profile</a>
-                        </div>
-                        <!--end::Menu item-->
-                        <!--begin::Menu separator-->
-                        <div class="separator my-2"></div>
-                        <!--end::Menu separator-->
+                        @if(session('current_role') === 'admin')
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="{{ url('/profilKepalaSekolah') }}" class="menu-link px-5">My Profile (as Kepala Sekolah)</a>
+                            <a href="{{ url('/my-profile') }}" class="menu-link px-5">My Profile</a>
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu separator-->
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
+                        @elseif(session('current_role') === 'kepala_sekolah')
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="{{ url('/profilGuru') }}" class="menu-link px-5">My Profile (as Guru)</a>
+                            <a href="{{ url('/my-profile') }}" class="menu-link px-5">My Profile</a>
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu separator-->
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
+                        @elseif(session('current_role') === 'guru')
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="{{ url('/profilWaliKelas') }}" class="menu-link px-5">My Profile (as Wali Kelas)</a>
+                            <a href="{{ url('/my-profile') }}" class="menu-link px-5">My Profile</a>
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu separator-->
                         <div class="separator my-2"></div>
                         <!--end::Menu separator-->
+                        @elseif(session('current_role') === 'wali_kelas')
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="{{ url('/my-profile') }}" class="menu-link px-5">My Profile</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+                        @endif
                         <!--begin::Menu item-->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

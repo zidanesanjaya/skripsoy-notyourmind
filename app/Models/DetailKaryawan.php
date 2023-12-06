@@ -13,6 +13,7 @@ class DetailKaryawan extends Model
     protected $fillable = [
         'id',
         'id_user',
+        'username_user',
         'nama_lengkap',
         'jabatan',
         'created_at',

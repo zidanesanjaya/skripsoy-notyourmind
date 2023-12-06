@@ -39,18 +39,18 @@ License: For each use you must have a valid license purchased only from above li
                         @yield('content')
 					<!--end:::Main-->
                     <!--Begin:::Footer-->
-					@if (\Session::has('success'))
-						<!-- Success Alert -->
-						<div id="success-alert" class="alert alert-success alert-dismissible fade show">
-							{{ session('success') }}
-							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-						</div>
-					@elseif (\Session::has('danger'))
-						<!-- Error Alert -->
-						<div id="error-alert" class="alert alert-danger alert-dismissible fade show">
+					@if (\Session::has('danger'))
+					<div class="container" style="position:fixed;bottom:0;width:40%;z-index:9999;" id="error-alert">
+						<div class="alert alert-danger float-left mr-3" role="alert">
 							{{ session('danger') }}
-							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 						</div>
+					</div>
+					@elseif (\Session::has('success'))
+					<div class="container" style="position:fixed;bottom:0;width:40%;z-index:9999;" id="success-alert">
+						<div class="alert alert-success float-left mr-3" role="alert">
+							{{ session('success') }}
+						</div>
+					</div>
 					@endif
                         @include('layouts.footer')
                     <!--end:::Footer-->

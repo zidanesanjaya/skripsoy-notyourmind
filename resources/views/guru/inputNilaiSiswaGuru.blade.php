@@ -1,8 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    #dataTable {
+        max-height: 400px;
+        /* Sesuaikan dengan tinggi maksimum yang Anda inginkan */
+        overflow-y: auto;
+        /* Membuat scrollbar vertikal muncul jika melebihi tinggi maksimum */
+        width: 100%;
+        /* Menyesuaikan lebar tabel dengan kontainer */
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
 <!--begin::Main-->
 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <!--begin::Content wrapper-->
     <div class="d-flex flex-column flex-column-fluid">
         <!--begin::Toolbar-->
@@ -24,7 +46,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Input Nilai Siswa</li>
+                        <li class="breadcrumb-item text-muted">Input Nilai Sumatif Siswa</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -45,14 +67,16 @@
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bold fs-3 mb-1">Input Nilai Siswa</span>
+                                <span class="card-label fw-bold fs-3 mb-1">Input Nilai Sumatif Siswa</span>
                             </h3>
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar">
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-filemanager-table-toolbar="base">
                                     <!--begin::Export-->
-                                    <a href="/files/sampleTemplateNilaiAsesmen.xlsx">
+                                    <a href="" class="btn btn-light-warning me-3" onclick="initSiswa();" id="initSiswa">Initialize</a>
+
+                                    <a onclick="getNilaiExcel();" id="getNilaiExcel">
                                         <button type="button" class="btn btn-light-success me-3" id="downloadTemplateNilaiAsesmen" download>
                                             <!--begin::Svg Icon | path: icons/duotune/files/fil013.svg-->
                                             <span class="svg-icon svg-icon-2">
@@ -66,7 +90,7 @@
                                     </a>
                                     <!--end::Export-->
                                     <!--begin::Add customer-->
-                                    <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#importNilaiAsesmen">
+                                    <button type="button" onclick="uploadNilai();" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#importNilaiAsesmen">
                                         <!--begin::Svg Icon | path: icons/duotune/files/fil018.svg-->
                                         <span class="svg-icon svg-icon-2">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,10 +101,13 @@
                                         </span>
                                         <!--end::Svg Icon-->Unggah Nilai Asesmen</button>
                                     <!--end::Add customer-->
-                                    <!--begin::Add customer-->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kelolaAsesmenGuru">
-                                        Kelola Sumatif</button>
-                                    <!--end::Add customer-->
+                                    <!--begin::Input Nilai Ujian-->
+                                    <a href="{{ url('/nilai-akhir') }}">
+                                        <button type="button" class="btn btn-info">
+                                            Input Nilai Ujian
+                                        </button>
+                                    </a>
+                                    <!--end::Input Nilai Ujian-->
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
@@ -99,10 +126,10 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Mata Pelajaran...</option>
-                                            <option value="Pendidikan Agama Islam">Pendidikan Agama Islam</option>
-                                            <option value="Bahasa Arab">Bahasa Arab</option>
+                                        <select class="form-select form-select-solid" onchange="loadData();changeSelectSumatif();" id="mapel">
+                                            @foreach($mapel AS $key)
+                                            <option value="{{$key->id}}">{{$key->nama_mapel}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -117,8 +144,7 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Tingkat...</option>
+                                        <select class="form-select form-select-solid" onchange="loadData();" id="filterTingkat">
                                             <option value="7">7</option>
                                             <option value="8">8</option>
                                             <option value="9">9</option>
@@ -136,8 +162,7 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Kelas...</option>
+                                        <select class="form-select form-select-solid" id="filterKelas" onchange="loadData();">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
                                             <option value="C">C</option>
@@ -160,18 +185,8 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid">
-                                            <option value="">Pilih Sumatif...</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
+                                        <select class="form-select form-select-solid" id="filterSumatif" onchange="loadData();">
+
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -186,69 +201,23 @@
                         <!--begin::Table container-->
                         <div class="table-responsive">
                             <!--begin::Table-->
-                            <table id="datasiswa" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
+                            <table id="dataTable" class="table align-middle gs-0 gy-4 table-striped" style="width:100%">
                                 <thead>
                                     <tr class="fw-bold text-muted bg-light text-nowrap">
                                         <th class="px-5 min-w-20px w-20px text-center">No.</th>
                                         <th class="ps-4 min-w-20px w-20px text-center">NIS</th>
                                         <th class="min-w-50px w-75px text-center">NISN</th>
                                         <th class="min-w-100px w-100px text-center">Nama Siswa</th>
-                                        <th class="min-w-100px w-150px text-center">Nilai</th>
-                                        <th class="min-w-100px w-150px text-start">Deskripsi Tertinggi</th>
-                                        <th class="min-w-100px w-150px text-start">Deskripsi Terendah</th>
+                                        <th class="min-w-100px w-50px text-center">Nilai Sumatif</th>
+                                        <th class="min-w-150px w-150px text-start">Deskripsi Tertinggi</th>
+                                        <th class="min-w-150px w-150px text-start">Deskripsi Terendah</th>
+                                        <th class="min-w-75px w-50px text-center">S</th>
+                                        <th class="min-w-75px w-50px text-center">I</th>
+                                        <th class="min-w-75px w-50px text-center">A</th>
                                     </tr>
                                 </thead>
-                                <tbody id="listSiswa">
-                                    <tr>
-                                        <td class="px-5">1.</td>
-                                        <td class="px-5">9925</td>
-                                        <td class="text-center">2104295256</td>
-                                        <td>Aisyah Fatin Sholikah</td>
-                                        <td class="text-center">
-                                            <div class="row m-1">
-                                                <div class="col-12">
-                                                    <input type="text" class="form-control form-control-solid text-center" placeholder="Nilai" name="nilaiAsesmen" />
-                                                </div>
-                                            </div>
-                                            <div class="row m-1">
-                                                <div class="col-12">
-                                                    <div class="row">
-                                                        <div class="col-4">
-                                                            <input type="text" class="form-control form-control-solid text-center" placeholder="S" name="presensiSakit" />
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <input type="text" class="form-control form-control-solid text-center" placeholder="I" name="presensiIjin" />
-                                                        </div>
-                                                        <div class="col-4">
-                                                            <input type="text" class="form-control form-control-solid text-center" placeholder="A" name="presensiAlasan" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <option value="">Pilih Deskripsi Tertinggi...</option>
-                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
-                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, beatae!
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid">
-                                                    <option value="">Pilih Deskripsi Terendah...</option>
-                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
-                                                    <option value="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, dignissimos.</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </td>
-                                    </tr>
+                                <tbody id="listSiswa" class="text-center">
+
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -274,9 +243,14 @@
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Form-->
-            <form class="form" action="none" id="kt_modal_upload_form">
+            <form action="/import-nilai" method="post" enctype="multipart/form-data">
+                @csrf
                 <!--begin::Modal header-->
                 <div class="modal-header">
+                    <input type="hidden" id="id_mapel_up" name="id_mapel">
+                    <input type="hidden" id="tingkat_up" name="tingkat">
+                    <input type="hidden" id="kelas_up" name="kelas">
+                    <input type="hidden" id="sumatif_up" name="sumatif">
                     <!--begin::Modal title-->
                     <h2 class="fw-bold">Upload Nilai Asesmen</h2>
                     <!--end::Modal title-->
@@ -299,48 +273,44 @@
                     <!--begin::Input group-->
                     <div class="form-group">
                         <!--begin::Dropzone-->
-                        <div class="dropzone dropzone-queue mb-2" id="kt_modal_upload_dropzone">
+                            <div class="dropzone dropzone-queue mb-2" id="kt_modal_upload_dropzone">
                             <!--begin::Controls-->
-                            <div class="dropzone-panel mb-4">
-                                <div class="input-group">
-                                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                <div class="dropzone-panel mb-4">
+                                    <div class="input-group">
+                                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"name="file" aria-label="Upload">
+                                    </div>
                                 </div>
-                            </div>
                             <!--end::Controls-->
                             <!--begin::Items-->
-                            <div class="dropzone-items wm-200px">
-                                <div class="dropzone-item p-5" style="display:none">
-                                    <!--begin::Progress-->
-                                    <div class="dropzone-progress">
-                                        <div class="progress bg-light-primary">
-                                            <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                <div class="dropzone-items wm-200px">
+                                    <div class="dropzone-item p-5" style="display:none">
+                                        <div class="form-group mb-4">
+                                            <div class="custom-file text-left">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-toolbar">
+                                            <span class="dropzone-start">
+                                                <i class="bi bi-play-fill fs-3"></i>
+                                            </span>
+                                            <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                <i class="bi bi-x fs-3"></i>
+                                            </span>
+                                            <span class="dropzone-delete" data-dz-remove="">
+                                                <i class="bi bi-x fs-1"></i>
+                                            </span>
                                         </div>
                                     </div>
-                                    <!--end::Progress-->
-                                    <!--begin::Toolbar-->
-                                    <div class="dropzone-toolbar">
-                                        <span class="dropzone-start">
-                                            <i class="bi bi-play-fill fs-3"></i>
-                                        </span>
-                                        <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                            <i class="bi bi-x fs-3"></i>
-                                        </span>
-                                        <span class="dropzone-delete" data-dz-remove="">
-                                            <i class="bi bi-x fs-1"></i>
-                                        </span>
-                                    </div>
-                                    <!--end::Toolbar-->
                                 </div>
                             </div>
-                            <!--end::Items-->
-                        </div>
-                        <!--end::Dropzone-->
-                        <div class="text-end">
-                            <button type="reset" id="kt_modal_new_target_cancel" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
-                            <button type="submit" id="kt_modal_new_target_submit" class="btn btn-primary">
-                                <span class="indicator-label">Upload</span>
-                            </button>
-                        </div>
+                            <!--end::Dropzone-->
+                            <div class="text-end">
+                                <button type="reset" id="" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" id="" class="btn btn-primary">
+                                    <span class="indicator-label">Upload</span>
+                                </button>
+                            </div>
+
                     </div>
                     <!--end::Input group-->
                 </div>
@@ -352,116 +322,258 @@
 </div>
 <!--end::Modal - Upload File-->
 
-<!--begin::Modal - Kelola Asesmen Guru-->
-<div class="modal fade" id="kelolaAsesmenGuru" tabindex="-1" aria-hidden="true">
-    <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-650px">
-        <!--begin::Modal content-->
-        <div class="modal-content rounded">
-            <!--begin::Modal header-->
-            <div class="modal-header pb-0 border-0 justify-content-end">
-                <!--begin::Close-->
-                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                    <span class="svg-icon svg-icon-1">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-                        </svg>
-                    </span>
-                    <!--end::Svg Icon-->
-                </div>
-                <!--end::Close-->
-            </div>
-            <!--begin::Modal header-->
-            <!--begin::Modal body-->
-            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
-                <!--begin:Form-->
-                <form id="nilaiAsesmenGuru_form" class="form">
-                    @csrf
-                    <!--begin::Heading-->
-                    <div class="mb-13 text-center">
-                        <!--begin::Title-->
-                        <h1 class="mb-3">Kelola Asesmen Sumatif</h1>
-                        <!--end::Title-->
-                    </div>
-                    <!--end::Heading-->
-                    <!--begin::Input group-->
-                    <div class="row g-9 mb-8">
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="required fs-6 fw-semibold mb-2">Sumatif</label>
-                            <!--end::Label-->
-                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Pilih Sumatif..." name="sumatif">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                                <span>Nama Sumatif</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Nama Sumatif" name="namaSumatif" />
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="row g-9 mb-8">
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                                <span class="required">Deskripsi Tertinggi</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Deskripsi Tertinggi" name="deskripsiTertinggiSumatif(angka)" />
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-md-6 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-                                <span class="required">Deskripsi Terendah</span>
-                            </label>
-                            <!--end::Label-->
-                            <input type="text" class="form-control form-control-solid" placeholder="Masukkan Deskripsi Terendah" name="deskripsiTerendahSumatif(angka)" />
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Input group-->
-                    <!--begin::Actions-->
-                    <div class="text-center">
-                        <button data-bs-dismiss="modal" type="reset" id="nilaiAsesmenGuru_cancel" class="btn btn-light me-3">Cancel</button>
-                        <button type="submit" id="nilaiAsesmenGuru_submit" class="btn btn-primary">
-                            <span class="indicator-label">Submit</span>
-                        </button>
-                    </div>
-                    <!--end::Actions-->
-                </form>
-                <!--end:Form-->
-            </div>
-            <!--end::Modal body-->
-        </div>
-        <!--end::Modal content-->
-    </div>
-    <!--end::Modal dialog-->
-</div>
-<!--end::Modal - Kelola Asesmen Guru-->
+<script>
+    $(document).ready(async function() {
+        await changeSelectSumatif();
+        await loadData();
+    });
+
+   function getNilaiExcel() {
+        var filterKelas = $("#filterKelas").val();
+        var filterTingkat = $("#filterTingkat").val();
+        document.getElementById('getNilaiExcel').href = "/getExcelNilai/" + filterTingkat + "/" + filterKelas;
+    }
+
+
+    function uploadNilai(){
+        var mapel = $("#mapel").val();
+        var filterKelas = $("#filterKelas").val();
+        var filterTingkat = $("#filterTingkat").val();
+        var filterSumatif = $("#filterSumatif").val();
+
+        $("#id_mapel_up").val(mapel);
+        $("#kelas_up").val(filterKelas);
+        $("#tingkat_up").val(filterTingkat);
+        $("#sumatif_up").val(filterSumatif);
+    }
+
+    async function changeSelectSumatif() {
+        var mapel = $("#mapel").val();
+
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                url: 'get-json-sumatif-by-id/' + mapel,
+                dataType: 'json',
+                success: function(data) {
+                    $('#filterSumatif').empty();
+                    $('#filterSumatif').append('<option selected value="-1" selected>Pilih Sumatif</option>');
+                    for (let i = 0; i < data.length; i++) {
+                        $('#filterSumatif').append('<option value="' + data[i].id + '">' + data[i].nama_sumatif + '</option>');
+                    }
+                    resolve(); // Tandai bahwa operasi selesai
+                },
+                error: function(error) {
+                    console.error('Terjadi kesalahan:', error);
+                    reject(error); // Tangani kesalahan jika terjadi
+                }
+            });
+        });
+    }
+
+    function changeSumatif(id_nilai, id_sumatif_tertinggi, id_sumatif_terendah) {
+        var id_mapel = $("#mapel").val();
+        $.ajax({
+            url: 'get-json-sumatif-by-id/' + id_mapel, // Lokasi file JSON
+            dataType: 'json',
+            success: function(data) {
+                $('#highdesc_' + id_nilai).empty();
+                $('#lowdesc_' + id_nilai).empty();
+
+                $('#lowdesc_' + id_nilai).append('<option value="">Pilih Sumatif</option>');
+                for (let i = 0; i < data.length; i++) {
+                    if (id_sumatif_terendah && id_sumatif_terendah == data[i].id) {
+                        $('#lowdesc_' + id_nilai).append('<option value="' + data[i].id + '" selected>' + data[i].nama_sumatif + '</option>');
+                    } else {
+                        $('#lowdesc_' + id_nilai).append('<option value="' + data[i].id + '">' + data[i].nama_sumatif + '</option>');
+                    }
+                }
+
+                $('#highdesc_' + id_nilai).append('<option value="">Pilih Sumatif</option>');
+                for (let i = 0; i < data.length; i++) {
+                    if (id_sumatif_tertinggi && id_sumatif_tertinggi == data[i].id) {
+                        $('#highdesc_' + id_nilai).append('<option value="' + data[i].id + '" selected>' + data[i].nama_sumatif + '</option>');
+                    } else {
+                        $('#highdesc_' + id_nilai).append('<option value="' + data[i].id + '">' + data[i].nama_sumatif + '</option>');
+                    }
+                }
+            },
+            error: function(error) {
+                console.error('Terjadi kesalahan:', error);
+            }
+        });
+
+    }
+
+    function initSiswa() {
+        var mapel = $("#mapel").val();
+        var filterKelas = $("#filterKelas").val();
+        var filterTingkat = $("#filterTingkat").val();
+        var filterSumatif = $("#filterSumatif").val();
+        var csrfToken = document.querySelector('input[name="csrf_token"]').value;
+
+        document.getElementById("initSiswa").href = "/initSiswa/" + mapel + '/' + filterKelas + '/' + filterTingkat + '/' + filterSumatif;
+
+    }
+
+    function loadData() {
+        var mapel = $("#mapel").val();
+        var filterKelas = $("#filterKelas").val();
+        var filterTingkat = $("#filterTingkat").val();
+        var filterSumatif = $("#filterSumatif").val();
+
+        console.log('/get-json-data-siswa/' + mapel + '/' + filterTingkat + '/' + filterKelas + '/' + filterSumatif);
+        $('#dataTable').DataTable().destroy();
+        $('#dataTable').DataTable({
+            ajax: {
+                url: '/get-json-data-siswa/' + mapel + '/' + filterTingkat + '/' + filterKelas + '/' + filterSumatif,
+                dataSrc: 'data',
+            },
+            columns: [{
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return meta.row + 1; // Menggunakan nomor baris sebagai counter
+                    }
+                },
+                {
+                    data: 'nis'
+                },
+                {
+                    data: 'nisn'
+                },
+                {
+                    data: 'nama_lengkap'
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return '<div class="row m-1">' +
+                            '<div class="col-12">' +
+                            '<input type="number" class="form-control form-control-solid text-center" placeholder="Nilai" id="nilai_' + (meta.row + 1) + '" value="' + row.nilai + '" onkeyup="saveNilai(' + (meta.row + 1) + ',' + data.nisn + ');" />' +
+                            '</div>' +
+                            '</div>';
+                    }
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return data.sumatif_tertinggi;
+                        // '<div>'+
+                        //     '<select class="form-select form-select-solid" name="deskripsi_tertinggi" id="highdesc_'+(meta+1)+'" onkeyup="saveNilai('+(meta+1)+','+data.nisn+');" >'+
+
+                        //     '</select>'+
+                        // '</div>';
+                    }
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return data.sumatif_terendah;
+                        // '<div>'+
+                        //     '<select class="form-select form-select-solid" name="deskripsi_terendah" id="lowdesc_'+(meta+1)+'" onkeyup="saveNilai('+(meta+1)+','+data.nisn+');" >'+
+
+                        //     '</select>'+
+                        // '</div>';
+                    }
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return '<div class="row m-1">' +
+                            '<div class="col-12">' +
+                            '<div class="row">' +
+                            '<div class="col-12">' +
+                            '<input type="number" class="form-control form-control-solid text-center" placeholder="S" id="sakit_' + (meta.row + 1) + '" value="' + row.sakit + '" onkeyup="saveNilai(' + (meta.row + 1) + ',' + data.nisn + ');"  />' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return '<div class="row m-1">' +
+                            '<div class="col-12">' +
+                            '<div class="row">' +
+                            '<div class="col-12">' +
+                            '<input type="number" class="form-control form-control-solid text-center" placeholder="I" id="ijin_' + (meta.row + 1) + '" value="' + row.ijin + '" onkeyup="saveNilai(' + (meta.row + 1) + ',' + data.nisn + ');"  />' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                },
+                {
+                    data: null,
+                    render: function(data, type, row, meta) {
+                        return '<div class="row m-1">' +
+                            '<div class="col-12">' +
+                            '<div class="row">' +
+                            '<div class="col-12">' +
+                            '<input type="number" class="form-control form-control-solid text-center" placeholder="A" id="alasan_' + (meta.row + 1) + '" value="' + row.alpha + '" onkeyup="saveNilai(' + (meta.row + 1) + ',' + data.nisn + ');"  />' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    }
+                }
+            ],
+            // drawCallback: function(settings){
+            //     this.api().rows().every(function(){
+            //         var meta = this;
+            //         var data = meta.data();
+            //         changeSumatif(data.id_nilai , data.id_sumatif_tertinggi , data.id_sumatif_terendah);
+            //     });
+            // }
+        });
+
+    }
+
+    function saveNilai(num, nisn) {
+        var mapel = $("#mapel").val();
+        var filterKelas = $("#filterKelas").val();
+        var filterTingkat = $("#filterTingkat").val();
+        var filterSumatif = $("#filterSumatif").val();
+
+        var nilai = document.getElementById('nilai_' + num).value || 0;
+        var sakit = document.getElementById('sakit_' + num).value || 0;
+        var ijin = document.getElementById('ijin_' + num).value || 0;
+        var alasan = document.getElementById('alasan_' + num).value || 0;
+
+        // var lowdesc = document.getElementById('lowdesc_'+num).value;
+        // var highdesc = document.getElementById('highdesc_'+num).value;
+
+        var csrfToken = document.querySelector('input[name="csrf_token"]').value;
+
+        var data = {
+            nisn: nisn,
+            id_mapel: mapel,
+            nilai: nilai,
+            sakit: sakit,
+            ijin: ijin,
+            alpha: alasan,
+            id_sumatif: filterSumatif,
+            // lowdesc: lowdesc,
+            // highdesc: highdesc
+        };
+
+        fetch('/update-nilai', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data berhasil dikirim:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    }
+</script>
 
 @endsection
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\siswas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\DetailSiswa;
+use Illuminate\Support\Facades\Hash;
 
 class SiswasController extends Controller
 {
@@ -14,10 +18,11 @@ class SiswasController extends Controller
      */
     public function index()
     {
-        $siswas = Siswas::paginate(10);
-        return response()->json([
-            'data' => $siswas
-        ]);
+        $siswas = DB::SELECT(DB::RAW("
+            select * from users left join detail_siswa on users.id = detail_siswa.user_id where users.role = 'siswa'
+        "));
+
+        return view('admin.masterSiswa', ['siswas'=>$siswas]);
     }
 
     /**
@@ -38,19 +43,20 @@ class SiswasController extends Controller
      */
     public function store(Request $request)
     {
-        $siswas = Siswas::create([
-            'nis' => $request->nis,
-            'nisn' => $request->nisn,
-            'namaSiswa' => $request->namaSiswa,
-            'kelas' => $request->kelas,
-            'fase' => $request->fase,
-            'semester' => $request->semester,
-            'tahunAkademik' => $request->tahunAkademik,
+        $user = User::create([
+            'username' => $request->nis,
+            'role' => 'siswa',
+            // 'email' => $request->email,
+            'password' => Hash::make($request->password)
         ]);
 
-        return response()->json([
-            'data' => $siswas
+        DetailSiswa::create([
+            'nisn' => $request->nisn,
+            'user_id' => $user->id,
+            'nama_lengkap' => $request->nama
         ]);
+        
+        return back();
     }
 
     /**
@@ -61,11 +67,11 @@ class SiswasController extends Controller
      */
     public function show($id)
     {
-        $siswas = Siswas::where('id',$id);
+        // $siswas = Siswas::where('id',$id);
         
-        return response()->json([
-            'data' => $siswas
-        ]);
+        // return response()->json([
+        //     'data' => $siswas
+        // ]);
     }
 
     /**
@@ -86,20 +92,57 @@ class SiswasController extends Controller
      * @param  \App\Models\siswas  $siswas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, siswas $siswas)
+    public function update(Request $request)
     {
-        $siswas->nis = $request->nis;
-        $siswas->nisn = $request->nisn;
-        $siswas->namaSiswa = $request->namaSiswa;
-        $siswas->kelas = $request->kelas;
-        $siswas->fase = $request->fase;
-        $siswas->semester = $request->semester;
-        $siswas->tahunAkademik = $request->tahunAkademik;
+        $checkDataSiswa = $request->dataSiswa;
 
-        return response()->json([
-            'data' => $siswas
-        ]);
+        if(!isset($checkDataSiswa) || $checkDataSiswa == null){
+            $userData = [
+                'username' => $request->nis,
+                'role' => 'siswa'
+            ];
+        
+            $detailSiswaData = [
+                'nisn' => $request->nisn,
+                'nama_lengkap' => $request->nama
+            ];
+        
+            if ($request->password !== null) {
+                $userData['password'] = $request->password;
+            }
+        
+            User::where('username', $request->nis)->update($userData);
+        
+            DetailSiswa::where('nisn', $request->nisn)->update($detailSiswaData);
+        }else{
+            $detailSiswaData = [
+                'tempat' => $request->tempat,
+                'tanggal_lahir' => $request->tanggal_lahir,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'agama' => $request->agama,
+                'status' => $request->status,
+                'anak_ke' => $request->anak_ke,
+                'alamat_siswa' => $request->alamat_siswa,
+                'no_hp' => $request->no_hp,
+                'sekolah_asal' => $request->sekolah_asal,
+                'nama_ayah' => $request->nama_ayah,
+                'pekerjaan_ayah' => $request->pekerjaan_ayah,
+                'nama_ibu' => $request->nama_ibu,
+                'pekerjaan_ibu' => $request->pekerjaan_ibu,
+                'alamat_ortu' => $request->alamat_ortu,
+                'no_hp_ortu' => $request->no_hp_ortu,
+                'nama_wali' => $request->nama_wali,
+                'alamat_wali' => $request->alamat_wali,
+                'no_hp_wali' => $request->np_hp_wali,
+                'pekerjaan_wali' => $request->pekerjaan_wali,
+            ];
+
+            DetailSiswa::where('nisn', $request->nisn)->update($detailSiswaData);
+        }
+    
+        return back()->with('success', 'Berhasil Update Siswa');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -115,4 +158,20 @@ class SiswasController extends Controller
             'message' => 'siswas deleted'
         ], 204);
     }
+
+    public function destroySiswa($id){
+        User::findOrFail($id)->delete();
+        DetailSiswa::where('user_id',$id)->delete();
+        return back()->with('danger', 'Berhasil Menghapus Siswa');
+    }
+
+    public function getSiswaById($id){
+        $data = DB::SELECT(DB::RAW(
+            "SELECT u.* , ds.nama_lengkap , ds.nisn 
+            from users AS u LEFT JOIN detail_siswa AS ds ON u.id = ds.user_id WHERE u.id = $id"
+        ));
+
+        return response()->json($data);
+    }
+    
 }

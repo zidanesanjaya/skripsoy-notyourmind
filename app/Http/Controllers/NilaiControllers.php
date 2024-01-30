@@ -641,6 +641,8 @@ class NilaiControllers extends Controller
             AND nisn = $nisn"
         );
 
+        // dd($nilaiPancasila2[0]->nilai_pancasila1);
+
         $data_diri = DB::SELECT(
             "SELECT 
                 ds.* , 

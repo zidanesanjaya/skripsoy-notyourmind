@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\DetailKaryawan;
+use App\Models\DetailSiswa;
+use App\Models\MataPelajaran;
+use App\Models\MapelKelas;
+use App\Models\NilaiAKhir;
+use App\Models\NilaiPancasila;
+use App\Models\NilaiSiswa;
+use App\Models\ResultsSumatif;
+use App\Models\Kelas;
 use Illuminate\Support\Facades\DB;
 
 
@@ -48,13 +56,13 @@ class KaryawanControllers extends Controller
      */
     public function store(Request $request)
     {
-        $checkUser =  User::where('username',$request->nbm)->where('role',$request->role)->count();
+        $checkUser =  User::where('username',$request->nbm_exists)->where('role',$request->role)->count();
         $stringData = "[" . implode(",", $request->role) . "]";
 
         if($checkUser == 0){
             $user = User::updateOrCreate(
             [
-                'username' => $request->nbm,
+                'username' => $request->nbm_exists,
             ],
             [
                 'username' => $request->nbm,
@@ -65,7 +73,7 @@ class KaryawanControllers extends Controller
 
             DetailKaryawan::updateOrCreate(
             [
-                'username_user' => $request->nbm,
+                'username_user' => $request->nbm_exists,
             ],    
             [
                 'id_user' => $user->id,
@@ -191,4 +199,20 @@ class KaryawanControllers extends Controller
         $informasi_sekolah = DB::SELECT("SELECT isk.semester ,isk.fase, ta.id AS tahun_akademik FROM informasi_sekolah AS isk LEFT JOIN tahun_akademik AS ta ON isk.tahun_pelajaran = ta.tahun_akademik");
         return view('kepalaSekolah.dataNilaiSiswaKepalaSekolah.nilaiKeseluruhanSiswaKepalaSekolah',['nisn'=> $nisn , 'informasi_sekolah'=> $informasi_sekolah[0]]);
     }
+
+    public function reset_all(){
+        Kelas::whereNotNull('id_wali_kelas')->update(['id_wali_kelas' => null]);
+        DetailSiswa::whereNotNull('id_kelas')->update(['id_kelas' => null]);
+        MataPelajaran::whereNotNull('id_guru')->update(['id_guru' => null]);
+        MapelKelas::whereNotNull('id')->delete();
+        NilaiAkhir::whereNotNull('id')->delete();
+        NilaiPancasila::whereNotNull('id')->delete();
+        NilaiSiswa::whereNotNull('id')->delete();
+        ResultsSumatif::whereNotNull('id')->delete();
+        User::where('role', 'like', "%wali_kelas%")->update(['role' => "[guru]"]);
+        DetailKaryawan::where('jabatan', 'like', "%wali_kelas%")->update(['jabatan' => "[guru]"]);
+        return back()->with('success', 'Berhasil Reset Semua Data');
+    }
+    
+    
 }

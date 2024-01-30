@@ -77,6 +77,7 @@ Route::get('/destroy-user/{id}', [KaryawanControllers::class, 'destroyUser'])->n
 Route::get('/index-all-employee', [KaryawanControllers::class, 'index_all_employee'])->name('index.all_employee');
 Route::get('/nilai-siswa-all', [KaryawanControllers::class, 'index_nilai_siswa'])->name('index.nilai_siswa');
 Route::get('/nilai-detail-siswa/{id}', [KaryawanControllers::class, 'nilai_siswa_detail']);
+Route::get('/reset-all', [KaryawanControllers::class, 'reset_all']);
 
 Route::resource('mapel', MataPelajaranControllers::class);
 Route::get('/get-mapel/{id}', [MataPelajaranControllers::class, 'getMapel']);

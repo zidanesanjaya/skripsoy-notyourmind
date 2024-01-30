@@ -191,14 +191,14 @@
                     </div>
                     <!--begin::Input group-->
                     <!--begin::Table-->
-                    <table id="modalTambahDataSiswaGuru" class="table align-middle gs-0 gy-4 text-nowrap" style="width:100%">
+                    <table id="modalTambahDataSiswaGuru" class="table align-middle gs-0 gy-4" style="width:100%">
                         <thead>
                             <tr class="fw-bold text-muted bg-light">
-                                <th class="px-5 min-w-20px">No.</th>
-                                <th class="ps-4 min-w-20px">NIS</th>
-                                <th class="min-w-50px w-100px rounded-start">NISN</th>
+                                <th class="px-5 min-w-20px text-nowrap">No.</th>
+                                <th class="ps-4 min-w-20px text-nowrap">NIS</th>
+                                <th class="min-w-50px w-100px rounded-start text-nowrap">NISN</th>
                                 <th class="min-w-100px w-150px">Nama Siswa</th>
-                                <th class="min-w-50px w-50px text-center">Aksi</th>
+                                <th class="min-w-50px w-50px text-center text-nowrap">Aksi</th>
                             </tr>
                         </thead>
                         <tbody id="listSiswa">

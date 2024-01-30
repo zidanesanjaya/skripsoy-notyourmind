@@ -256,13 +256,14 @@
                 <h3 class="text-dark fw-bold fs-3 mb-5">Menghapus Data Siswa Kelas Akan Menghapus Semua Data Siswa Pada Masing - Masing Kelas</h3>
                 <!--end::Heading-->
                 <!--begin::Notice-->
-                <div class="text-muted fw-semibold mb-10">Kalau Yakin, Ketik "Saya Yakin Menghapus Data Siswa Kelas"</div>
+                <div class="text-muted fw-semibold mb-10">Kalau Yakin, Ketik "yakin"</div>
                 <!--end::Notice-->
                 <!--begin::Form-->
-                <form class="form" action="#">
+                <form class="form"  action="/reset-all" onsubmit="return validateForm()" method="get">
+                    @csrf
                     <!--begin::Input group-->
                     <div class="mb-10 fv-row">
-                        <input type="text" class="form-control form-control-lg form-control-solid" required />
+                        <input type="text" id="inputField" class="form-control form-control-lg form-control-solid" required/>
                     </div>
                     <!--end::Input group-->
                     <!--begin::Actions-->
@@ -558,6 +559,21 @@
         });
     }
 
+    </script>
+
+    <script>
+        function validateForm() {
+            // Mendapatkan nilai dari input field
+            var inputValue = document.getElementById('inputField').value;
+
+            // Memeriksa apakah nilai input sama dengan "yakin"
+            if (inputValue.toLowerCase() === 'yakin'.toLowerCase()) {
+                return true; // Izinkan pengiriman formulir
+            } else {
+                alert('Input tidak sesuai dengan kata "yakin"');
+                return false; // Cegah pengiriman formulir
+            }
+        }
     </script>
 
 @endsection

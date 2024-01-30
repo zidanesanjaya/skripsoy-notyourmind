@@ -197,22 +197,22 @@
         {{$nilaiPancasila1[0]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'BB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila1, 'BB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? ''== 'MB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila1, 'MB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'BSH')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila1, 'BSH') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila1 ?? '' == 'SB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila1, 'SB') === 0)
           V
           @endif
         </td>
@@ -222,22 +222,22 @@
         {{$nilaiPancasila2[0]->desc_pancasila1 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'BB')
+        @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila1, 'BB') === 0)
+            V
+        @endif
+        </td>
+        <td style="border-style: solid; width: 40pt; text-align: center;">
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila1, 'MB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'MB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila1, 'BSH') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila1  ?? '' == 'BSH')
-          V
-          @endif
-        </td>
-        <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila1 ?? '' == 'SB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila1, 'SB') === 0)
           V
           @endif
         </td>
@@ -252,22 +252,22 @@
         {{$nilaiPancasila1[0]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'BB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila2, 'BB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? ''  == 'MB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila2, 'MB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'BSH')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila2, 'BSH') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila2 ?? '' == 'SB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila2, 'SB') === 0)
           V
           @endif
         </td>
@@ -277,22 +277,22 @@
         {{$nilaiPancasila2[0]->desc_pancasila2 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'BB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila2, 'BB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'MB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila2, 'MB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'BSH')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila2, 'BSH') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila2[0]->nilai_pancasila2 ?? '' == 'SB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila2, 'SB') === 0)
           V
           @endif
         </td>
@@ -307,22 +307,22 @@
         {{$nilaiPancasila1[0]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'BB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila3, 'BB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'MB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila3, 'MB')===0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'BSH')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila3, 'BSH')===0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if($nilaiPancasila1[0]->nilai_pancasila3 ?? '' == 'SB')
+          @if(strcasecmp($nilaiPancasila1[0]->nilai_pancasila3, 'SB')===0)
           V
           @endif
         </td>
@@ -332,22 +332,22 @@
         {{$nilaiPancasila2[0]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'BB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila3, 'BB')===0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'MB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila3, 'MB') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'BSH')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila3, 'BSH') === 0)
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila2[0]->nilai_pancasila3 ?? null ) == 'SB')
+          @if(strcasecmp($nilaiPancasila2[0]->nilai_pancasila3, 'SB') === 0)
           V
           @endif
         </td>
@@ -713,17 +713,17 @@
         {{$nilaiPancasila1[2]->desc_pancasila3 ?? null}}
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'BB')
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) === 'BB')
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'MB')
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) === 'MB')
           V
           @endif
         </td>
         <td style="border-style: solid; width: 40pt; text-align: center;">
-          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) == 'BSH')
+          @if(($nilaiPancasila1[2]->nilai_pancasila3 ?? null ) === 'BSH')
           V
           @endif
         </td>

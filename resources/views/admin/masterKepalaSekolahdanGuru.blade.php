@@ -289,6 +289,7 @@
 								<span class="required">NBM</span>
 							</label>
 							<!--end::Label-->
+							<input type="hidden" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm_exists" id="nbm_exists" />
 							<input type="text" class="form-control form-control-solid" placeholder="Masukkan NBM" name="nbm" id="nbm_edit" />
 						</div>
 						<!--end::Col-->
@@ -364,6 +365,7 @@
 
 				$("#nama_edit").val(data.nama_lengkap);
 				$("#nbm_edit").val(data.username);
+				$("#nbm_exists").val(data.username);
 				$("#email_edit").val(data.email);
 			},
 			error: function(xhr, status, error) {

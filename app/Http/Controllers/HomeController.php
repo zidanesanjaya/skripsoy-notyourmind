@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\DetailKaryawan;
 use App\Models\DetailSiswa;
 use App\Models\MataPelajaran;
+use App\Models\Kelas;
 use Auth;
 use DB;
 use Illuminate\Support\Facades\Hash;
@@ -34,6 +35,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $username = Auth::user()->username;
         if(Auth::user()->role == 'admin'){
             $count_guru = User::where('role','like', '%guru%')->count();
             $count_siswa = User::where('role', 'siswa')->count();
@@ -44,6 +46,20 @@ class HomeController extends Controller
             $id = Auth::user()->id;
             $detailsiswa = DB::SELECT("SELECT ds.* , u.username AS nis , k.tingkat , k.kelas  FROM detail_siswa AS ds LEFT JOIN users AS u ON ds.user_id = u.id LEFT JOIN kelas AS k ON ds.id_kelas = k.id WHERE ds.user_id = $id");
             return view('dashboard' , ['detailsiswa'=> $detailsiswa[0]]);
+        }
+        if (Auth::user()->role != 'siswa' || Auth::user()->role != 'admin') {
+            $data = DB::SELECT(
+                "WITH cte AS (
+                SELECT u.* , ds.nama_lengkap FROM users AS u RIGHT JOIN detail_siswa AS ds ON u.id = ds.user_id
+                UNION ALL
+                SELECT u.* , ds.nama_lengkap FROM users AS u RIGHT JOIN detail_karyawan AS ds ON u.id = ds.id_user
+                )
+                
+                SELECT * FROM cte WHERE username = $username
+                "
+            );
+
+            return view('dashboard',['nama_lengkap'=>$data[0]->nama_lengkap]);
         }
         return view('dashboard');
 

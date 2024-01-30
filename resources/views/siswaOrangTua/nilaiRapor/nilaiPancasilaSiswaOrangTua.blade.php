@@ -272,28 +272,28 @@
                 dataType: 'JSON',
                 success: function(response){
 
-                    pancasila1_step1 = response[0].nilai_pancasila1;
-                    pancasila2_step1 = response[0].nilai_pancasila2;
-                    pancasila3_step1 = response[0].nilai_pancasila3;
+                    pancasila1_step1 = response[0]?.nilai_pancasila1 ?? '';
+                    pancasila2_step1 = response[0]?.nilai_pancasila2 ?? '';
+                    pancasila3_step1 = response[0]?.nilai_pancasila3 ?? '';
 
                     if(response[1]){
-                        pancasila1_step2 = response[1].nilai_pancasila1;
-                        pancasila2_step2 = response[1].nilai_pancasila2;
-                        pancasila3_step2 = response[1].nilai_pancasila3;
+                        pancasila1_step2 = response[1]?.nilai_pancasila1 ?? '';
+                        pancasila2_step2 = response[1]?.nilai_pancasila2 ?? '';
+                        pancasila3_step2 = response[1]?.nilai_pancasila3 ?? '';
                     }
                     
 
-                    desc_pancasila1_step1 = response[0].desc_pancasila1;
-                    desc_pancasila2_step1 = response[0].desc_pancasila2;
-                    desc_pancasila3_step1 = response[0].desc_pancasila3;
+                    desc_pancasila1_step1 = response[0]?.desc_pancasila1 ?? '';
+                    desc_pancasila2_step1 = response[0]?.desc_pancasila2 ?? '';
+                    desc_pancasila3_step1 = response[0]?.desc_pancasila3 ?? '';
 
                     if(response[1]){
-                        desc_pancasila1_step2 = response[1].desc_pancasila1;
-                        desc_pancasila2_step2 = response[1].desc_pancasila2;
-                        desc_pancasila3_step2 = response[1].desc_pancasila3;
+                        desc_pancasila1_step2 = response[1]?.desc_pancasila1 ?? '';
+                        desc_pancasila2_step2 = response[1]?.desc_pancasila2 ?? '';
+                        desc_pancasila3_step2 = response[1]?.desc_pancasila3 ?? '';
                     }
                 
-                    catatan = response[0].catatan;
+                    catatan = response[0]?.catatan ?? '';
                 }
             });
 
@@ -306,14 +306,15 @@
                     var sub_proyek2 = '';
                     var sub_proyek3 = '';
 
+                    console.log(response);
                     id_pancasila = document.querySelector('select[id="list_proyek"]').value;
-                    response = [response.find(item => item.id == id_pancasila)];
+                    const foundObject = Object.values(response).find(item => item.id == id_pancasila);
 
-                    $("#nama_proyek").append(response[0].nama_project);
-                    $("#deskripsi_pancasila").append(response[0].deskripsi);
+                    $("#nama_proyek").append(foundObject.nama_project);
+                    $("#deskripsi_pancasila").append(foundObject.deskripsi);
 
                     sub_proyek1 += '<tr style="background-color: #f2f2f2;">'+
-                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+response[0].sub_proyek1+'</td>'+
+                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+foundObject.sub_proyek1+'</td>'+
                                             '<td></td>'+
                                             '<td></td>'+
                                             '<td></td>'+
@@ -371,9 +372,9 @@
 
                     $("#table_pancasila").append(sub_proyek1);
 
-                    if(response[0].sub_proyek2){
+                    if(foundObject.sub_proyek2){
                         sub_proyek2 += '<tr style="background-color: #f2f2f2;">'+
-                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+response[0].sub_proyek2+'</td>'+
+                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+foundObject.sub_proyek2+'</td>'+
                                             '<td></td>'+
                                             '<td></td>'+
                                             '<td></td>'+
@@ -434,9 +435,9 @@
                     }
 
                     
-                    if(response[0].sub_proyek3){
+                    if(foundObject.sub_proyek3){
                         sub_proyek3 += '<tr style="background-color: #f2f2f2;">'+
-                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+response[0].sub_proyek3+'</td>'+
+                                            '<td class="text-gray-800 text-hover-primary fw-bold px-5">'+foundObject.sub_proyek3+'</td>'+
                                             '<td></td>'+
                                             '<td></td>'+
                                             '<td></td>'+

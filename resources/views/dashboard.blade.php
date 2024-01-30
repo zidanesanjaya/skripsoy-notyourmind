@@ -15,7 +15,7 @@
 				<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 					<!--begin::Title-->
 					<h2>
-						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello {{Auth::user()->username}} </h1> Guru
+						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello @if($nama_lengkap)  {{$nama_lengkap}} @else {{Auth::user()->username}} @endif </h1> Guru
 					</h2>
 					<!--end::Title-->
 					<!--begin::Breadcrumb-->
@@ -126,7 +126,7 @@
 				<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 					<!--begin::Title-->
 					<h2>
-						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello {{Auth::user()->username}} </h1> Wali Kelas
+						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello @if($nama_lengkap)  {{$nama_lengkap}} @else {{Auth::user()->username}} @endif </h1> Wali Kelas
 					</h2>
 					<!--end::Title-->
 					<!--begin::Breadcrumb-->
@@ -265,7 +265,7 @@
 				<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 					<!--begin::Title-->
 					<h2>
-						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello {{Auth::user()->username}} </h1> Siswa
+						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello @if($nama_lengkap)  {{$nama_lengkap}} @else {{Auth::user()->username}} @endif </h1> Siswa
 					</h2>
 					<!--end::Title-->
 					<!--begin::Breadcrumb-->
@@ -444,7 +444,7 @@
 				<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
 					<!--begin::Title-->
 					<h2>
-						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello {{Auth::user()->username}} </h1> Kepala Sekolah
+						<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Hello @if($nama_lengkap)  {{$nama_lengkap}} @else {{Auth::user()->username}} @endif </h1> Kepala Sekolah
 					</h2>
 					<!--end::Title-->
 					<!--begin::Breadcrumb-->
